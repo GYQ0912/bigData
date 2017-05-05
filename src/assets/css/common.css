@@ -1,0 +1,395 @@
+html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, input, a, em, img, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: "PingFang SC", "Microsoft YaHei Light", "Microsoft YaHei";
+}
+
+body {
+    line-height: 1;
+}
+
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary {
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ul, li, dl {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+i, em {
+    font-style: normal;
+}
+
+div:after, div:before {
+    content: '';
+}
+
+/*--//End--reset--*/
+
+.bd {
+    width: 100%;
+    float: left;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.header {
+    width: 100%;
+    height: 120px;
+    padding: 30px 0;
+    z-index: 99;
+}
+
+.header .content {
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+.header .content a {
+    color: #fff;
+    opacity: 0.5;
+}
+
+.header .content a.active {
+    opacity: 1;
+}
+
+.header .content .logo {
+    background: url(../images/logo@1x.png) no-repeat;
+    width: 252px;
+    height: 120px;
+    float: left;
+    margin-left: 4%;
+    opacity: 1;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.header .content .nav,
+.header .content .info {
+    margin-top: 48px;
+    margin-bottom: 48px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.header .content .nav {
+    float: left;
+    margin-left: 17px;
+}
+
+.header .content .nav a {
+    position: relative;
+    float: left;
+    margin-left: 40px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.header .content .nav a:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    overflow: hidden;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.header .content .nav a:hover{
+    opacity:1;
+}
+.header .content .nav a:hover:after,
+.header .content .nav a.active:after{
+    width:100%;
+}
+
+
+
+.header .info {
+    float: right;
+    margin-right: 4%;
+}
+
+.header .info li {
+    float: left;
+    margin-left: 20px;
+}
+
+.header .info li .icon1x {
+    width: 19px;
+    height: 19px;
+    opacity: 1;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.header .info li.language a {
+    font-size: 12px;
+    line-height: 25px;
+    float: left;
+}
+
+.header .content .info li.language a.zh {
+    padding-right: 12px;
+    margin-right: 12px;
+    position: relative;
+}
+
+.header .content .info li.language a.zh:after {
+    content: '';
+    width: 1px;
+    height: 9px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+}
+
+.header .content .info li.search {
+    display: none;
+}
+
+.header .content .info li.search a {
+    background-position: 0 0;
+    float: left;
+}
+
+.header .content .info li.login a {
+    background-position: 0 -19px;
+    float: left;
+}
+
+
+.home_header_fixed {
+    height: 80px;
+    padding: 20px 0;
+    background: #fff;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.home_header_fixed {
+    background: #fff;
+}
+
+.home_header_fixed .content a {
+    color: #1b1b1b;
+}
+
+.home_header_fixed .content .nav a:after {
+    background: #1b1b1b;
+}
+
+.home_header_fixed .content .info li.search a {
+    background-position: -19px 0;
+}
+
+.home_header_fixed .content .info li.login a {
+    background-position: -19px -19px;
+}
+
+.home_header_fixed .content .info li.language a.zh:after {
+    background: #1b1b1b;
+}
+
+.home_header_fixed .content .info li.search {
+    display: block;
+}
+
+
+
+.home_header_fixed .content a {
+    color: #000;
+}
+
+.home_header_fixed .content .logo {
+    background: url(../images/logo_fixed.png) no-repeat 0 0;
+    width: 210px;
+    height: 80px;
+}
+
+
+.home_header_fixed .content .nav,
+.home_header_fixed .content .info {
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+
+/*--//End header --*/
+
+.footer {
+    background: #161616 url(../images/footer_bg.png) top center no-repeat;
+    height: 122px;
+    padding-top: 38px;
+    position: relative;
+    text-align: center;
+}
+
+.footer .diich {
+    width: 210px;
+    text-align: center;
+    position: absolute;
+    left: 7%;
+}
+
+.footer .diich p {
+    color: #fff;
+    opacity: .5;
+}
+
+.footer .diich .name {
+    font-size: 30px;
+    line-height: 32px;
+    opacity: .9;
+    margin-bottom: 12px;
+}
+
+.footer .diich .subname {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.footer .msg {
+    line-height: 24px;
+    font-size: 14px;
+    color: #fff;
+    opacity: .5;
+    text-align: left;
+    position: absolute;
+
+}
+
+.footer .mese {
+    left: 35%;
+}
+
+.footer .phone {
+    left: 49%;
+}
+
+.footer .share {
+    position: absolute;
+    right: 7%;
+}
+
+.footer .share a {
+    background: url(../images/share.png) no-repeat;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-left: 28px;
+}
+
+.footer .share a.facebook {
+    background-position: 0 0;
+}
+
+.footer .share a.twitter {
+    background-position: 0 -16px;
+}
+
+.footer .share a.instagram {
+    background-position: 0 -32px;
+}
+
+.footer .share a.linkedin {
+    background-position: 0 -48px;
+}
+
+/*--//ENd footer--*/
+
+.play_big {
+    background: url(../images/play_big.png) no-repeat 0 0;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+}
+
+.play_big:hover {
+    background-position: 0 -120px;
+}
+
+.play_sm {
+    background: url(../images/play_sm.png) no-repeat 0 0;
+    width: 24px;
+    height: 24px;
+}
+
+/*--//End 播放按钮组件*/
+
+.gotop {
+    background: url(../images/gotop.png) no-repeat 0 0;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 230px;
+    right: 24px;
+    z-index: 3;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.gotop:hover {
+    opacity: .5;
+}
+
+/*--/End 返回顶部*/
+
+.crumbs {
+    width: 1170px;
+    height: 16px;
+    margin: 50px auto 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.crumbs span,
+.crumbs span a {
+    height: 16px;
+    line-height: 16px;
+    color: #fff;
+    opacity: .7;
+    float: left;
+}
+
+.crumbs span a:hover {
+    opacity: 1;
+}
+
+.crumbs span.last {
+    opacity: .3;
+}
+
+.crumbs .gt {
+    background: url(../images/crumbs_gt.png) no-repeat 0 0;
+    width: 8px;
+    height: 14px;
+    float: left;
+    margin: 1px 8px;
+}
+
+/*--//End crumbs--*/
