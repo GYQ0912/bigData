@@ -245,6 +245,53 @@ div:after, div:before {
     margin-bottom: 48px;
 }
 
+.filter {
+    width: 100%;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    background: #ccc;
+}
+
+.search_box {
+    width: 960px;
+    height: 360px;
+    margin: 0 auto;
+}
+
+.search_box form {
+    background: #fff;
+    width: 100%;
+    height: 38px;
+    padding: 27px 0;
+    border-bottom: 2px solid #1B1B1B;
+    position: relative;
+    float: left;
+    margin-top: 60px;
+}
+
+.search_box form .ipt {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    font-size: 44px;
+    color: #1B1B1B;
+}
+
+.search_box form .submit {
+    background: url(../images/search1.png) no-repeat;
+    width: 47px;
+    height: 45px;
+    line-height: 999px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -23px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
 /*--//End header --*/
 
 .footer {
