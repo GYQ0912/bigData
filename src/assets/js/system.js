@@ -72,12 +72,16 @@ $(function () {
     })();
     //导航搜索
     (function () {
-        var _header = $('#home-header')
+        var _header = $('#home-header');
+        var gotop = $('.gotop');
+
         $(window).scroll(function () {
             if ($(window).scrollTop() > 810) {
-                _header.addClass('home_header_fixed');
+                _header.addClass('header_active header_fixed');
+                gotop.fadeIn();
             } else {
-                _header.removeClass('home_header_fixed');
+                _header.removeClass('header_active header_fixed');
+                gotop.fadeOut();
             }
 
         });
@@ -89,8 +93,50 @@ $(function () {
     $('.detail .products .list li:last-child, .detail .influence .column3 li:last-child').css('margin-right', '0');
 
 
-});
+    //返回顶部
+    $('.gotop').click(function () {
+        $("html,body").animate({scrollTop: 0}, 500);
+    });
 
+
+    //详情页
+    (function () {
+        var _detail = $('.detail');
+        var shareEl = _detail.find('a.share');  //分享
+        var praiseEl = _detail.find('a.praise');  //点赞
+        var shareBox = _detail.find('.share_box');
+
+
+        shareEl.on('click', function () {
+            var _this = $(this);
+            if (!_this.hasClass('active')) {
+                _this.addClass('active');
+                shareBox.fadeIn(100);
+            } else {
+                _this.removeClass('active');
+                shareBox.fadeOut(100);
+            }
+
+            return false;
+        });
+
+        praiseEl.on('click',function () {
+            var _this = $(this);
+            if (!_this.hasClass('active')) {
+                _this.addClass('active');
+            } else {
+                _this.removeClass('active');
+            }
+            return false;
+        })
+
+
+
+
+    })();
+
+
+});
 
 
 

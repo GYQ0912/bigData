@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Video.js Test Suite</title>
+    <style>
+        video {
+            width: 400px;
+            height: 400px;
+            background-size:cover;
+            object-fit: fill;
+            pointer-events: none;
+
+        }
+    </style>
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+
+
+<div style="width: 400px;height: 400px;background:#f00;">
+    <video id="video" poster="assets/uploads/exp2.png" src="assets/uploads/video.mp4"></video>
+</div>
+
+<!--<button class="large awesome" onclick="document._video.play()">play()</button>-->
+<button class="large awesome" onclick="document.getElementById('video-active').pause()">pause()</button>
+
+
+<!--
+<video
+        id="video-active"
+        class="video-active"
+        width="640"
+        height="390"
+        autoplay
+        controls="controls" poster="assets/uploads/exp2.png">
+    <source src="assets/uploads/video.mp4" type="video/mp4">
+</video>
+
+<div id="current">0:00</div>
+<div id="duration">0:00</div>
+-->
+
+
+<script>
+
+
+
+    $(document).ready(function () {
+        var media = $("#video-active");
+        media.on("timeupdate", function (event) {
+            onTrackedVideoFrame(this.currentTime, this.duration);
+        });
+
+
+        setTimeout(function () {
+
+        }, 1000);
+
+
+    })
+
+
+    function onTrackedVideoFrame(currentTime, duration) {
+        $("#current").text(currentTime);
+        $("#duration").text(duration);
+    }
+
+
+</script>
+
+
+</body>
+</html>

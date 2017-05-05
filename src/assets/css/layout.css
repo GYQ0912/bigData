@@ -713,7 +713,7 @@ h3 {
 
 .detail .project .content .floor a.share,
 .detail .project .content .floor a.praise {
-    background: url(../images/detail_share.png) no-repeat 0 0;
+    background: url(../images/detail_icon.png) no-repeat 0 0;
     width: 23px;
     height: 20px;
     float: left;
@@ -728,9 +728,95 @@ h3 {
     opacity: 1;
 }
 
+.detail .project .content .floor a.praise.active {
+    background: url(../images/detail_icon.png) no-repeat -23px -20px;
+    opacity: 1;
+}
+
+.detail .project .content .floor .share_box {
+    width: 154px;
+    height: 108px;
+    padding: 10px 10px 10px 0;
+    position: absolute;
+    top: -130px;
+    left: 0;
+    background: #fff;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: none;
+}
+
+.detail .project .content .floor .share_box:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+}
+
+.detail .project .content .floor .share_box .icons {
+    width: 46px;
+    float: left;
+}
+
+.detail .project .content .floor .share_box .icons a {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+.detail .project .content .floor .share_box .icons a:after {
+    content: '';
+    background: url(../images/detail_share.png) no-repeat 0 0;
+    width: 17px;
+    height: 15px;
+    display: inline-block;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.detail .project .content .floor .share_box .icons a.sina:after {
+    background-position: 0 0;
+}
+
+.detail .project .content .floor .share_box .icons a.facebook:after {
+    background-position: 0 -15px;
+}
+
+.detail .project .content .floor .share_box .icons a.twitter:after {
+    background-position: 0 -30px;
+}
+
+.detail .project .content .floor .share_box .icons a.sina:hover:after {
+    background-position: -17px 0;
+}
+
+.detail .project .content .floor .share_box .icons a:hover.facebook:after {
+    background-position: -17px -15px;
+}
+
+.detail .project .content .floor .share_box .icons a:hover.twitter:after {
+    background-position: -17px -30px;
+}
+
+.detail .project .content .floor .share_box .qrcode {
+    width: 108px;
+    height: 108px;
+    float: right;
+}
+
 .detail .project .content .floor a.praise {
     background-position: 0 -20px;
     margin-left: 30px;
+    -webkit-transition: all 0s;
+    transition: all 0s;
 }
 
 .detail .project .content .floor a.album {
@@ -820,18 +906,19 @@ h3 {
     width: 100%;
     float: left;
     margin-bottom: 36px;
+    position: relative;
 }
 
 .detail .main_article .content .media li img {
     width: 100%;
     float: left;
-    margin-bottom: 20px;
 }
 
 .detail .main_article .content .media li span {
     color: #949494;
     font-size: 14px;
     float: right;
+    margin-top: 20px;
 }
 
 .detail .main_article .content .media .more {
@@ -975,15 +1062,49 @@ h3 {
     margin-bottom: 50px;
 }
 
+.side_fixed {
+    position: fixed;
+    top: 350px;
+    right: 40px;
+}
 
+.side_fixed li {
+    height: 34px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    color: #949494;
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
 
+.side_fixed li span {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    white-space: nowrap;
+    display: none;
+}
 
+.side_fixed li strong {
+    width: 30px;
+    float: right;
+    margin-bottom: 20px;
+}
 
+.side_fixed li:hover {
+    font-size: 24px;
+    color: #333;
+}
 
+.side_fixed li:hover span {
+    display: block;
+}
 
-
-
-
-
+.side_fixed li.active {
+    color: #333;
+}
 
 
