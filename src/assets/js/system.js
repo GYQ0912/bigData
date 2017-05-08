@@ -74,14 +74,17 @@ $(function () {
     (function () {
         var _header = $('#home-header');
         var gotop = $('.gotop');
+        var parent = $('.filter_search');
+
 
         $(window).scroll(function () {
-            if ($(window).scrollTop() > 810) {
-                _header.addClass('header_active header_fixed');
+            if ($(window).scrollTop() > 630) {
+                _header.addClass('active');
                 gotop.fadeIn();
             } else {
-                _header.removeClass('header_active header_fixed');
+                _header.removeClass('active');
                 gotop.fadeOut();
+                parent.slideUp('fast');
             }
 
         });
@@ -101,10 +104,10 @@ $(function () {
 
     //详情页
     (function () {
-        var _detail = $('.detail');
+        var _detail = $('.detail123');
         var shareEl = _detail.find('a.share');  //分享
         var praiseEl = _detail.find('a.praise');  //点赞
-        var shareBox = _detail.find('.share_box');
+        var shareBox = _detail.find('.share_box');  //分享谈框
 
 
         shareEl.on('click', function () {
@@ -120,7 +123,7 @@ $(function () {
             return false;
         });
 
-        praiseEl.on('click',function () {
+        praiseEl.on('click', function () {
             var _this = $(this);
             if (!_this.hasClass('active')) {
                 _this.addClass('active');
@@ -131,10 +134,62 @@ $(function () {
         })
 
 
+    })();
+
+
+    //搜索筛选
+    (function () {
+        var searchIcon = $('.header .content .info li.search');
+        var parent = $('.filter_search');
+        var allEl = parent.find('.attr span');  //筛选项
+        var itemEl = parent.find('.item');  //
+
+
+        searchIcon.on('click', function () {
+            parent.slideDown('fast');
+            return false;
+        });
+
+        allEl.on('click', function () {
+            var _this = $(this);
+            var _index = _this.index();
+
+            itemEl.eq(_index).show().siblings('.item').hide();
+            itemEl.eq(_index).css('left', parseInt(_this.position().left) + 'px');
+
+
+        });
 
 
     })();
 
+
+    //非遗名录下拉
+    (function () {
+        var _header = $('.header');
+        var _directory = $('#directory');
+
+        var _menu = $('.drop_menu');
+        var _item = _menu.find('.item');
+
+
+        //非遗目录hover
+        _directory.hover(function () {
+            _menu.slideDown('fast');
+        });
+
+        _header.mouseleave(function () {
+            _menu.slideUp();
+        })
+
+        //去掉dd的左边距
+        _item.each(function () {
+            var _dd = $(this).find('dd');
+            _dd.eq(0).css('margin-left', '0');
+        });
+
+
+    })();
 
 });
 

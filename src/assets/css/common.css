@@ -53,9 +53,19 @@ div:after, div:before {
 
 .header {
     width: 100%;
-    height: 120px;
-    padding: 30px 0;
-    z-index: 99;
+    height: 24px;
+    padding: 78px 0;
+    z-index: 9;
+}
+
+.header .icon {
+    background-image: url(../images/icon@1x.png);
+    width: 19px;
+    height: 19px;
+    opacity: 1;
+    display: inline-block;
+    position: relative;
+    top: 3px;
 }
 
 .header .content {
@@ -64,8 +74,13 @@ div:after, div:before {
 }
 
 .header .content a {
+    height: 24px;
+    line-height: 24px;
     color: #fff;
     opacity: 0.5;
+    float: left;
+    -webkit-transition: all .3s;
+    transition: all .3s;
 }
 
 .header .content a.active {
@@ -76,32 +91,29 @@ div:after, div:before {
     background: url(../images/logo@1x.png) no-repeat;
     width: 252px;
     height: 120px;
-    float: left;
-    margin-left: 4%;
     opacity: 1;
     -webkit-transition: all .3s;
     transition: all .3s;
+    float: left;
+    margin-top: -50px;
+    margin-left: 4%;
+    margin-right: 17px;
 }
 
 .header .content .nav,
 .header .content .info {
-    margin-top: 48px;
-    margin-bottom: 48px;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
 
 .header .content .nav {
     float: left;
-    margin-left: 17px;
 }
 
 .header .content .nav a {
     position: relative;
-    float: left;
     margin-left: 40px;
     font-size: 14px;
-    line-height: 24px;
 }
 
 .header .content .nav a:after {
@@ -126,112 +138,174 @@ div:after, div:before {
     width: 100%;
 }
 
-.header .info {
+.header .content .info {
     float: right;
     margin-right: 4%;
 }
 
-.header .info li {
+.header .content .info li {
+    height: 24px;
+    line-height: 24px;
     float: left;
-    margin-left: 20px;
 }
 
-.header .info li .icon1x {
-    width: 19px;
-    height: 19px;
-    opacity: 1;
-    display: inline-block;
-    position: relative;
-    top: 3px;
-}
-
-.header .info li.language a {
+.header .content .info li em {
     font-size: 12px;
-    line-height: 25px;
-    float: left;
+    color: #fff;
 }
 
-.header .content .info li.language a.zh {
-    padding-right: 12px;
-    margin-right: 12px;
+.header .content .info li.login {
+    margin-right: 18px;
+    padding-right: 18px;
     position: relative;
 }
 
-.header .content .info li.language a.zh:after {
+.header .content .info li.login i {
+    background-position: 0 -19px;
+    float: left;
+    margin-right: 6px;
+}
+
+.header .content .info li.login:after {
     content: '';
     width: 1px;
-    height: 9px;
-    background: #fff;
+    height: 8px;
+    background: rgba(255, 255, 255, .2);
     position: absolute;
     top: 50%;
     right: 0;
-    margin-top: -5px;
+    margin-top: -2px;
+    background: #fff;
+}
+
+.header .content .info li.language a.zh {
+    margin-right: 6px;
 }
 
 .header .content .info li.search {
     display: none;
 }
 
-.header .content .info li.search a {
+.header .content .info li.search i {
     background-position: 0 0;
-    float: left;
 }
 
-.header .content .info li.login a {
-    background-position: 0 -19px;
-    float: left;
+/*--//End header 基本--*/
+
+.drop_menu {
+    height: 400px;
+    background: #1B1B1B;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: none;
+
 }
 
-.header_active {
-    height: 80px;
-    padding: 20px 0;
+.drop_menu .content {
+    width: 1080px;
+    height: 200px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.drop_menu .content .item {
+    float: left;
+    margin-left: 74px;
+}
+
+.drop_menu .content .item dt {
+    width: 100%;
+    height: 56px;
+    font-size: 16px;
+    line-height: 28px;
+    float: left;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.drop_menu .content .item dd {
+    float: left;
+    margin-left:40px;
+}
+
+.drop_menu .content .item dd a {
+    font-size: 14px;
+    line-height: 28px;
+    color: #fff;
+    opacity: .5;
+    display: block;
+}
+
+.drop_menu .content .item.level1 {
+    width: 86px;
+    margin-left: 0;
+}
+
+.drop_menu .content .item.level2 {
+    width: 143px;
+}
+
+.drop_menu .content .item.level3 {
+    width: 100px;
+}
+
+.drop_menu .content .item.level4 {
+    width: 240px;
+}
+
+.drop_menu .content .item.level5 {
+    width: 210px;
+}
+
+/*--//ENd 导航二级菜单*/
+
+.header.active {
+    padding: 48px 0;
     background: #fff;
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
-.header_active {
-    background: #fff;
-}
-
-.header_active .content a {
+.header.active .content a {
     color: #1b1b1b;
 }
 
-.header_active .content .nav a:after {
-    background: #1b1b1b;
-}
-
-.header_active .content .info li.search a {
-    background-position: -19px 0;
-}
-
-.header_active .content .info li.login a {
-    background-position: -19px -19px;
-}
-
-.header_active .content .info li.language a.zh:after {
-    background: #1b1b1b;
-}
-
-.header_active .content .info li.search {
-    display: block;
-}
-
-.header_active .content a {
-    color: #000;
-}
-
-.header_fixed .content .logo {
+.header.active .content .logo {
     background: url(../images/logo_fixed.png) no-repeat 0 0;
     width: 210px;
     height: 80px;
+    margin-top: -30px;
 }
 
-.header_active .content .nav,
-.header_active .content .info {
-    margin-top: 28px;
-    margin-bottom: 28px;
+.header.active .content .nav a:after {
+    background: #1b1b1b;
+}
+
+.header.active .content .info li.login i {
+    background-position: -19px -19px;
+}
+
+.header.active .content .info li.login em {
+    color: #333;
+}
+
+.header.active .content .info li.login:after {
+    background: #D8D8D8;
+}
+
+.header.active .content .info li.language {
+    display: none;
+}
+
+.header.active .content .info li.search {
+    display: block;
+}
+
+.header.active .content .info li.search i {
+    background-position: -19px 0;
 }
 
 .detail_header {
@@ -245,33 +319,32 @@ div:after, div:before {
     margin-bottom: 48px;
 }
 
-.filter {
+/*--//End detail_header */
+
+.filter_search {
     width: 100%;
-    position: absolute;
+    height: 380px;
+    position: fixed;
     top: 120px;
     left: 0;
     right: 0;
-    background: #ccc;
-}
-
-.search_box {
-    width: 960px;
-    height: 360px;
-    margin: 0 auto;
-}
-
-.search_box form {
+    z-index: 9;
     background: #fff;
-    width: 100%;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.filter_search .content form {
+    background: #fff;
+    width: 960px;
     height: 38px;
     padding: 27px 0;
     border-bottom: 2px solid #1B1B1B;
     position: relative;
-    float: left;
-    margin-top: 60px;
+    margin: 60px auto 130px auto;
 }
 
-.search_box form .ipt {
+.filter_search .content form .ipt {
     width: 100%;
     height: 44px;
     line-height: 44px;
@@ -279,7 +352,7 @@ div:after, div:before {
     color: #1B1B1B;
 }
 
-.search_box form .submit {
+.filter_search .content form .submit {
     background: url(../images/search1.png) no-repeat;
     width: 47px;
     height: 45px;
@@ -290,6 +363,131 @@ div:after, div:before {
     margin-top: -23px;
     cursor: pointer;
     overflow: hidden;
+}
+
+.filter_search .content .attr {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+.filter_search .content .attr span {
+    padding-right: 20px;
+    font-size: 24px;
+    line-height: 22px;
+    position: relative;
+    display: inline-block;
+    margin: 0 24px;
+    cursor: pointer;
+}
+
+.filter_search .content .attr span:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #949494;
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.filter_search .content .dropbox {
+    width: 100%;
+    float: left;
+    position: relative;
+    top: 90px;
+}
+
+.filter_search .content .dropbox .item {
+    background: #fff;
+    padding: 48px;
+    position: absolute;
+    -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, .1);
+    top: 0;
+    display: none;
+}
+
+.filter_search .content .dropbox .item dl {
+    width: 232px;
+    padding-right: 10px;
+    float: left;
+}
+
+.filter_search .content .dropbox .item dt div {
+    width: 100%;
+    float: left;
+}
+
+.filter_search .content .dropbox .item dt .title {
+    font-size: 15px;
+    color: #949494;
+    margin-bottom: 22px;
+}
+
+.filter_search .content .dropbox .item dt .subtitle {
+    font-size: 20px;
+    color: #4990E2;
+    margin-bottom: 10px;
+}
+
+.filter_search .content .dropbox .item dd {
+    width: 202px;
+    padding-right: 30px;
+    max-height: 400px;
+    float: left;
+    overflow-y: auto;
+}
+
+.filter_search .content .dropbox .item dd li {
+    width: 100%;
+    line-height: 20px;
+    font-size: 18px;
+    float: left;
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+.filter_search .content .dropbox .item dd li span {
+    float: right;
+}
+
+.filter_search .content .dropbox .item dd li:hover {
+    color: #4990E2;
+}
+
+.filter_search .content .dropbox .item dl.level2 {
+    padding-right: 18px;
+}
+
+.filter_search .content .dropbox .item dl.level2 dt {
+    padding-left: 38px;
+}
+
+.filter_search .content .dropbox .item dl.level2 dd {
+    padding-right: 30px;
+    padding-left: 38px;
+    border-left: 1px solid rgba(148, 148, 148, .2);
+}
+
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+.filter_search .content .dropbox .item dd::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/*定义滚动条的轨道，内阴影及圆角*/
+.filter_search .content .dropbox .item dd::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background-color: #fff;
+}
+
+/*定义滑块，内阴影及圆角*/
+.filter_search .content .dropbox .item dd::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(148, 148, 148, .5);
 }
 
 /*--//End header --*/
@@ -488,3 +686,8 @@ div:after, div:before {
     margin-left: -40px;
     cursor: pointer;
 }
+
+
+
+
+
