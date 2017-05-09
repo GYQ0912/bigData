@@ -440,9 +440,11 @@ div:after, div:before {
 }
 
 .filter_search .content .dropbox .item dd li span {
+    color: #333;
     float: right;
 }
 
+.filter_search .content .dropbox .item dd li.active,
 .filter_search .content .dropbox .item dd li:hover {
     color: #4990E2;
 }
