@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>点击页面其他部分关闭弹出框</title>
+    <script src="../src/assets/js/jquery-2.2.4.min.js"></script>
+    <style>
+        .hide {
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+<div class="down">click</div>
+<div class="con hide">show-area</div>
+
+
+
+</body>
+<script>
+    $(document).ready(function(){
+        $("div.down").click(function(e){
+            e.stopPropagation();
+            $("div.con").removeClass("hide");
+        });
+
+        $(document).click(function(){
+            if(!$("div.con").hasClass("hide")){
+                $("div.con").addClass("hide");
+            }
+        });
+    });
+</script>
+
+</html>

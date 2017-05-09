@@ -1,6 +1,19 @@
-$(function () {
-    //首屏轮播图
-    (function () {
+var homePage = {
+    controller: function () {
+        homePage.init();
+    },
+    init: function () {
+        homePage.slide(); //轮播图
+        homePage.input();  //输入框
+        homePage.scroll();  //滑动导航
+        homePage.filter();  //搜索下拉
+        homePage.dropMenu();  //非遗名录下拉
+    },
+    bind:function () {
+
+
+    },
+    slide: function () {//轮播图
         var parent = $('.slider');
         var imgLi = parent.find('ul.img li');
         var imgLen = imgLi.length;
@@ -8,11 +21,9 @@ $(function () {
         var form = $('.form');
         var ipt = form.find('input.ipt');
         var textP = form.find('div.text p');
-
         var cur = 0;
         var speed = 5000;
         var timer = null;
-
 
         numLi.mousedown(function () {
             clearInterval(timer);
@@ -29,7 +40,6 @@ $(function () {
         //轮播
         timer = setInterval(slider, speed);
 
-
         function slider() {
             if (cur < imgLen - 1) {
                 cur++;
@@ -41,8 +51,13 @@ $(function () {
             textP.eq(cur).fadeIn().siblings('p').fadeOut();
         }
 
-        //搜索部分
-        ipt.each(function () {
+
+    },
+    input: function () {
+        //输入框特效
+        var _form = $('.form');
+        var _input = _form.find('input.ipt');
+        _input.each(function () {
             var _this = $(this);
 
             //初始化val值
@@ -50,149 +65,120 @@ $(function () {
 
             //获取焦点
             _this.focus(function () {
-                clearInterval(timer);
+                // clearInterval(timer);
                 $(this).val('');
             });
 
             //失去焦点
             _this.blur(function () {
-                clearInterval(timer);
+                // clearInterval(timer);
 
                 var newVal = $(this).val();
                 if (newVal == '') {
                     $(this).val(oldVal);
                 }
 
-                timer = setInterval(slider, speed);
+                // timer = setInterval(slider, speed);
             });
 
+
         });
-
-
-    })();
-    //导航搜索
-    (function () {
+    },
+    top: function () {//返回顶部
+        $('.gotop').click(function () {
+            $("html,body").animate({scrollTop: 0}, 500);
+        });
+    },
+    scroll: function () {//滚动
         var _header = $('#home-header');
-        var gotop = $('.gotop');
-        var parent = $('.filter_search');
-
+        var _top = $('.gotop');
+        var _filter = $('.filter_search');
 
         $(window).scroll(function () {
             if ($(window).scrollTop() > 630) {
                 _header.addClass('active');
-                gotop.fadeIn();
+                _top.fadeIn();
             } else {
                 _header.removeClass('active');
-                gotop.fadeOut();
-                parent.slideUp('fast');
+                _top.fadeOut();
+                _filter.slideUp('fast');
             }
 
         });
-    })();
+    },
+    filter: function () {
+        var _header = $('.header');
+        var search = _header.find('li.search');   //搜索图标
+        var filter = $('.filter_search');   //下拉搜索
+        var filterAll = filter.find('.attr span');  //筛选项
+        var filterItem = filter.find('.item');      //筛选下来框
 
-
-    //项目详情
-    //取消右边距
-    $('.detail .products .list li:last-child, .detail .influence .column3 li:last-child').css('margin-right', '0');
-
-
-    //返回顶部
-    $('.gotop').click(function () {
-        $("html,body").animate({scrollTop: 0}, 500);
-    });
-
-
-    //详情页
-    (function () {
-        var _detail = $('.detail123');
-        var shareEl = _detail.find('a.share');  //分享
-        var praiseEl = _detail.find('a.praise');  //点赞
-        var shareBox = _detail.find('.share_box');  //分享谈框
-
-
-        shareEl.on('click', function () {
-            var _this = $(this);
-            if (!_this.hasClass('active')) {
-                _this.addClass('active');
-                shareBox.fadeIn(100);
-            } else {
-                _this.removeClass('active');
-                shareBox.fadeOut(100);
-            }
-
-            return false;
+        //1.导航上的搜索图标
+        search.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            filter.slideDown('fast');
         });
 
-        praiseEl.on('click', function () {
-            var _this = $(this);
-            if (!_this.hasClass('active')) {
-                _this.addClass('active');
-            } else {
-                _this.removeClass('active');
-            }
-            return false;
-        })
-
-
-    })();
-
-
-    //搜索筛选
-    (function () {
-        var searchIcon = $('.header .content .info li.search');
-        var parent = $('.filter_search');
-        var allEl = parent.find('.attr span');  //筛选项
-        var itemEl = parent.find('.item');  //
-
-
-        searchIcon.on('click', function () {
-            parent.slideDown('fast');
-            return false;
-        });
-
-        allEl.on('click', function () {
+        //2.点击筛选
+        filterAll.on('click', function () {
             var _this = $(this);
             var _index = _this.index();
-
-            itemEl.eq(_index).show().siblings('.item').hide();
-            itemEl.eq(_index).css('left', parseInt(_this.position().left) + 'px');
-
-
+            filterItem.eq(_index)
+                .css('left', parseInt(_this.position().left) + 'px')
+                .show()
+                .siblings('.item')
+                .hide();
         });
 
+        //3.阻止点击自身关闭
+        filter.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
 
-    })();
+        //4.点击自身之外的地方关闭下拉框
+        $(document).on("click", function () {
+            filter.slideUp('fast');
+        });
 
-
-    //非遗名录下拉
-    (function () {
+    },
+    dropMenu:function () {//非遗名录下拉
+        var drop = $('.drop_menu');
+        var item = drop.find('.item');
         var _header = $('.header');
-        var _directory = $('#directory');
+        var _houer = _header.find('.nav a').eq(1);
 
-        var _menu = $('.drop_menu');
-        var _item = _menu.find('.item');
-
-
-        //非遗目录hover
-        _directory.hover(function () {
-            _menu.slideDown('fast');
+        _houer.hover(function () {
+            var _height = _header.outerHeight(true);
+            drop.css('top', _height + 'px').slideDown('fast');
         });
 
         _header.mouseleave(function () {
-            _menu.slideUp();
-        })
-
-        //去掉dd的左边距
-        _item.each(function () {
-            var _dd = $(this).find('dd');
-            _dd.eq(0).css('margin-left', '0');
+            drop.slideUp();
         });
 
 
-    })();
+        //去掉dd的左边距
+        item.eq(0).css('width','82px');
+        item.eq(1).css('width','143px');
+        item.eq(2).css('width','100px');
+        item.eq(3).css('width','240px');
 
+        item.eq(3).find('a:even').css('width','72px');
+        item.eq(3).find('a:odd').css({'width':'129px','margin-left':'24px'});
+
+        item.eq(4).css('width','210px');
+        item.eq(4).find('a:even').css('width','115px');
+        item.eq(4).find('a:odd').css({'width':'66px','margin-left':'24px'});
+
+    }
+
+};
+
+$(function () {
+    homePage.controller();
 });
-
 
 
 
