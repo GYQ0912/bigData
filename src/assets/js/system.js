@@ -1,3 +1,7 @@
+var header = {//导航相关
+
+};
+
 var homePage = {
     controller: function () {
         homePage.init();

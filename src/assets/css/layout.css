@@ -168,14 +168,17 @@ h3 {
     height: 366px;
 }
 
-.home .cate ul {
-    margin: 100px 0;
-}
-
 .home .cate li {
     width: 20%;
     text-align: center;
     float: left;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.home .cate li a {
+    padding: 100px 0;
+    display: block;
 }
 
 .home .cate li i {
@@ -216,6 +219,10 @@ h3 {
     font-size: 14px;
     color: #777;
     line-height: 20px;
+}
+
+.home .cate li:hover {
+    background: #fafafa;
 }
 
 /*--//End cate--*/
@@ -273,6 +280,8 @@ h3 {
     float: left;
     overflow: hidden;
 }
+
+.home .introduce li .preview
 
 .home .introduce li .content .info {
     width: 32%;
@@ -356,6 +365,42 @@ h3 {
 
 .home .information li a {
     display: block;
+    position: relative;
+}
+
+
+.home .information li .pic {
+    position: relative;
+    overflow: hidden;
+    font-size:0;
+}
+
+
+.home .information li .pic img {
+    width:100%;
+    -webkit-transition: -webkit-transform .4s;
+    transition: transform .4s;
+}
+
+.home .information li .pic:after {
+    content: '';
+    position: absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background: rgba(0,0,0,0);
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+
+.home .information li a:hover .pic img {
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
+}
+.home .information li a:hover .pic:after{
+    background: rgba(0,0,0,.3);
 }
 
 .home .information li:nth-child(2) {
