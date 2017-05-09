@@ -1,21 +1,82 @@
 var header = {//导航相关
+    init:function () {
+        header.filter();  //搜索下拉
+        header.dropMenu();  //非遗名录下拉
+    },
+    filter: function () {
+        var _header = $('.header');
+        var search = _header.find('li.search');   //搜索图标
+        var filter = $('.filter_search');   //下拉搜索
+        var filterAll = filter.find('.attr span');  //筛选项
+        var filterItem = filter.find('.item');      //筛选下来框
 
+        //1.导航上的搜索图标
+        search.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            filter.slideDown('fast');
+        });
+
+        //2.点击筛选
+        filterAll.on('click', function () {
+            var _this = $(this);
+            var _index = _this.index();
+            filterItem.eq(_index)
+                .css('left', parseInt(_this.position().left) + 'px')
+                .show()
+                .siblings('.item')
+                .hide();
+        });
+
+        //3.阻止点击自身关闭
+        filter.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        //4.点击自身之外的地方关闭下拉框
+        $(document).on("click", function () {
+            filter.slideUp('fast');
+        });
+
+    },
+    dropMenu:function () {//非遗名录下拉
+        var drop = $('.drop_menu');
+        var item = drop.find('.item');
+        var _header = $('.header');
+        var _houer = _header.find('.nav a').eq(1);
+
+        _houer.hover(function () {
+            var _height = _header.outerHeight(true);
+            drop.css('top', _height + 'px').slideDown('fast');
+        });
+
+        _header.mouseleave(function () {
+            drop.slideUp();
+        });
+
+
+        //去掉dd的左边距
+        item.eq(0).css('width','82px');
+        item.eq(1).css('width','143px');
+        item.eq(2).css('width','100px');
+        item.eq(3).css('width','240px');
+
+        item.eq(3).find('a:even').css('width','72px');
+        item.eq(3).find('a:odd').css({'width':'129px','margin-left':'24px'});
+
+        item.eq(4).css('width','210px');
+        item.eq(4).find('a:even').css('width','115px');
+        item.eq(4).find('a:odd').css({'width':'66px','margin-left':'24px'});
+
+    },
 };
 
 var homePage = {
-    controller: function () {
-        homePage.init();
-    },
     init: function () {
         homePage.slide(); //轮播图
         homePage.input();  //输入框
         homePage.scroll();  //滑动导航
-        homePage.filter();  //搜索下拉
-        homePage.dropMenu();  //非遗名录下拉
-    },
-    bind:function () {
-
-
     },
     slide: function () {//轮播图
         var parent = $('.slider');
@@ -107,81 +168,13 @@ var homePage = {
                 _top.fadeOut();
                 _filter.slideUp('fast');
             }
-
         });
-    },
-    filter: function () {
-        var _header = $('.header');
-        var search = _header.find('li.search');   //搜索图标
-        var filter = $('.filter_search');   //下拉搜索
-        var filterAll = filter.find('.attr span');  //筛选项
-        var filterItem = filter.find('.item');      //筛选下来框
-
-        //1.导航上的搜索图标
-        search.on('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            filter.slideDown('fast');
-        });
-
-        //2.点击筛选
-        filterAll.on('click', function () {
-            var _this = $(this);
-            var _index = _this.index();
-            filterItem.eq(_index)
-                .css('left', parseInt(_this.position().left) + 'px')
-                .show()
-                .siblings('.item')
-                .hide();
-        });
-
-        //3.阻止点击自身关闭
-        filter.on('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        });
-
-        //4.点击自身之外的地方关闭下拉框
-        $(document).on("click", function () {
-            filter.slideUp('fast');
-        });
-
-    },
-    dropMenu:function () {//非遗名录下拉
-        var drop = $('.drop_menu');
-        var item = drop.find('.item');
-        var _header = $('.header');
-        var _houer = _header.find('.nav a').eq(1);
-
-        _houer.hover(function () {
-            var _height = _header.outerHeight(true);
-            drop.css('top', _height + 'px').slideDown('fast');
-        });
-
-        _header.mouseleave(function () {
-            drop.slideUp();
-        });
-
-
-        //去掉dd的左边距
-        item.eq(0).css('width','82px');
-        item.eq(1).css('width','143px');
-        item.eq(2).css('width','100px');
-        item.eq(3).css('width','240px');
-
-        item.eq(3).find('a:even').css('width','72px');
-        item.eq(3).find('a:odd').css({'width':'129px','margin-left':'24px'});
-
-        item.eq(4).css('width','210px');
-        item.eq(4).find('a:even').css('width','115px');
-        item.eq(4).find('a:odd').css({'width':'66px','margin-left':'24px'});
-
     }
-
 };
 
 $(function () {
-    homePage.controller();
+    homePage.init();
+    header.init();
 });
 
 
