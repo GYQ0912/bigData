@@ -281,8 +281,6 @@ h3 {
     overflow: hidden;
 }
 
-.home .introduce li .preview
-
 .home .introduce li .content .info {
     width: 32%;
     height: 316px;
@@ -348,6 +346,10 @@ h3 {
     left: 10%;
 }
 
+
+
+
+
 /*--//End introduce--*/
 .home .information {
     margin-top: 110px;
@@ -368,16 +370,14 @@ h3 {
     position: relative;
 }
 
-
 .home .information li .pic {
     position: relative;
     overflow: hidden;
-    font-size:0;
+    font-size: 0;
 }
 
-
 .home .information li .pic img {
-    width:100%;
+    width: 100%;
     -webkit-transition: -webkit-transform .4s;
     transition: transform .4s;
 }
@@ -385,22 +385,22 @@ h3 {
 .home .information li .pic:after {
     content: '';
     position: absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    background: rgba(0,0,0,0);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-
 
 .home .information li a:hover .pic img {
     -webkit-transform: scale(1.04);
     transform: scale(1.04);
 }
-.home .information li a:hover .pic:after{
-    background: rgba(0,0,0,.3);
+
+.home .information li a:hover .pic:after {
+    background: rgba(0, 0, 0, .3);
 }
 
 .home .information li:nth-child(2) {
@@ -466,9 +466,11 @@ h3 {
     -webkit-transition: all .3s;
     transition: all .3s;
 }
+
 .home .project .content .declare:hover {
     background: #3468BB;
 }
+
 /*--//ENd home_project--*/
 
 .partners {
