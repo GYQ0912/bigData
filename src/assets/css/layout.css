@@ -463,8 +463,12 @@ h3 {
     display: inline-block;
     letter-spacing: 5px;
     margin-top: 30px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
 }
-
+.home .project .content .declare:hover {
+    background: #3468BB;
+}
 /*--//ENd home_project--*/
 
 .partners {
