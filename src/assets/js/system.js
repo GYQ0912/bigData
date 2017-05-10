@@ -1,5 +1,5 @@
 var common = {//公共js
-    init:function () {
+    init: function () {
         header.init();
         this.top();
         this.input();
@@ -180,10 +180,21 @@ var homePage = {
     }
 };
 
+
+var cancelMargin = {
+    marginRight:function (obj) {//
+        $(obj).css('margin-right',0);
+    },
+    marginLeft:function (obj) {
+        $(obj).css('margin-right',0);
+    }
+};
+
+
 $(function () {
-    homePage.init();
-    header.init();
     common.init();
+    header.init();
+    homePage.init();
 });
 
 

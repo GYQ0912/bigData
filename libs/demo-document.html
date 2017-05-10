@@ -1,35 +1,25 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>点击页面其他部分关闭弹出框</title>
-    <script src="../src/assets/js/jquery-2.2.4.min.js"></script>
     <style>
-        .hide {
-            display: none;
-
+        div
+        {
+            width:100px;
+            height:100px;
+            background:red;
+            position:absolute;
+            animation:myfirst 5s;
+            -webkit-animation:myfirst 5s;
+            animation-fill-mode: forwards;
+        }
+        @-webkit-keyframes myfirst /* Safari and Chrome */
+        {
+            0%   {background:#0f0; left:500px; bottom:50px;}
+            100% {background:red; left:500px; height:210px;bottom:50px;}
         }
     </style>
 </head>
 <body>
-<div class="down">click</div>
-<div class="con hide">show-area</div>
-
-
-
+<div></div>
 </body>
-<script>
-    $(document).ready(function(){
-        $("div.down").click(function(e){
-            e.stopPropagation();
-            $("div.con").removeClass("hide");
-        });
-
-        $(document).click(function(){
-            if(!$("div.con").hasClass("hide")){
-                $("div.con").addClass("hide");
-            }
-        });
-    });
-</script>
-
 </html>
