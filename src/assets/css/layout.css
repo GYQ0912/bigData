@@ -177,6 +177,7 @@ h3 {
 }
 
 .home .cate li a {
+    height: 182px;
     padding: 100px 0;
     display: block;
 }
@@ -345,10 +346,6 @@ h3 {
 .home .introduce li .lbox .content .info {
     left: 10%;
 }
-
-
-
-
 
 /*--//End introduce--*/
 .home .information {
