@@ -616,6 +616,7 @@ h3 {
     margin-top: -14px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 .detail .project .content .code .icon {
@@ -634,6 +635,33 @@ h3 {
     background-position: 0 -28px;
     float: right;
     margin-left: 5px;
+}
+
+.detail .project .content .code .drop {
+    width: 108px;
+    height: 108px;
+    padding: 10px;
+    position: absolute;
+    top: 28px;
+    right: 0;
+    background: #fff;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    display: none;
+}
+
+.detail .project .content .code .drop:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    top: -5px;
+    right: 12px;
 }
 
 .detail .project .content .subtxt {
@@ -769,6 +797,7 @@ h3 {
     opacity: .7;
     -webkit-transition: all .3s;
     transition: all .3s;
+    position: relative;
 }
 
 .detail .project .content .floor a.share:hover,
@@ -1011,8 +1040,8 @@ h3 {
     overflow: hidden;
 }
 
-.detail .products .list  ul {
-    width:200%;
+.detail .products .list ul {
+    width: 200%;
     float: left;
     margin-top: 60px;
 }
@@ -1125,6 +1154,7 @@ h3 {
     position: fixed;
     top: 350px;
     right: 40px;
+    z-index:9;
 }
 
 .side_fixed li {

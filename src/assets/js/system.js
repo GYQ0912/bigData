@@ -182,8 +182,70 @@ var homePage = {
 var detailPage = {
     init: function () {
         this.pageTab();
+        this.share();
+        this.praise();
+        this.specific();
+        this.scroll();
     },
-    pageTab: function () {
+    share: function () {//分享
+        var _detail = $('.detail');
+        var share = _detail.find('a.share');
+        var shareBox = _detail.find('.share_box');
+
+        //弹出框
+        share.on('click', function () {
+            shareBox.stop(true).fadeToggle();
+            return false;
+        });
+
+        shareBox.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        });
+
+        $(document).on("click", function () {
+            shareBox.fadeOut();
+        });
+
+
+    },
+    praise: function () {//点赞功能
+        var _detail = $('.detail');
+        var praise = _detail.find('.praise');
+
+        praise.on('click', function () {
+            var _this = $(this);
+
+            //创建动画数字
+            if (_this.hasClass('active')) {//取消点赞
+                _this.removeClass('active');
+                _this.append('<div class="add"><b>-1</b></div>');
+                animateNum('.add');
+            } else {//点赞
+                _this.addClass('active');
+                _this.append('<div class="add"><b>+1</b></div>');
+                animateNum('.add');
+
+            }
+
+            function animateNum(obj) {
+                $(obj).css({
+                    'position': 'absolute',
+                    'z-index': '1',
+                    'color': '#C30',
+                    'left': '5px',
+                    'top': '-15px',
+                }).animate({
+                    left: 15,
+                    top: -30
+                }, 'slow', function () {
+                    $(this).fadeIn('fast').remove();
+                });
+            }
+        });
+
+    },
+    pageTab: function () {//代表性作品
         var _products = $('.detail .products');
 
         //列表相关属性
@@ -207,21 +269,65 @@ var detailPage = {
         //计算列表滚动
 
         _pageSpan.on('click', function () {
-            var index=$(this).index();
-            _ul.animate({'margin-left': -index*1170 + 'px'}, 300);
+            var index = $(this).index();
+            _ul.animate({'margin-left': -index * 1170 + 'px'}, 300);
             $(this).addClass('active').siblings('span').removeClass('active');
         });
 
-    }
-};
-
-
-var cancelMargin = {
-    marginRight: function (obj) {//
-        $(obj).css('margin-right', 0);
     },
-    marginLeft: function (obj) {
-        $(obj).css('margin-right', 0);
+    specific: function () {//doi鼠标滑过
+        $('.detail .project .content .code').hover(function () {
+            $(this).find('.drop').fadeToggle(true);
+        });
+    },
+    scroll: function () {//楼层
+        var aNav = $('.side_fixed li');  //导航
+        var aDiv = $('section.floor');   //楼层
+
+
+        var arr = [];
+        aDiv.each(function () {
+            arr.push($(this).offset().top);
+        });
+
+
+        //滚动
+        $(window).scroll(function () {
+            var _top = $(window).scrollTop();
+            if(_top >= arr[0]){
+                console.log(0)
+            }
+            if(_top >= arr[1]){
+                console.log(1)
+            }
+
+
+            // aDiv.each(function (i) {
+            //     var win_t = $(window).scrollTop();
+            //
+            //     console.log(arr[i])
+            //     // if(win_t >=arr)
+            //
+            //     // if (win_t >= arr[i]) {
+            //     //     alert(i)
+            //     //     // console.log(i);
+            //     //     // $(this).addClass('active').siblings('section.floor').removeClass('active');
+            //     // }
+            //
+            // })
+
+        });
+
+
+        //点击回到当前楼层
+        aNav.on('click', function () {
+            var _index = $(this).index();
+            var _top = aDiv.eq(_index).offset().top;
+
+            $('html,body').animate({'scrollTop': _top + 'px'}, 500);
+        });
+
+
     }
 };
 

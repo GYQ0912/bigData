@@ -12,7 +12,7 @@
 
 <body>
 <div class="container">
-    <div class="header header_active detail_header">
+    <div class="header header_detail">
         <div class="content">
             <a class="logo" href=""></a>
             <div class="nav">
@@ -25,18 +25,18 @@
                 <a href="">我要申报</a>
             </div>
 
-            <ul class="info">
-                <li class="language">
-                    <a class="zh active" href="">中文</a>
-                    <a class="en" href="">EN</a>
-                </li>
-                <li class="search">
-                    <a class="icon1x" href=""></a>
-                </li>
-                <li class="login">
-                    <a class="icon1x" href=""></a>
-                </li>
-            </ul>
+            <div class="info">
+                <ul>
+                    <li class="login"><a class="active" href=""><i class="icon"></i><em>登录</em></a></li>
+                    <li class="language">
+                        <a class="zh active" href=""><em>中文</em></a>
+                        <a class="en" href=""><em>EN</em></a>
+                    </li>
+                    <li class="search">
+                        <i class="icon"></i>
+                    </li>
+                </ul>
+            </div>
 
         </div>
     </div>
@@ -63,9 +63,9 @@
             <div class="card">
                 <div class="content">
                     <div class="floor">
-                        <a href="" class="share" title="分享"></a>
-                        <a href="" class="praise active" title="点赞"></a>
-                        <a href="" class="album"><i class="play_sm"></i>【视频】昆曲传承人讲述昆曲…(2个视频／9张图片)</a>
+                        <a class="share" title="分享"></a>
+                        <a class="praise active" title="点赞" style="position: relative;"></a>
+                        <a class="album"><i class="play_sm"></i>【视频】昆曲传承人讲述昆曲…(2个视频／9张图片)</a>
                         <div class="share_box">
                             <div class="icons">
                                 <a href="" class="sina"></a>
@@ -78,8 +78,12 @@
                     <!--//End -->
                     <div class="title">
                         <div class="title_big"><h2>昆曲</h2></div>
-                        <div class="code"><i class="icon"></i><span>标识码：37232519870103004383</span><em
-                                class="icon"></em></div>
+                        <div class="code">
+                            <i class="icon"></i><span>标识码：37232519870103004383</span><em class="icon"></em>
+                            <div class="drop">
+                                <img src="assets/images/code.png" alt="">
+                            </div>
+                        </div>
                     </div>
                     <!--//End title-->
 
@@ -171,12 +175,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
         <!--//End baseinfo-->
 
-
-        <div class="bd brief">
+        <section class="bd floor brief">
             <div class="main_article">
                 <div class="card">
                     <div class="card_title">簡介</div>
@@ -198,10 +200,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!--//End brief-->
 
-        <div class="bd products">
+        <section class="bd floor products">
             <div class="card">
                 <div class="card_title">代表性作品<em>共5项</em></div>
                 <div class="list">
@@ -246,11 +248,10 @@
                     <div class="page"></div>
                 </div>
             </div>
-        </div>
+        </section>
         <!--//End products-->
 
-
-        <div class="bd history">
+        <section class="bd floor history">
             <div class="main_article">
                 <div class="card">
                     <div class="card_title">历史渊源</div>
@@ -288,11 +289,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <!--//End 历史渊源-->
 
-
-        <div class="bd cost">
+        <section class="bd floor cost">
             <div class="card">
                 <div class="card_title">重要價值</div>
                 <div class="content">
@@ -302,10 +302,10 @@
                 </div>
             </div>
 
-        </div>
+        </section>
         <!--//End 价值-->
 
-        <div class="bd influence">
+        <section class="bd floor influence">
             <div class="card">
                 <div class="card_title">影响</div>
                 <div class="content">
@@ -324,9 +324,8 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
         <!--//ENd-->
-
 
         <div class="side_fixed">
             <ul>
