@@ -284,38 +284,58 @@ var detailPage = {
         var aNav = $('.side_fixed li');  //导航
         var aDiv = $('section.floor');   //楼层
 
-
-        var arr = [];
-        aDiv.each(function () {
-            arr.push($(this).offset().top);
-        });
+        var f0 = aDiv.eq(0).offset().top;
+        var f1 = aDiv.eq(1).offset().top;
+        var f2 = aDiv.eq(2).offset().top;
+        var f3 = aDiv.eq(3).offset().top;
+        var f4 = aDiv.eq(4).offset().top;
+        if (aDiv.length == 6) {
+            var f5 = aDiv.eq(5).offset().top;
+        }
+        if (aDiv.length == 7) {
+            var f6 = aDiv.eq(6).offset().top;
+        }
+        if (aDiv.length == 8) {
+            var f7 = aDiv.eq(7).offset().top;
+        }
+        if (aDiv.length == 9) {
+            var f8 = aDiv.eq(8).offset().top;
+        }
 
 
         //滚动
         $(window).scroll(function () {
-            var _top = $(window).scrollTop();
-            if(_top >= arr[0]){
-                console.log(0)
+            var tt = $(window).scrollTop();
+
+
+            if (tt > f0) {
+                aNav.eq(0).addClass('active').siblings('li').removeClass('active');
             }
-            if(_top >= arr[1]){
-                console.log(1)
+            if (tt > f1) {
+                aNav.eq(1).addClass('active').siblings('li').removeClass('active');
             }
-
-
-            // aDiv.each(function (i) {
-            //     var win_t = $(window).scrollTop();
-            //
-            //     console.log(arr[i])
-            //     // if(win_t >=arr)
-            //
-            //     // if (win_t >= arr[i]) {
-            //     //     alert(i)
-            //     //     // console.log(i);
-            //     //     // $(this).addClass('active').siblings('section.floor').removeClass('active');
-            //     // }
-            //
-            // })
-
+            if (tt > f2) {
+                aNav.eq(2).addClass('active').siblings('li').removeClass('active');
+            }
+            if (tt > f3) {
+                aNav.eq(3).addClass('active').siblings('li').removeClass('active');
+            }
+            if (tt > f4) {
+                aNav.eq(4).addClass('active').siblings('li').removeClass('active');
+            }
+            if (tt > f5) {
+                aNav.eq(5).addClass('active').siblings('li').removeClass('active');
+            }
+            if (tt > f6) {
+                aNav.eq(6).addClass('active').siblings('li').removeClass('active');
+            }
+            if (tt > f7) {
+                aNav.eq(7).addClass('active').siblings('li').removeClass('active');
+            }
+            if (tt > f8) {
+                aNav.eq(8).addClass('active').siblings('li').removeClass('active');
+            }
+            
         });
 
 
