@@ -119,7 +119,6 @@ var header = {//导航相关
 var homePage = {
     init: function () {
         this.slide(); //轮播图
-        // this.input();  //输入框
         this.scroll();  //滑动导航
     },
     slide: function () {//轮播图
@@ -180,13 +179,49 @@ var homePage = {
     }
 };
 
+var detailPage = {
+    init: function () {
+        this.pageTab();
+    },
+    pageTab: function () {
+        var _products = $('.detail .products');
+
+        //列表相关属性
+        var _ul = _products.find('.list ul');  //获取列表ul
+        var _li = _ul.find('li');  //获取列表li
+        var liLen = _li.length;   //获取列表的length
+
+        //分页相关属性
+        var _page = _products.find('.page');  //分页显示容器
+        var currentNum = 4;      //当前页显示个数
+        var total = Math.ceil(liLen / currentNum);  //分页总数
+
+        //创建分页数码
+        for (var i = 1; i <= total; i++) {
+            _page.append('<span>0' + i + '</span>');
+        }
+        var _pageSpan = _page.find('span');
+        _pageSpan.eq(0).addClass('active');
+
+
+        //计算列表滚动
+
+        _pageSpan.on('click', function () {
+            var index=$(this).index();
+            _ul.animate({'margin-left': -index*1170 + 'px'}, 300);
+            $(this).addClass('active').siblings('span').removeClass('active');
+        });
+
+    }
+};
+
 
 var cancelMargin = {
-    marginRight:function (obj) {//
-        $(obj).css('margin-right',0);
+    marginRight: function (obj) {//
+        $(obj).css('margin-right', 0);
     },
-    marginLeft:function (obj) {
-        $(obj).css('margin-right',0);
+    marginLeft: function (obj) {
+        $(obj).css('margin-right', 0);
     }
 };
 
@@ -195,6 +230,8 @@ $(function () {
     common.init();
     header.init();
     homePage.init();
+
+    detailPage.init();
 });
 
 
