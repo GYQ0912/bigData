@@ -854,7 +854,7 @@ h3 {
 }
 
 .detail .card .text_img .media .more .arrow_right {
-    background: url(../images/detail_icon.png) no-repeat 0 -144px;
+    background: url(../images/detail_icon.png?t=2) no-repeat 0 -144px;
     width: 19px;
     height: 14px;
     float: right;
