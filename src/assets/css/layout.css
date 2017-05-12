@@ -547,6 +547,11 @@ h3 {
 }
 
 /*--//End mainbg--*/
+.detail .title_big h2 {
+    font-size: 44px;
+    line-height: 44px;
+    color: #333;
+}
 
 .detail .card {
     width: 1170px;
@@ -555,20 +560,17 @@ h3 {
     z-index: 2;
 }
 
-.detail .title_big h2 {
-    font-size: 44px;
-    line-height: 44px;
-    color: #333;
-}
-
-.detail .card_title {
+.detail .card header {
     height: 64px;
     font-size: 24px;
     color: #444;
+    margin-top: 120px;
+    margin-bottom: 48px;
     position: relative;
 }
 
-.detail .card_title:after {
+.detail .card header:after {
+    content: '';
     width: 24px;
     height: 4px;
     background: #4283EB;
@@ -577,14 +579,297 @@ h3 {
     left: 0;
 }
 
-.detail .card_title em {
+.detail .card header em {
     font-size: 12px;
     color: #777;
     display: inline-block;
     margin-left: 8px;
 }
 
-/*--//End title_big--*/
+.detail .card article.product_list {
+    padding-bottom: 30px;
+}
+
+.detail .card article.product_list {
+    overflow: hidden;
+}
+
+.detail .card article.product_list ul {
+    width: 1000%;
+    float: left;
+}
+
+.detail .card article.product_list li {
+    width: 270px;
+    float: left;
+    margin-right: 30px;
+}
+
+.detail .card article.product_list li p {
+    font-size: 16px;
+    color: #333;
+}
+
+.detail .card article.product_list li p.name {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.detail .card article.product_list li p.master {
+    line-height: 36px;
+}
+
+.detail .card article.product_list li p.master img {
+    float: left;
+    margin-right: 10px;
+}
+
+.detail .card article.product_list li p.master .avatar {
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.detail .card article.product_list .page {
+    width: 100%;
+    height: 23px;
+    text-align: center;
+    float: left;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.detail .card article.product_list .page span {
+    height: 23px;
+    font-size: 14px;
+    color: #777;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    font-family: "DINPro";
+}
+
+.detail .card article.product_list .page span.active {
+    color: #333;
+}
+
+.detail .card article.product_list .page span.active:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #4283EB;
+}
+
+/*--//End 图文列表--*/
+
+.detail section.odd {
+    background: #fff;
+}
+
+.detail section.even {
+
+}
+
+.detail .card .plain_text ul {
+    width: 100%;
+    float: left;
+}
+
+.detail .card .plain_text li {
+    width: 370px;
+    float: left;
+    margin-right: 30px;
+}
+
+.detail .card .plain_text li p {
+    line-height: 36px;
+    color: #1b1b1b;
+    margin-bottom: 50px;
+}
+
+.detail .card .plain_text li a {
+    color: #4283EB;
+}
+
+/*--//End 纯文本 三列--*/
+
+.detail .card .time_axis ul {
+    padding-left: 32px;
+    position: relative;
+    float: left;
+    margin-bottom: 80px;
+}
+
+.detail .card .time_axis ul:after {
+    content: '';
+    border-left: 1px dashed #777;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.detail .card .time_axis ul li {
+    width: 100%;
+    font-size: 16px;
+    float: left;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.detail .card .time_axis ul li span {
+    float: left;
+}
+
+.detail .card .time_axis ul li span.icon {
+    position: absolute;
+    top: 0;
+    left: -38px;
+    z-index: 2;
+}
+
+.detail .card .time_axis ul li span.icon:after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    background: #777;
+    border: 3px solid #e8e8ea;
+    float: left;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.detail .card .time_axis ul li span.time {
+    width: 140px;
+    color: #777;
+}
+
+.detail .card .time_axis ul li span.txt {
+    color: #1b1b1b;
+}
+
+/*--//End 时间轴--*/
+.detail .card .master_avatar {
+    width: 100%;
+    float: left;
+    padding-bottom: 50px;
+}
+
+.detail .card .master_avatar li {
+    width: 370px;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.detail .card .master_avatar li .avatar {
+    width: 70px;
+    height: 70px;
+    float: left;
+}
+
+.detail .card .master_avatar li .avatar img {
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.detail .card .master_avatar li .txt {
+    font-size: 16px;
+    color: #777;
+    line-height: 30px;
+    float: left;
+    margin-left: 15px;
+}
+
+.detail .card .master_avatar li .txt .name {
+    color: #333;
+}
+
+.detail .card .master_avatar li .txt .name .tag {
+    width: 32px;
+    height: 18px;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #82878C;
+    font-size: 12px;
+    color: #82878C;
+    display: inline-block;
+    margin-left: 6px;
+}
+
+/*--//End 大师头像简介--*/
+
+.detail .card .text_img .side {
+    width: 770px;
+    font-size: 16px;
+    line-height: 36px;
+    float: left;
+}
+
+.detail .card .text_img .side .item div {
+    margin-bottom: 50px;
+}
+
+.detail .card .text_img .media {
+    width: 370px;
+    float: right;
+    margin-top: 48px;
+}
+
+.detail .card .text_img .media li {
+    width: 100%;
+    float: left;
+    margin-bottom: 36px;
+    position: relative;
+}
+
+.detail .card .text_img .media li img {
+    width: 100%;
+    float: left;
+}
+
+.detail .card .text_img .media li span {
+    color: #949494;
+    font-size: 14px;
+    float: right;
+    margin-top: 20px;
+}
+
+.detail .card .text_img .media .more {
+    height: 14px;
+}
+
+.detail .card .text_img .media .more a {
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    color: #333;
+    float: right;
+}
+
+.detail .card .text_img .media .more .arrow_right {
+    background: url(../images/detail_icon.png) no-repeat 0 -144px;
+    width: 19px;
+    height: 14px;
+    float: right;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    margin-left: 5px;
+}
+
+.detail .card .text_img .media .more a:hover {
+    color: #4283EB;
+}
+
+.detail .card .text_img .media .more a:hover .arrow_right {
+    background-position: -28px -144px;
+}
 
 .detail .project .content {
     background: #fff url(../images/project_mapbg.png) no-repeat 620px -60px;
@@ -647,8 +932,8 @@ h3 {
     background: #fff;
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.1);
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     display: none;
 }
 
@@ -760,12 +1045,42 @@ h3 {
     margin-right: 10px;
 }
 
+.detail .project .content .inheritor .pro .img {
+    width: 94px;
+    height: 70px;
+    float: left;
+}
+
+.detail .project .content .inheritor .pro .txt {
+    font-size: 12px;
+    line-height: 24px;
+    color: #777;
+    float: left;
+    margin-left: 20px;
+}
+
+.detail .project .content .inheritor .pro .txt .t {
+    color: #333;
+}
+
 .detail .project .content .batch {
     margin-top: 50px;
 }
 
 .detail .project .content .batch .tname {
+    height: 20px;
+    line-height: 20px;
     color: #333;
+}
+
+.detail .project .content .batch .tname i {
+    background: url(../images/detail_icon.png) no-repeat 0 -104px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+    top: 4px;
 }
 
 .detail .project .content .batch .subcon {
@@ -917,6 +1232,14 @@ h3 {
     margin: 10px 0;
 }
 
+.detail .project .content .floor a.album .icon_img {
+    background: url(../images/detail_icon.png) no-repeat 0 -60px;
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin: 10px 10px 10px 0;
+}
+
 .detail .project .content .floor a.album:hover {
     background: rgba(255, 255, 255, .3);
     border: 1px solid rgba(255, 255, 255, .7);
@@ -1031,87 +1354,6 @@ h3 {
     background: #fff;
 }
 
-.detail .products {
-    padding-top: 120px;
-    padding-bottom: 30px;
-}
-
-.detail .products .list {
-    overflow: hidden;
-}
-
-.detail .products .list ul {
-    width: 200%;
-    float: left;
-    margin-top: 60px;
-}
-
-.detail .products .list li {
-    width: 270px;
-    float: left;
-    margin-right: 30px;
-    /*margin-top: 60px;*/
-}
-
-.detail .products .list li p {
-    font-size: 16px;
-    color: #333;
-}
-
-.detail .products .list li p.name {
-    margin-top: 20px;
-    margin-bottom: 8px;
-}
-
-.detail .products .list li p.master {
-    line-height: 36px;
-}
-
-.detail .products .list li p.master img {
-    float: left;
-    margin-right: 10px;
-}
-
-.detail .products .list li p.master .avatar {
-    width: 36px;
-    height: 36px;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-
-.detail .products .list .page {
-    width: 100%;
-    height: 23px;
-    text-align: center;
-    float: left;
-    margin-top: 50px;
-    cursor: pointer;
-}
-
-.detail .products .list .page span {
-    height: 23px;
-    font-size: 14px;
-    color: #777;
-    position: relative;
-    display: inline-block;
-    margin: 0 10px;
-    font-family: "DINPro";
-}
-
-.detail .products .list .page span.active {
-    color: #333;
-}
-
-.detail .products .list .page span.active:after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background: #4283EB;
-}
-
 .detail .cost {
     padding-top: 120px;
     padding-bottom: 80px;
@@ -1152,9 +1394,9 @@ h3 {
 
 .side_fixed {
     position: fixed;
-    top: 350px;
+    bottom: 350px;
     right: 40px;
-    z-index:9;
+    z-index: 9;
 }
 
 .side_fixed li {

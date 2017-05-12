@@ -181,6 +181,11 @@ var homePage = {
 
 var detailPage = {
     init: function () {
+        //去除影响li右边距
+        cancelCss.marginRight('.detail .plain_text li:last-child');
+
+        $('.detail .card .master_avatar li:nth-child(3n)').css('margin-right',0);
+
         this.pageTab();
         this.share();
         this.praise();
@@ -246,10 +251,10 @@ var detailPage = {
 
     },
     pageTab: function () {//代表性作品
-        var _products = $('.detail .products');
+        var _products = $('.product_list');
 
         //列表相关属性
-        var _ul = _products.find('.list ul');  //获取列表ul
+        var _ul = _products.find('ul');  //获取列表ul
         var _li = _ul.find('li');  //获取列表li
         var liLen = _li.length;   //获取列表的length
 
@@ -259,20 +264,23 @@ var detailPage = {
         var total = Math.ceil(liLen / currentNum);  //分页总数
 
         //创建分页数码
-        for (var i = 1; i <= total; i++) {
-            _page.append('<span>0' + i + '</span>');
+        if(total > 1){
+            for (var i = 1; i <= total; i++) {
+                _page.append('<span>0' + i + '</span>');
+            }
+            var _pageSpan = _page.find('span');
+            _pageSpan.eq(0).addClass('active');
+
+            //计算列表滚动
+            _pageSpan.on('click', function () {
+                var index = $(this).index();
+                _ul.animate({'margin-left': -index * 1170 + 'px'}, 300);
+                $(this).addClass('active').siblings('span').removeClass('active');
+            });
         }
-        var _pageSpan = _page.find('span');
-        _pageSpan.eq(0).addClass('active');
 
 
-        //计算列表滚动
 
-        _pageSpan.on('click', function () {
-            var index = $(this).index();
-            _ul.animate({'margin-left': -index * 1170 + 'px'}, 300);
-            $(this).addClass('active').siblings('span').removeClass('active');
-        });
 
     },
     specific: function () {//doi鼠标滑过
@@ -301,7 +309,6 @@ var detailPage = {
         if (aDiv.length == 9) {
             var f8 = aDiv.eq(8).offset().top;
         }
-
 
         //滚动
         $(window).scroll(function () {
@@ -335,9 +342,8 @@ var detailPage = {
             if (tt > f8) {
                 aNav.eq(8).addClass('active').siblings('li').removeClass('active');
             }
-            
-        });
 
+        });
 
         //点击回到当前楼层
         aNav.on('click', function () {
@@ -348,6 +354,12 @@ var detailPage = {
         });
 
 
+    }
+};
+
+var cancelCss = {
+    marginRight:function (obj) {
+        $(obj).css('margin-right',0);
     }
 };
 
