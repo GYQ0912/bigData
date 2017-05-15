@@ -8,7 +8,7 @@ html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, input, a, em, img, sma
     padding: 0;
     border: 0;
     outline: 0;
-    font-size: 100%;
+    font-size: 16px;
     vertical-align: baseline;
     font-family: "PingFang SC", "Microsoft YaHei Light", "Microsoft YaHei";
 }
@@ -27,7 +27,7 @@ footer, header, hgroup, menu, nav, section, summary {
     display: block;
 }
 
-h3 {
+h3, strong {
     font-weight: normal;
 }
 
@@ -825,7 +825,143 @@ div:after, div:before {
     display: inline-block;
 }
 
+/*--//End--*/
 
+.detail_title {
+    height: 44px;
+    position: relative;
+}
+
+.detail_title h2 {
+    font-size: 44px;
+    line-height: 44px;
+    color: #333;
+}
+
+.detail_title .doi_code {
+    background: #4283EA;
+    line-height: 28px;
+    padding-left: 7px;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -14px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.detail_title .doi_code .icon {
+    background: url(../images/qrcode.png) no-repeat;
+    width: 28px;
+    height: 28px;
+}
+
+.detail_title .doi_code i.icon {
+    background-position: 0 0;
+    float: left;
+    margin-right: 5px
+}
+
+.detail_title .doi_code em.icon {
+    background-position: 0 -28px;
+    float: right;
+    margin-left: 5px;
+}
+
+.detail_title .doi_code .drop {
+    width: 108px;
+    height: 108px;
+    padding: 10px;
+    position: absolute;
+    top: 28px;
+    right: 0;
+    background: #fff;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    display: none;
+}
+
+.detail_title .doi_code .drop:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    position: absolute;
+    top: -5px;
+    right: 12px;
+}
+
+/*--//ENd 详情title*/
+
+.avatar {
+    float: left;
+    margin-right: 10px;
+}
+
+.avatar img {
+    width: 100%;
+    -webikt-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*--//End 圆角头像--*/
+
+.video .play {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .2);
+    border: 1px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.video .play i {
+    background: url(../images/detail_icon.png) no-repeat 0 -180px;
+    width: 26px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -9px;
+    margin-top: -17px;
+}
+
+.video .play:hover {
+    background: rgba(255, 255, 255, .3);
+}
+
+.video .play.play120 {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px;
+    margin-left: -60px;
+}
+
+.video .time {
+    font-family:DINPro;
+    background: rgba(0, 0, 0, .5);
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    color: #fff;
+    -webkit-border-radius:1px;
+    border-radius:1px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/*--//End 视频相关*/
 
 
 

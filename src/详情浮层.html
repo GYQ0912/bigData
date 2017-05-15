@@ -1,76 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>视频图片预览</title>
-	<link rel="stylesheet" href="assets/css/common.css">
-	<link rel="stylesheet" href="assets/css/layout.css">
-	<!--<link rel="stylesheet" href="assets/css/videoAndImage.css">-->
+    <meta charset="UTF-8">
+    <title>视频图片预览</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <!--<link rel="stylesheet" href="assets/css/videoAndImage.css">-->
 </head>
 <body>
-	<!-- 视频图册弹层 start -->
-	<section class="preview_container">
-		<div class="preview_body">
-			<!-- 关闭按钮 -->
-			<a href="javascript:;">
-				<svg class="icon icon_close" aria-hidden="true">
-					<use xlink:href="#icon-close"></use>
-				</svg>
-			</a>
+<div class="media_layer">
+    <!-- 视频图册弹层 start -->
+    <div class="preview_container">
+        <div class="preview_body">
+            <!-- 关闭按钮 -->
+            <a href="javascript:;">
+                <svg class="icon icon_close" aria-hidden="true">
+                    <use xlink:href="#icon-close"></use>
+                </svg>
+            </a>
 
-			<div class="content_head">
-				<ul id="menu">
-					<li>
-						<a href="javascript:;" data-type="video">视频</a>
-					</li>
-					<li class="active">
-						<a href="javascript:;" data-type="image">图册</a>
-					</li>
-				</ul>
+            <div class="content_head">
+                <ul id="menu">
+                    <li>
+                        <a href="javascript:;" data-type="video">视频</a>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:;" data-type="image">图册</a>
+                    </li>
+                </ul>
 
-				<div class="content_head_desc">
-					<p class="title">《锦绣园-名称示意最多显示20字…》</p>
-					<a href="###">查看详情</a>
+                <div class="content_head_desc">
+                    <p class="title">《锦绣园-名称示意最多显示20字…》</p>
+                    <a href="###">查看详情</a>
 
-					<span class="auth">UNESCO认证传承人</span>
-					<span class="username">林为林</span>
-					<div class="user_icon">
-						<img src="assets/uploads/Bitmap1.png" alt="">
-					</div>
-				</div>
-			</div>
+                    <span class="auth">UNESCO认证传承人</span>
+                    <span class="username">林为林</span>
+                    <div class="user_icon">
+                        <img src="assets/uploads/Bitmap1.png" alt="">
+                    </div>
+                </div>
+            </div>
 
-			<div class="image">
-				<img src="assets/uploads/videopost.png" alt="">
-			</div>
+            <div class="image">
+                <img src="assets/uploads/videopost.png" alt="">
+            </div>
 
-			<div class="video">
-				<!-- 切换 -->
-				<video controls="controls" src="assets/video/video.mp4">
-					Your browser does not support the video tag.
-				</video>
-			</div>
+            <div class="video">
+                <!-- 切换 -->
+                <video controls="controls" src="assets/video/video.mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
-			<!-- 前一个按钮 -->
-			<a class="changeBtn prev" href="javascript:;" data-source='{"type":"image", "url":"assets/uploads/p2@2x.png"}'>
-				<svg class="icon icon_left" aria-hidden="true">
-					<use xlink:href="#icon-left"></use>
-				</svg>
-			</a>
-			<!-- 下一个按钮 -->
-			<a class="changeBtn next" href="javascript:;" data-source='{"type":"image", "url":"assets/uploads/videopost.png"}'>
-				<svg class="icon icon_right" aria-hidden="true">
-					<use xlink:href="#icon-right"></use>
-				</svg>
-			</a>
+            <!-- 前一个按钮 -->
+            <a class="changeBtn prev" href="javascript:;"
+               data-source='{"type":"image", "url":"assets/uploads/p2@2x.png"}'>
+                <svg class="icon icon_left" aria-hidden="true">
+                    <use xlink:href="#icon-left"></use>
+                </svg>
+            </a>
+            <!-- 下一个按钮 -->
+            <a class="changeBtn next" href="javascript:;"
+               data-source='{"type":"image", "url":"assets/uploads/videopost.png"}'>
+                <svg class="icon icon_right" aria-hidden="true">
+                    <use xlink:href="#icon-right"></use>
+                </svg>
+            </a>
 
-			<!-- 数字指示 -->
-			<p class="indicator">06/09</p>
-		</div>
-	</section>
-	<!-- 视频图册弹层 end -->
-	
-	<script src="assets/js/iconfont.js"></script>
-	<script src="assets/js/videoAndImage.js"></script>
+            <!-- 数字指示 -->
+            <p class="indicator">06/09</p>
+        </div>
+    </div>
+    <!-- 视频图册弹层 end -->
+</div>
+<script src="assets/js/iconfont.js"></script>
+<script src="assets/js/videoAndImage.js"></script>
 </body>
 </html>
