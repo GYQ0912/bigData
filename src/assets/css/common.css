@@ -98,8 +98,8 @@ div:after, div:before {
 
 .header {
     width: 100%;
-    height: 24px;
-    padding: 58px 0;
+    height: 44px;
+    padding: 48px 0;
     z-index: 9;
 }
 
@@ -110,7 +110,7 @@ div:after, div:before {
     opacity: 1;
     display: inline-block;
     position: relative;
-    top: 3px;
+    top: 13px;
 }
 
 .header .content {
@@ -119,8 +119,8 @@ div:after, div:before {
 }
 
 .header .content a {
-    height: 24px;
-    line-height: 24px;
+    height: 44px;
+    line-height: 44px;
     font-size: 12px;
     color: #fff;
     opacity: 0.5;
@@ -141,7 +141,7 @@ div:after, div:before {
     -webkit-transition: all .3s;
     transition: all .3s;
     float: left;
-    margin-top: -40px;
+    margin-top: -30px;
     margin-left: 4%;
     margin-right: 17px;
 }
@@ -154,11 +154,20 @@ div:after, div:before {
 
 .header .content .nav {
     float: left;
+    margin-left: 40px;
+}
+
+.header .content .nav li {
+    padding: 0 20px;
+    float: left;
+}
+
+.header .content .nav li.active a {
+    opacity: 1;
 }
 
 .header .content .nav a {
     position: relative;
-    margin-left: 40px;
     font-size: 14px;
 }
 
@@ -179,8 +188,8 @@ div:after, div:before {
     opacity: 1;
 }
 
-.header .content .nav a:hover:after,
-.header .content .nav a.active:after {
+.header .content .nav li:hover a:after,
+.header .content .nav li.active a:after {
     width: 100%;
 }
 
@@ -190,8 +199,6 @@ div:after, div:before {
 }
 
 .header .content .info li {
-    height: 24px;
-    line-height: 24px;
     float: left;
 }
 
@@ -237,7 +244,7 @@ div:after, div:before {
 }
 
 .header.active {
-    padding: 48px 0;
+    padding: 38px 0;
     background: #fff;
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
@@ -251,7 +258,7 @@ div:after, div:before {
     background: url(../images/logo_fixed.png) no-repeat 0 0;
     width: 210px;
     height: 80px;
-    margin-top: -30px;
+    margin-top: -18px;
 }
 
 .header.active .content .nav a:after {
@@ -454,6 +461,7 @@ div:after, div:before {
 }
 
 .filter_search .content form .suggest li span {
+    font-size:20px;
     color: #949494;
 }
 
