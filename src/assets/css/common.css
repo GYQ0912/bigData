@@ -1,3 +1,8 @@
+@font-face {
+    font-family: DINPro;
+    src: url('../font/DINPro-Regular.otf');
+}
+
 html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, input, a, em, img, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
     margin: 0;
     padding: 0;
@@ -12,9 +17,18 @@ body {
     line-height: 1;
 }
 
+html,
+body {
+    height: 100%
+}
+
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary {
     display: block;
+}
+
+h3 {
+    font-weight: normal;
 }
 
 table {
@@ -27,6 +41,7 @@ ul, li, dl {
 }
 
 a {
+    color: #333;
     text-decoration: none;
     cursor: pointer;
 }
@@ -40,6 +55,28 @@ div:after, div:before {
 }
 
 /*--//End--reset--*/
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+.filter_search .content .dropbox .item dd::-webkit-scrollbar,
+.filter_search .content form .suggest ul::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/*定义滚动条的轨道，内阴影及圆角*/
+.filter_search .content .dropbox .item dd::-webkit-scrollbar-track,
+.filter_search .content form .suggest ul::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    background-color: #fff;
+}
+
+/*定义滑块，内阴影及圆角*/
+.filter_search .content .dropbox .item dd::-webkit-scrollbar-thumb,
+.filter_search .content form .suggest ul::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(148, 148, 148, .5);
+}
+
+/*--//End 自定义滚动条--*/
 
 .bd {
     width: 100%;
@@ -50,6 +87,13 @@ div:after, div:before {
     position: fixed;
     top: 0;
     left: 0;
+}
+
+.container {
+    min-width: 1200px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto
 }
 
 .header {
@@ -239,12 +283,31 @@ div:after, div:before {
     cursor: pointer;
 }
 
+.header_detail {
+    background: #fff;
+}
+
 .header_detail .content a {
     color: #333;
 }
+
+.header_detail .content .language {
+    display: none;
+}
+
+.header_detail .content .info li.search {
+    display: block;
+}
+
+.header_detail .content .info li.search i {
+    background-position: -19px 0;
+    cursor: pointer;
+}
+
 .header_detail .content .info li.login:after {
     background: #D8D8D8;
 }
+
 .header_detail .content .info li em {
     color: #1B1B1B;
 }
@@ -297,9 +360,9 @@ div:after, div:before {
 }
 
 .drop_menu .content .item dd a {
-    width:100%;
+    width: 100%;
     font-size: 14px;
-    height:28px;
+    height: 28px;
     line-height: 28px;
     color: #fff;
     opacity: .5;
@@ -307,7 +370,7 @@ div:after, div:before {
 }
 
 .drop_menu .content .item dd a:hover {
-    opacity:1;
+    opacity: 1;
 }
 
 /*--//ENd 导航二级菜单*/
@@ -354,6 +417,54 @@ div:after, div:before {
     margin-top: -23px;
     cursor: pointer;
     overflow: hidden;
+}
+
+.filter_search .content form .suggest {
+    width: 100%;
+    height: 176px;
+    padding-top: 50px;
+    background: #fff;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+.filter_search .content form .suggest ul {
+    width: 100%;
+    height: 120px;
+    float: left;
+    overflow-y: auto;
+}
+
+.filter_search .content form .suggest li {
+    width: 100%;
+    float: left;
+    margin: 10px 0;
+}
+
+.filter_search .content form .suggest li a {
+    font-size: 20px;
+}
+
+.filter_search .content form .suggest li a:hover {
+    text-decoration: underline;
+}
+
+.filter_search .content form .suggest li span {
+    color: #949494;
+}
+
+.overbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 5;
 }
 
 .filter_search .content .attr {
@@ -463,24 +574,6 @@ div:after, div:before {
     padding-left: 38px;
 }
 
-/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
-.filter_search .content .dropbox .item dd::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-}
-
-/*定义滚动条的轨道，内阴影及圆角*/
-.filter_search .content .dropbox .item dd::-webkit-scrollbar-track {
-    -webkit-box-shadow: none;
-    background-color: #fff;
-}
-
-/*定义滑块，内阴影及圆角*/
-.filter_search .content .dropbox .item dd::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: rgba(148, 148, 148, .5);
-}
-
 /*--//End header --*/
 
 .footer {
@@ -582,27 +675,72 @@ div:after, div:before {
 }
 
 /*--//End 播放按钮组件*/
+.side_fixed {
+    position: fixed;
+    bottom: 250px;
+    right: 40px;
+    z-index: 9;
+}
 
-.gotop {
+.side_fixed ul {
+    display: block;
+}
+
+.side_fixed li {
+    height: 34px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    color: #949494;
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.side_fixed li span {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    white-space: nowrap;
+    display: none;
+}
+
+.side_fixed li strong {
+    width: 30px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.side_fixed li:hover {
+    font-size: 24px;
+    color: #333;
+}
+
+.side_fixed li:hover span {
+    display: block;
+}
+
+.side_fixed li.active {
+    color: #333;
+}
+
+.side_fixed a.gotop {
     background: url(../images/gotop.png) no-repeat 0 0;
     width: 60px;
     height: 60px;
     cursor: pointer;
-    position: fixed;
-    bottom: 230px;
-    right: 24px;
     z-index: 3;
     -webkit-transition: all .3s;
     transition: all .3s;
     display: none;
 }
 
-.gotop:hover {
+.side_fixed a.gotop:hover {
     opacity: .5;
 }
 
 /*--//End 返回顶部*/
-
 .crumbs {
     width: 1170px;
     height: 16px;
@@ -677,6 +815,16 @@ div:after, div:before {
     margin-left: -40px;
     cursor: pointer;
 }
+
+/*--//End card_video--*/
+
+.doi_gray {
+    background: url(../images/qrcode.png) no-repeat -28px 0;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+}
+
 
 
 
