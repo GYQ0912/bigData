@@ -3,6 +3,7 @@ var common = {//公共js
         header.init();
         this.top();
         this.input();
+        this.suggest();
     },
     top: function () {//返回顶部
         $('.gotop').click(function () {
@@ -39,8 +40,27 @@ var common = {//公共js
 
         });
     },
+    suggest: function () {
+        var obj = $('.suggest');
+        if (obj.is(':visible')) {
+            $('body').append('<div class="overbg"></div>');
+        } else {
+            $('.overbg').remove();
+        }
+    }
+};
+
+
+var search = {
 
 };
+
+
+
+
+
+
+
 
 var header = {//导航相关
     init: function () {
@@ -113,9 +133,10 @@ var header = {//导航相关
         item.eq(4).find('a:even').css('width', '115px');
         item.eq(4).find('a:odd').css({'width': '66px', 'margin-left': '24px'});
 
-    },
+    }
 };
 
+//首页
 var homePage = {
     init: function () {
         this.slide(); //轮播图
@@ -169,7 +190,7 @@ var homePage = {
         $(window).scroll(function () {
             if ($(window).scrollTop() > 630) {
                 _header.addClass('active');
-                _top.fadeIn();
+                _top.fadeIn().css('display', 'block');
             } else {
                 _header.removeClass('active');
                 _top.fadeOut();
@@ -179,12 +200,12 @@ var homePage = {
     }
 };
 
+//详情页
 var detailPage = {
     init: function () {
         //去除影响li右边距
         cancelCss.marginRight('.detail .plain_text li:last-child');
-
-        $('.detail .card .master_avatar li:nth-child(3n)').css('margin-right',0);
+        $('.detail .card .master_avatar li:nth-child(3n)').css('margin-right', 0);
 
         this.pageTab();
         this.share();
@@ -264,7 +285,7 @@ var detailPage = {
         var total = Math.ceil(liLen / currentNum);  //分页总数
 
         //创建分页数码
-        if(total > 1){
+        if (total > 1) {
             for (var i = 1; i <= total; i++) {
                 _page.append('<span>0' + i + '</span>');
             }
@@ -280,8 +301,6 @@ var detailPage = {
         }
 
 
-
-
     },
     specific: function () {//doi鼠标滑过
         $('.detail .project .content .code').hover(function () {
@@ -291,12 +310,21 @@ var detailPage = {
     scroll: function () {//楼层
         var aNav = $('.side_fixed li');  //导航
         var aDiv = $('section.floor');   //楼层
-
-        var f0 = aDiv.eq(0).offset().top;
-        var f1 = aDiv.eq(1).offset().top;
-        var f2 = aDiv.eq(2).offset().top;
-        var f3 = aDiv.eq(3).offset().top;
-        var f4 = aDiv.eq(4).offset().top;
+        if (aDiv.length == 1) {
+            var f0 = aDiv.eq(0).offset().top;
+        }
+        if (aDiv.length == 2) {
+            var f1 = aDiv.eq(1).offset().top;
+        }
+        if (aDiv.length == 3) {
+            var f2 = aDiv.eq(2).offset().top;
+        }
+        if (aDiv.length == 4) {
+            var f3 = aDiv.eq(3).offset().top;
+        }
+        if (aDiv.length == 5) {
+            var f4 = aDiv.eq(4).offset().top;
+        }
         if (aDiv.length == 6) {
             var f5 = aDiv.eq(5).offset().top;
         }
@@ -357,11 +385,40 @@ var detailPage = {
     }
 };
 
-var cancelCss = {
-    marginRight:function (obj) {
-        $(obj).css('margin-right',0);
+//非遗名录
+var directory = {
+    init: function () {
+        $('.directory .section .pro_column3 li:nth-child(3n)').css('margin-right', 0);
+        $('.directory .section ul.inheritor li:nth-child(3n)').css('margin-right', 0);
+        $('.directory .section ul.product li:nth-child(3n)').css('margin-right', 0);
+        this.loadMore();
+    },
+    loadMore: function () {
+        $('.load_more a').on('click', function () {
+            $(this).html('Loading...');
+        })
     }
 };
+
+//非遗大师
+//todo
+
+
+//精彩资讯
+var informationPage = {
+    init: function () {
+        //todo
+    },
+};
+
+
+var cancelCss = {
+    marginRight: function (obj) {
+        $(obj).css('margin-right', 0);
+    }
+};
+
+
 
 
 $(function () {
@@ -370,6 +427,10 @@ $(function () {
     homePage.init();
 
     detailPage.init();
+
+    directory.init();
+
+    informationPage.init();
 });
 
 

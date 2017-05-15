@@ -1,0 +1,290 @@
+@font-face {
+    font-family: "DINPro";
+    src: url('../font/DINPro-Regular.otf');
+}
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body{
+	background-color: rgb(245, 246, 247);
+}
+.header{
+	-webkit-box-sizing: content-box !important;
+	box-sizing: content-box !important;
+}
+.icon1x {
+    background-image: url(../images/icon@1x.png);
+}
+.header .content .info li.search {
+    display: list-item;
+}
+
+.num{
+	font-family: "DINPro";
+	text-align: center;
+	font-size: 70px;
+	color: #1B1B1B;
+	line-height: 70px;
+}
+.classify{
+	text-align: center;
+	font-size: 16px;
+	color: #949494;
+	line-height: 16px;
+	margin-top: 24px;
+}
+/*项目 start*/
+.container{
+	width: 1200px;
+	display: table;
+	margin: 0 auto;
+	padding-top: 60px;
+}
+.container:first-of-type{
+	margin-top: 180px;	
+}
+.container:last-of-type{
+	padding-bottom: 40px;
+}
+.container h3{
+	font-size: 36px;
+    color: #444444;
+    letter-spacing: 2px;
+    line-height: 18px;
+    font-weight: 300;
+}
+.blue_line{
+	display: block;
+	width: 24px;
+	height: 4px;
+	background-color: rgb(66, 131, 234);
+	margin-top: 40px;
+}
+.thumbnail{
+	width: 100%;
+	height: 269px;
+	overflow: hidden;
+}
+.thumbnail:hover img{
+	transform:scale(1.1);
+}
+.category,
+.inheritor_icon{
+	width: 100%;
+	display: table;
+	margin-top: 11px;
+}
+.inheritor_icon.f_left {
+    float: left;
+    width: auto;
+    margin-top: 20px;
+    margin-left: 24px;
+}
+.inheritor_icon > div{
+	width: 36px;
+    height: 36px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+.inheritor_icon > div:first-of-type{
+	margin-left: 0px;
+}
+.inheritor_icon > span{
+	font-size: 12px;
+    color: #949494;
+    line-height: 12px;
+    vertical-align: 14px;
+    margin-left: 10px;
+}
+.inheritor_icon.f_left > span{
+	float: left;
+    margin-top: 12px;
+}
+.doi{
+	font-size: 13px;
+	color: #949494;
+	letter-spacing: -0.62px;
+	line-height: 12px;
+	margin-top: 25.6px;
+}
+.doi span:first-of-type{
+	border: 1px solid #949494;
+	padding: 0px 3px;
+	font-weight: 600;
+}
+.doi span:nth-of-type(2){
+	margin: 0 6px;
+}
+.doi span:last-of-type{
+	color: #333333;
+}
+.category span:first-of-type{
+	font-size: 12px;
+    color: #949494;
+    line-height: 12px;
+    letter-spacing: 1px;
+    margin-left: 2px;
+}
+.category span:last-of-type{
+	font-size: 12px;
+    color: #1B1B1B;
+    line-height: 12px;
+    margin-left: 11px;
+}
+.load_more{
+	display: block;
+	font-size: 16px;
+	color: rgba(131,133,142,0.7);
+	width: 160px;
+	height: 60px;
+	background-color: #fff;
+	text-align: center;
+	line-height: 60px;
+	margin: 0 auto;
+	margin-top: 48px;
+}
+/*项目 end*/
+
+
+/*传承人 start*/
+ul.inheritor li{
+	width: 370px;
+	display: inline-block;
+	background-color: #fff;
+	padding: 30px 0px;
+	margin-left: 30px;
+	margin-top: 50px;
+}
+.inheritor_photo{
+	width: 240px;
+	height: 238px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 0 auto;
+}
+ul.inheritor li h2{
+	font-size: 24px;
+	color: #1B1B1B;
+	line-height: 24px;
+	text-align: center;
+	margin-top: 30px;
+}
+ul.inheritor li h4{
+	margin: 0 auto;
+}
+ul.inheritor li .doi{
+	text-align: center;
+	margin-top: 14px;
+}
+ul.inheritor li p{
+	font-size: 12px;
+	color: #1B1B1B;
+	line-height: 12px;
+	text-align: center;
+	margin-top: 14px;
+}
+/*传承人 end*/
+
+/*项目 start*/
+.authenticated:after{
+	position: relative;
+	content: "";
+	display: inline-block;
+	width: 24px;
+	height: 17px;
+	background-image: url(../img/logo2@2x.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	left: 10px;
+}
+/*项目 end*/
+
+
+/*公共css start*/
+ul.project,
+ul.inheritor,
+ul.product{
+	/*width: 100%;
+	display: table;
+	margin-top: 60px;*/
+	max-width: 100%;
+    display: table;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+ul.project li,
+ul.product li{
+	width: 370px;
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+ul.project li:nth-of-type(1),
+ul.project li:nth-of-type(2),
+ul.project li:nth-of-type(3),
+ul.inheritor li:nth-of-type(1),
+ul.inheritor li:nth-of-type(2),
+ul.inheritor li:nth-of-type(3),
+ul.product li:nth-of-type(1),
+ul.product li:nth-of-type(2),
+ul.product li:nth-of-type(3)
+{
+	margin-top: 0px;
+}
+ul.project li:nth-of-type(3n+1),
+ul.inheritor li:nth-of-type(3n+1),
+ul.product li:nth-of-type(3n+1){
+	margin-left: 0px;
+}
+
+.project_context,
+.product_context{
+	width: 100%;
+	display: table;
+	padding: 21px 22px;
+	background-color: #fff;
+}
+ul.inheritor li h4,
+.product_context h5{
+	font-size: 16px;
+	color: #949494;
+	line-height: 16px;
+	display: table;
+	border: 1px solid  rgba(148, 148, 148, 0.6);
+	border-radius: 2px;
+	padding: 7px 24px;
+	margin-top: 24px;
+	font-weight: 300;
+}
+.f_left{
+	float: left;
+}
+.project_context h4,
+.product_context h4{
+	font-size: 24px;
+	color: #1B1B1B;
+	font-weight: 400;
+}
+.thumbnail img,
+.inheritor_icon > div > img,
+.inheritor_photo img{
+	width: 100%;
+	height: auto;
+}
+ul.project li:hover,
+ul.inheritor li:hover,
+ul.product li:hover{
+	box-shadow: 0px 3px 10px 2px rgba(0, 0, 0, 0.18)
+}
+ul.project li,
+.thumbnail img{
+	-webkit-transition:all 0.3s ease-in-out;
+	transition:all 0.3s ease-in-out;
+}
+/*公共css end*/
