@@ -949,20 +949,37 @@ div:after, div:before {
 }
 
 .video .time {
-    font-family:DINPro;
+    font-family: DINPro;
     background: rgba(0, 0, 0, .5);
     height: 24px;
     line-height: 24px;
     padding: 0 10px;
     color: #fff;
-    -webkit-border-radius:1px;
-    border-radius:1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
     position: absolute;
     top: 10px;
     right: 10px;
 }
+
 /*--//End 视频相关*/
 
+.slide_img {
+    width: 100%;
+    height: 600px;
+    float: left;
+    position: relative;
+    background: #212121;
+    overflow: hidden;
+}
 
+.slide_img img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -1400px;
+}
+
+/*--//End 通屏图片--*/
 
 
