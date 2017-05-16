@@ -51,14 +51,6 @@ var common = {//公共js
 };
 
 
-var search = {
-
-};
-
-
-
-
-
 
 
 
@@ -136,6 +128,9 @@ var header = {//导航相关
     }
 };
 
+
+
+
 //首页
 var homePage = {
     init: function () {
@@ -199,6 +194,9 @@ var homePage = {
         });
     }
 };
+
+
+
 
 //详情页
 var detailPage = {

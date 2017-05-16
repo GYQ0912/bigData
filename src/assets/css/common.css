@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section, summary {
     display: block;
 }
 
-h3, strong {
+h3, h4, strong {
     font-weight: normal;
 }
 
@@ -298,9 +298,11 @@ div:after, div:before {
 .header_detail .content a {
     color: #333;
 }
+
 .header_detail .content .nav a:after {
     background: #000;
 }
+
 .header_detail .content .language {
     display: none;
 }
@@ -591,8 +593,8 @@ div:after, div:before {
 
 .footer {
     background: #161616 url(../images/footer_bg.png) top center no-repeat;
-    width:100%;
-    min-width:1200px;
+    width: 100%;
+    min-width: 1200px;
     height: 122px;
     padding-top: 38px;
     position: relative;
@@ -1016,7 +1018,7 @@ a.arrow_right:after {
 }
 
 a.arrow_right:hover {
-    color: #4283EB!important;
+    color: #4283EB !important;
 }
 
 a.arrow_right:hover:after {

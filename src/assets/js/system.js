@@ -649,6 +649,63 @@ var cancelCss = {
 };
 
 
+var masterPage = {
+    init: function () {
+        this.getScreen();
+        this.selectMaster();
+        $(window).resize(function () {
+            masterPage.getScreen();
+        })
+    },
+    getScreen: function () {//获取浏览器分辨率
+        var headerHeight = $('.header').outerHeight(true); //导航高度
+        var clientWidth = $(window).width();  //浏览器宽度
+        var clientHeight = $(window).height();  //浏览器宽度
+        var mainHeight = clientHeight - headerHeight;//内容的高度
+
+
+        var lbox = $('.lbox');
+        var rbox = $('.rbox');
+        var rboxDefaultContextP = rbox.find('.default .context p');
+        var li = lbox.find('li');
+        var liHeight = parseInt(mainHeight / 4) < 150 ? 150 : parseInt(mainHeight / 4);  //单个li的高度,最小宽度为150px;
+
+        var lboxWidth = liHeight * 5;   //左侧宽度
+        var rboxWidth = clientWidth - lboxWidth;  //右侧宽度
+
+        if (clientWidth < 1200) {
+            clientWidth = 1200;
+        }
+
+
+        //左侧
+        lbox.css('width', lboxWidth + 'px');  //左侧赋值
+        li.css({'width': liHeight + 'px', 'height': liHeight + 'px'});
+
+        //右侧
+        rbox.css({'width': rboxWidth + 'px', 'height': mainHeight + 'px'});
+
+        if (mainHeight <= 700) {
+            mainHeight = 700;
+            rboxDefaultContextP.css('height', '100px');
+            $('.master_page .rbox .more').css('bottom', '110px')
+        } else {
+            rboxDefaultContextP.css('height', '');
+            $('.master_page .rbox .more').css('bottom', '110px')
+        }
+
+
+    },
+    selectMaster: function () {//选中大师
+        var _li = $('.master_avatar li');
+        _li.on('click', function () {
+            $(this).addClass('active').siblings('li').removeClass('active');
+        });
+    }
+
+};
+
+
 $(function () {
     renderHhtml.init();
 
@@ -662,6 +719,9 @@ $(function () {
     detailProduct.init();
 
     loginPage.init();
+
+
+    masterPage.init();
 });
 
 
