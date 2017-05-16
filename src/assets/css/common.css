@@ -298,7 +298,9 @@ div:after, div:before {
 .header_detail .content a {
     color: #333;
 }
-
+.header_detail .content .nav a:after {
+    background: #000;
+}
 .header_detail .content .language {
     display: none;
 }
@@ -589,9 +591,12 @@ div:after, div:before {
 
 .footer {
     background: #161616 url(../images/footer_bg.png) top center no-repeat;
+    width:100%;
+    min-width:1200px;
     height: 122px;
     padding-top: 38px;
     position: relative;
+    float: left;
     text-align: center;
 }
 

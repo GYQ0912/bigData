@@ -8,13 +8,13 @@ var renderHhtml = {
             <a class="logo" href=""></a>
             <div class="nav">
                 <ul>
-                    <li class="active"><a href="">首页</a></li>
-                    <li><a href="">非遗名录</a></li>
-                    <li><a href="">非遗大师</a></li>
-                    <li><a href="">精选内容</a></li>
-                    <li><a href="">非遗咨询</a></li>
-                    <li><a href="">关于我们</a></li>
-                    <li><a href="">我要申报</a></li>
+                    <li class="active"><a href="http://localhost:3000/首页.html">首页</a></li>
+                    <li><a href="http://localhost:3000/非遗名录.html">非遗名录</a></li>
+                    <li><a href="http://localhost:3000/非遗大师.html">非遗大师</a></li>
+                    <li><a href="http://localhost:3000/精选内容.html">精选内容</a></li>
+                    <li><a href="http://localhost:3000/非遗资讯.html">非遗资讯</a></li>
+                    <li><a href="http://localhost:3000/官方服务.html">官方服务</a></li>
+                    <li><a href="http://localhost:3000/我要申报.html">我要申报</a></li>
                 </ul>
             </div>
             <div class="info">
@@ -323,7 +323,7 @@ var header = {
         $('body').append('<div class="overbg"></div>');
 
         //弹出框隐藏
-        $('.overbg').on('click',function(){
+        $('.overbg').on('click', function () {
             _layer.animate({'top': '-50%'}, _speed);
             $(this).remove();
         })
@@ -603,8 +603,40 @@ var detailProduct = {
 //登录注册
 var loginPage = {
     init: function () {
+        //去除表单最后一组的下边距
         $('.form_area .group:last-child').css('margin-bottom', 0);
+
+        this.code();
     },
+    code: function () {//验证码
+        var _form = $('.form_area');
+        var _span = _form.find('.code span');
+        var _oldSpan = _span.text();
+        var time = 60;
+
+
+        _span.on('click', function () {
+            var _this = $(this);
+
+            if (!_this.hasClass('active')) {
+                _this.addClass('active').text(time + 's后重新发送');
+                var timer = setInterval(function () {
+                    time--;
+                    _this.text(time + 's后重新发送');
+
+                    if (time == 0) {
+                        clearInterval(timer);
+                        time = 60;
+                        _this.removeClass('active').text(_oldSpan);
+                    }
+                }, 1000);
+            }
+
+
+        });
+
+
+    }
 
 };
 

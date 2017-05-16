@@ -824,7 +824,6 @@ section.odd {
     float: right;
 }
 
-
 /*--//End 左边文字右边图片--*/
 .card .text_content {
     width: 100%;
@@ -2668,6 +2667,8 @@ section.odd {
     z-index: 11;
 }
 
+/*--//End 弹出层--*/
+
 .form_area .title {
     width: 100%;
     font-size: 24px;
@@ -2681,8 +2682,14 @@ section.odd {
 
 .form_area .group {
     width: 100%;
+    position: relative;
     float: left;
     margin-bottom: 30px;
+}
+
+.form_area .group .area {
+    width: 482px;
+    float: left;
 }
 
 .form_area .group .ipt {
@@ -2699,16 +2706,37 @@ section.odd {
     width: 124px;
     height: 66px;
     line-height: 66px;
-    font-size: 24px;
     color: #000;
+    opacity: .7;
     float: left;
 }
 
 .form_area .group .name em {
+    width: 14px;
     font-size: 24px;
     color: #D0011B;
-    display: inline-block;
+    float: left;
     margin-right: 10px;
+}
+
+.form_area .group .name span {
+    width: 74px;
+    font-size: 24px;
+    float: left;
+    cursor: pointer;
+}
+
+.form_area .group .code {
+    height: 16px;
+    color: #4283EB;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    margin-top: -8px;
+}
+
+.form_area .group .code span.active {
+    color: #9B9B9B;
 }
 
 .form_area .group .forget {
@@ -2736,8 +2764,46 @@ section.odd {
     margin: 24px 0;
 }
 
+/*--//End 表单相关--*/
 
+.my_declare {
+    width: 100%;
+    float: left;
+    margin-top: 290px;
+    margin-bottom: 180px;
+}
 
+.my_declare .form_area {
+    width: 782px;
+    margin: 0 auto;
+}
+
+.my_declare .group .area {
+    width: 658px;
+}
+
+.my_declare .name span {
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.my_declare .form_area .group .ipt {
+    width: 616px;
+}
+
+.my_declare .form_area .group.policy {
+}
+
+.my_declare .form_area .group.policy label {
+    color: #949494;
+}
+
+.my_declare .form_area .group.policy input {
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+/*--//End 我要申报--*/
 
 
 
