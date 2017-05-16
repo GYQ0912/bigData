@@ -666,7 +666,7 @@ var masterPage = {
 
         var lbox = $('.lbox');
         var rbox = $('.rbox');
-        var rboxDefaultContextP = rbox.find('.default .context p');
+        var rboxDefaultContextP = rbox.find('.context p');
         var li = lbox.find('li');
         var liHeight = parseInt(mainHeight / 4) < 150 ? 150 : parseInt(mainHeight / 4);  //单个li的高度,最小宽度为150px;
 
@@ -685,9 +685,8 @@ var masterPage = {
         //右侧
         rbox.css({'width': rboxWidth + 'px', 'height': mainHeight + 'px'});
 
-        if (mainHeight <= 700) {
-            mainHeight = 700;
-            rboxDefaultContextP.css('height', '100px');
+        if (mainHeight <= 760) {
+            rboxDefaultContextP.css('height', '70px');
             $('.master_page .rbox .more').css('bottom', '110px')
         } else {
             rboxDefaultContextP.css('height', '');
@@ -698,8 +697,18 @@ var masterPage = {
     },
     selectMaster: function () {//选中大师
         var _li = $('.master_avatar li');
+        var _default = $('.master_page .rbox .default');
+        var _item = $('.master_page .rbox .item');
+        var _h1 = $('.master_page .rbox .item .title h1');
+        var _oldText = _h1.text();
+
+
         _li.on('click', function () {
+            var index = $(this).index();
+            _default.hide();
+            _item.show();
             $(this).addClass('active').siblings('li').removeClass('active');
+            _h1.text(_oldText + index);
         });
     }
 

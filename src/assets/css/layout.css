@@ -2860,15 +2860,19 @@ section.odd {
     display: block;
 }
 
-.master_page .rbox .more {
-    line-height: 24px;
-    color: #777;
-    font-size: 14px;
+.master_page .rbox .bottom {
     position: absolute;
     bottom: 10%;
 }
 
-.master_page .rbox .more i {
+.master_page .rbox .bottom .more {
+    line-height: 24px;
+    color: #777;
+    font-size: 14px;
+
+}
+
+.master_page .rbox .bottom .more i {
     background: url(../images/master_icon.png) no-repeat 0 0;
     width: 25px;
     height: 24px;
@@ -2895,25 +2899,25 @@ section.odd {
     text-overflow: ellipsis;
 }
 
-.master_page .rbox .default {
+.master_page .rbox .default,
+.master_page .rbox .item {
     width: 100%;
-    padding: 18% 11% 0 11%;
+    min-width: 380px;
+    padding: 0 11%;
     height: 100%;
     float: left;
-    background: #ccc;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-.master_page .rbox .default .context {
-    /*height: 240px;*/
+.master_page .rbox .context {
     line-height: 36px;
     position: relative;
     padding-left: 50px;
     margin-top: 56px;
 }
 
-.master_page .rbox .default .context:before {
+.master_page .rbox .context:before {
     width: 28px;
     height: 4px;
     background-color: #000;
@@ -2923,26 +2927,126 @@ section.odd {
     left: 0;
 }
 
-.master_page .rbox .default .context p {
+.master_page .rbox .context p {
     padding-right: 20px;
     height: 240px;
     overflow-y: auto;
 }
 
-.master_page .rbox .default .context p::-webkit-scrollbar {
+.master_page .rbox .context p::-webkit-scrollbar {
     width: 7px;
     height: 7px;
     cursor: pointer;
 }
 
-.master_page .rbox .default .context p::-webkit-scrollbar-track {
+.master_page .rbox .context p::-webkit-scrollbar-track {
     background-color: rgba(240, 240, 240, 1);
     border-radius: 12px;
 }
 
-.master_page .rbox .default .context p::-webkit-scrollbar-thumb {
+.master_page .rbox .context p::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: rgba(170, 170, 170, 1);
+}
+
+.master_page .rbox .default {
+    padding-top: 18%;
+}
+
+.master_page .rbox .item {
+    padding-top: 8%;
+    display: none;
+}
+
+.master_page .rbox .item .cate {
+    border: 1px solid #bbb;
+    font-size: 16px;
+    color: #949494;
+    line-height: 16px;
+    display: table;
+    padding: 6px 13px;
+    margin-top: 25px;
+    font-weight: 100;
+}
+
+.master_page .rbox .item h4 {
+    font-size: 16px;
+    color: #1B1B1B;
+    line-height: 28px;
+    margin-top: 8px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.master_page .rbox .item .doi {
+    color: #949494;
+    letter-spacing: -0.62px;
+    line-height: 12px;
+    margin-top: 13px;
+}
+
+.master_page .rbox .item .doi span {
+    font-size: 12px;
+    line-height: 16px;
+    color: #949494;
+}
+
+.master_page .rbox .item .doi span.tag {
+    border: 1px solid #bbb;
+    width: 24px;
+    line-height: 14px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    float: left;
+    position: relative;
+}
+
+.master_page .rbox .item .doi span.tag:after {
+    content: '';
+    width: 2px;
+    height: 7px;
+    background: #bbb;
+    position: absolute;
+    top: 15px;
+    right: 3px;
+}
+
+.master_page .rbox .item .doi span.zh {
+    margin: 0 6px;
+    font-weight: 300;
+}
+
+.master_page .rbox .item .doi span.num {
+    font-family: DINPro;
+    color: #333;
+    font-weight: 400;
+}
+
+.master_page .rbox .item .imgs {
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+}
+
+.master_page .rbox .item .imgs a {
+    width: 120px;
+    height: 120px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.master_page .rbox .item .imgs a img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /*--//End 非遗大师--*/
