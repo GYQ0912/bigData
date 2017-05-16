@@ -11,6 +11,7 @@ html, body, div, span, object, h1, h2, h3, h4, h5, h6, p, input, a, em, img, sma
     font-size: 16px;
     vertical-align: baseline;
     font-family: "PingFang SC", "Microsoft YaHei Light", "Microsoft YaHei";
+    text-align: justify;
 }
 
 body {
@@ -461,18 +462,8 @@ div:after, div:before {
 }
 
 .filter_search .content form .suggest li span {
-    font-size:20px;
+    font-size: 20px;
     color: #949494;
-}
-
-.overbg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, .6);
-    z-index: 5;
 }
 
 .filter_search .content .attr {
@@ -583,6 +574,18 @@ div:after, div:before {
 }
 
 /*--//End header --*/
+
+.overbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 5;
+}
+
+/*--//End 遮罩层--*/
 
 .footer {
     background: #161616 url(../images/footer_bg.png) top center no-repeat;
@@ -989,5 +992,28 @@ div:after, div:before {
 }
 
 /*--//End 通屏图片--*/
+a.arrow_right {
+    position: relative;
+    padding-right: 24px;
+}
 
+a.arrow_right:after {
+    content: '';
+    background: url(../images/detail_icon.png?t=2) no-repeat 0 -144px;
+    width: 19px;
+    height: 14px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -7px;
+}
 
+a.arrow_right:hover {
+    color: #4283EB!important;
+}
+
+a.arrow_right:hover:after {
+    background-position: -28px -144px;
+}

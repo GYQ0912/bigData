@@ -824,23 +824,6 @@ section.odd {
     float: right;
 }
 
-.card .text_img .media .more .arrow_right {
-    background: url(../images/detail_icon.png?t=2) no-repeat 0 -144px;
-    width: 19px;
-    height: 14px;
-    float: right;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    margin-left: 5px;
-}
-
-.card .text_img .media .more a:hover {
-    color: #4283EB;
-}
-
-.card .text_img .media .more a:hover .arrow_right {
-    background-position: -28px -144px;
-}
 
 /*--//End 左边文字右边图片--*/
 .card .text_content {
@@ -1862,21 +1845,6 @@ section.odd {
     margin: 0;
 }
 
-.mainContainer .context .more a.arrow_right i {
-    background: url(../images/detail_icon.png?t=2) no-repeat 0 -144px;
-    width: 19px;
-    height: 14px;
-    float: right;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    margin-left: 5px;
-    margin-top: 2px;
-}
-
-.mainContainer .more a.arrow_right:hover i {
-    background-position: -28px -144px;
-}
-
 .mainContainer .imgs {
     width: 100%;
     float: left;
@@ -2592,10 +2560,12 @@ section.odd {
     width: 100%;
     float: left;
 }
+
 .official .item {
-    width:100%;
+    width: 100%;
     float: left;
 }
+
 .official .card header {
     text-align: center;
     font-size: 44px;
@@ -2643,6 +2613,7 @@ section.odd {
     left: 50%;
     margin-left: -17%;
 }
+
 .official .about li .lbox .txt p {
     color: #1b1b1b;
     line-height: 30px;
@@ -2659,41 +2630,112 @@ section.odd {
     width: 100%;
     float: left;
 }
+
 .official .about li .lbox .content .info {
     line-height: 30px;
 }
+
 .official .about li .lbox .content .info p {
-    margin-bottom:40px;
+    margin-bottom: 40px;
     color: #1b1b1b;
 }
 
 .official .serve {
-    width:1170px;
+    width: 1170px;
     margin: 0 auto;
 }
 
 .official .serve .section .title {
-    font-size:24px;
+    font-size: 24px;
     color: #1b1b1b;
-    line-height:33px;
+    line-height: 33px;
     text-align: left;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 /*--//End 官方服务--*/
 
+.box_layer {
+    width: 606px;
+    height: 490px;
+    padding: 0 72px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -245px;
+    margin-left: -375px;
+    background: #fff;
+    z-index: 9;
+    background: #f7f7f7;
+}
 
+.form_area .title {
+    width: 100%;
+    font-size: 24px;
+    color: #1B1B1B;
+    height: 24px;
+    text-indent: 124px;
+    float: left;
+    margin-top: 60px;
+    margin-bottom: 48px;
+}
 
+.form_area .group {
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+}
 
+.form_area .group .ipt {
+    width: 440px;
+    height: 64px;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #949494;
+    border: 1px solid #e5e5e5;
+    float: left;
+}
 
+.form_area .group .name {
+    width: 124px;
+    height: 66px;
+    line-height: 66px;
+    font-size: 24px;
+    color: #000;
+    float: left;
+}
 
+.form_area .group .name em {
+    font-size: 24px;
+    color: #D0011B;
+    display: inline-block;
+    margin-right: 10px;
+}
 
+.form_area .group .forget {
+    color: #9B9B9B;
+    float: right;
+    margin-top: 14px;
+}
 
+.form_area .group .btn {
+    width: 180px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    background: #4283EA;
+    color: #fff;
+    font-size: 24px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+}
 
-
-
-
-
+.form_area .group .arrow_right {
+    font-size: 20px;
+    color: #949494;
+    float: right;
+    margin: 24px 0;
+}
 
 
 

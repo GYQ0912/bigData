@@ -545,10 +545,10 @@ var detailPage = {
 
 
     },
-    doiCode:function () {
-        $('.doi_code').hover(function(){
+    doiCode: function () {
+        $('.doi_code').hover(function () {
             $(this).find('.drop').fadeIn();
-        },function () {
+        }, function () {
             $(this).find('.drop').fadeOut();
         })
     }
@@ -582,14 +582,21 @@ var detailProduct = {
 };
 
 
+//登录注册
+var loginPage = {
+    init: function () {
+        $('.form_area .group:last-child').css('margin-bottom', 0);
+    },
+
+};
+
+
+//取消css
 var cancelCss = {
     marginRight: function (obj) {
         $(obj).css('margin-right', 0);
     }
 };
-
-
-
 
 
 $(function () {
@@ -603,6 +610,8 @@ $(function () {
 
     //作品详情页
     detailProduct.init();
+
+    loginPage.init();
 });
 
 
