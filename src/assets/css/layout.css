@@ -2660,13 +2660,12 @@ section.odd {
     height: 490px;
     padding: 0 72px;
     position: fixed;
-    top: 50%;
+    top: -50%;
     left: 50%;
     margin-top: -245px;
     margin-left: -375px;
-    background: #fff;
-    z-index: 9;
     background: #f7f7f7;
+    z-index: 11;
 }
 
 .form_area .title {

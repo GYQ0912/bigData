@@ -19,10 +19,10 @@ var renderHhtml = {
             </div>
             <div class="info">
                 <ul>
-                    <li class="login"><a class="active" href=""><i class="icon"></i><em>登录</em></a></li>
+                    <li class="login"><a class="active" href="javascript:;"><i class="icon"></i><em>登录</em></a></li>
                     <li class="language">
-                        <a class="zh active" href=""><em>中文</em></a>
-                        <a class="en" href=""><em>EN</em></a>
+                        <a class="zh active" href="javascript:;"><em>中文</em></a>
+                        <a class="en" href="javascript:;"><em>EN</em></a>
                     </li>
                     <li class="search">
                         <i class="icon"></i>
@@ -208,10 +208,14 @@ var header = {
         this.scroll();
         this.search();
         this.drop();
+
+        this.bind();
     },
     bind: function () {//点击状态
-
-
+        $('.header .content .info li.login').on('click', function () {
+            header.loginLayer();
+            return false;
+        });
     },
     scroll: function () {//页面滚动导航悬浮
         var _header = $('#home-header');
@@ -309,6 +313,20 @@ var header = {
         $(document).on("click", function () {
             filter.slideUp('fast');
         });
+    },
+    loginLayer: function () {//登录弹出框
+        var _layer = $('.box_layer');
+        var _speed = 300;
+
+        //弹出框显示
+        _layer.animate({'top': '50%'}, _speed);
+        $('body').append('<div class="overbg"></div>');
+
+        //弹出框隐藏
+        $('.overbg').on('click',function(){
+            _layer.animate({'top': '-50%'}, _speed);
+            $(this).remove();
+        })
     }
 };
 
