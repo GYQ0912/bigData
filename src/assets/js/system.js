@@ -1,9 +1,9 @@
 var renderHhtml = {
-    init: function () {
+    init: function() {
         this.header();
         this.footer();
     },
-    header: function () {//导航
+    header: function() { //导航
         var htmlStr = `<div class="content">
             <a class="logo" href=""></a>
             <div class="nav">
@@ -131,7 +131,7 @@ var renderHhtml = {
         `;
         this.base('.header', htmlStr);
     },
-    footer: function () {//底部
+    footer: function() { //底部
         var htmlStr = `<div class="diich">
             <p class="name">非遺國際 DIICH</p>
             <p class="subname">2017 © FeiYi. All rights<br> reserved</p>
@@ -146,7 +146,7 @@ var renderHhtml = {
         </div>`;
         this.base('.footer', htmlStr);
     },
-    base: function (obj, html) {
+    base: function(obj, html) {
         var _el = $(obj);
         _el.html(html);
     }
@@ -155,38 +155,34 @@ var renderHhtml = {
 
 //公共
 var common = {
-    init: function () {
-        this.marginRight();
+    init: function() {
         this.input();
-
+        this.top();
         header.init();
     },
-    marginRight: function () {
-        $('.directory .section li:nth-child(3n)').css('margin-right', 0);
-    },
-    top: function () {//返回顶部
-        $('.gotop').click(function () {
-            $("html,body").animate({scrollTop: 0}, 500);
+    top: function() { //返回顶部
+        $('.gotop').click(function() {
+            $("html,body").animate({ scrollTop: 0 }, 500);
         });
     },
-    input: function () {
+    input: function() {
         //输入框特效
         var _form = $('.form');
         var _input = _form.find('input.ipt');
-        _input.each(function () {
+        _input.each(function() {
             var _this = $(this);
 
             //初始化val值
             var oldVal = _this.val();
 
             //获取焦点
-            _this.focus(function () {
+            _this.focus(function() {
                 // clearInterval(timer);
                 $(this).val('');
             });
 
             //失去焦点
-            _this.blur(function () {
+            _this.blur(function() {
                 // clearInterval(timer);
 
                 var newVal = $(this).val();
@@ -204,26 +200,26 @@ var common = {
 
 //导航部分
 var header = {
-    init: function () {
+    init: function() {
         this.scroll();
         this.search();
         this.drop();
 
         this.bind();
     },
-    bind: function () {//点击状态
-        $('.header .content .info li.login').on('click', function () {
+    bind: function() { //点击状态
+        $('.header .content .info li.login').on('click', function() {
             header.loginLayer();
             return false;
         });
     },
-    scroll: function () {//页面滚动导航悬浮
+    scroll: function() { //页面滚动导航悬浮
         var _header = $('#home-header');
         var _top = $('.gotop');
         var _filter = $('.filter_search');
 
         if (_header) {
-            $(window).scroll(function () {
+            $(window).scroll(function() {
                 if ($(window).scrollTop() > 630) {
                     _header.addClass('active');
                     _top.fadeIn().css('display', 'block');
@@ -236,7 +232,7 @@ var header = {
         }
 
     },
-    drop: function () {//非遗名录下拉
+    drop: function() { //非遗名录下拉
         var drop = $('.drop_menu');
         var item = drop.find('.item');
         var _header = $('.header');
@@ -245,21 +241,21 @@ var header = {
         var speed = 200;
 
 
-        _houer.hover(function () {
+        _houer.hover(function() {
             clearInterval(timer);
             var _height = _header.outerHeight(true);
             drop.css('top', _height + 'px').slideDown('fast');
-        }, function () {
-            timer = setInterval(function () {
+        }, function() {
+            timer = setInterval(function() {
                 drop.slideUp();
             }, speed);
         });
 
 
-        drop.hover(function () {
+        drop.hover(function() {
             clearInterval(timer);
-        }, function () {
-            timer = setInterval(function () {
+        }, function() {
+            timer = setInterval(function() {
                 drop.slideUp();
             }, speed);
         });
@@ -272,28 +268,28 @@ var header = {
         item.eq(3).css('width', '240px');
 
         item.eq(3).find('a:even').css('width', '72px');
-        item.eq(3).find('a:odd').css({'width': '129px', 'margin-left': '24px'});
+        item.eq(3).find('a:odd').css({ 'width': '129px', 'margin-left': '24px' });
 
         item.eq(4).css('width', '210px');
         item.eq(4).find('a:even').css('width', '115px');
-        item.eq(4).find('a:odd').css({'width': '66px', 'margin-left': '24px'});
+        item.eq(4).find('a:odd').css({ 'width': '66px', 'margin-left': '24px' });
     },
-    search: function () {
+    search: function() {
         var _header = $('.header');
-        var search = _header.find('li.search');   //搜索图标
-        var filter = $('.filter_search');   //下拉搜索
-        var filterAll = filter.find('.attr span');  //筛选项
-        var filterItem = filter.find('.item');      //筛选下来框
+        var search = _header.find('li.search'); //搜索图标
+        var filter = $('.filter_search'); //下拉搜索
+        var filterAll = filter.find('.attr span'); //筛选项
+        var filterItem = filter.find('.item'); //筛选下来框
 
         //1.导航上的搜索图标
-        search.on('click', function (e) {
+        search.on('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             filter.slideDown('fast');
         });
 
         //2.点击筛选
-        filterAll.on('click', function () {
+        filterAll.on('click', function() {
             var _this = $(this);
             var _index = _this.index();
             filterItem.eq(_index)
@@ -304,27 +300,27 @@ var header = {
         });
 
         //3.阻止点击自身关闭
-        filter.on('click', function (e) {
+        filter.on('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
         });
 
         //4.点击自身之外的地方关闭下拉框
-        $(document).on("click", function () {
+        $(document).on("click", function() {
             filter.slideUp('fast');
         });
     },
-    loginLayer: function () {//登录弹出框
+    loginLayer: function() { //登录弹出框
         var _layer = $('.box_layer');
         var _speed = 300;
 
         //弹出框显示
-        _layer.animate({'top': '50%'}, _speed);
+        _layer.animate({ 'top': '50%' }, _speed);
         $('body').append('<div class="overbg"></div>');
 
         //弹出框隐藏
-        $('.overbg').on('click', function () {
-            _layer.animate({'top': '-50%'}, _speed);
+        $('.overbg').on('click', function() {
+            _layer.animate({ 'top': '-50%' }, _speed);
             $(this).remove();
         })
     }
@@ -333,10 +329,10 @@ var header = {
 
 //首页
 var homePage = {
-    init: function () {
+    init: function() {
         this.slide(); //轮播图
     },
-    slide: function () {//轮播图
+    slide: function() { //轮播图
         var parent = $('.slider');
         var imgLi = parent.find('ul.img li');
         var imgLen = imgLi.length;
@@ -348,7 +344,7 @@ var homePage = {
         var speed = 5000;
         var timer = null;
 
-        numLi.mousedown(function () {
+        numLi.mousedown(function() {
             clearInterval(timer);
             cur = $(this).index();
             $(this).addClass('active').siblings('li').removeClass('active');
@@ -356,7 +352,7 @@ var homePage = {
             textP.eq(cur).fadeIn().siblings('p').fadeOut();
         });
 
-        numLi.mouseup(function () {
+        numLi.mouseup(function() {
             timer = setInterval(slider, speed);
         });
 
@@ -379,55 +375,242 @@ var homePage = {
 };
 
 
-//详情页
-var detailPage = {
-    init: function () {
-        //去除影响li右边距
-        cancelCss.marginRight('.detail .plain_text li:last-child');
-        $('.detail .card .master_avatar li:nth-child(3n)').css('margin-right', 0);
-
-        this.pageTab();
-        this.share();
-        this.praise();
-        this.specific();
-        this.scroll();
-        this.doiCode();
-    },
-    share: function () {//分享
+//传承人详情页 ok
+var detaiInheritorlPage = {
+    init: function() {
         var _detail = $('.detail');
-        var share = _detail.find('a.share');
-        var shareBox = _detail.find('.share_box');
+        widget.share(_detail); //分享
+        widget.praise(_detail); //点赞
+        widget.doiCode(); //doi二维码
+        detailCommon.productsTab(); //产品分页tab
+        detailCommon.scroll(); //楼层导航效果
+    }
+};
 
-        //弹出框
-        share.on('click', function () {
-            shareBox.stop(true).fadeToggle();
-            return false;
-        });
+//项目详情页 ok
+var projectPage = {
+    init: function() {
+        var _detail = $('.detail');
+        this.setAttr();
+        widget.share(_detail); //分享
+        widget.praise(_detail); //点赞
+        widget.doiCode(); //doi二维码
+        detailCommon.productsTab(); //产品分页tab
+        detailCommon.scroll(); //楼层导航效果
+    },
+    setAttr: function() {
+        //设置文本内容为三列
+        textHandle.set('.plain_text');
+    }
 
-        shareBox.on('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        });
+};
 
-        $(document).on("click", function () {
-            shareBox.fadeOut();
+//作品详情页 ok
+var detailProductPage = {
+    init: function() {
+        this.thumb();
+        this.simple();
+        widget.doiCode();
+    },
+    thumb: function() {
+        var media = $('.media_box');
+        var _ul = media.find('ul');
+        var _li = _ul.find('li');
+        var _liWidth = _li.outerWidth(true);
+        var _liLen = _li.length;
+        var _ulWidth = _liLen * _liWidth;
+
+        _ul.css('width', _ulWidth + 'px');
+
+        _li.on('click', function() {
+            $(this).addClass('active').siblings('li').removeClass('active')
         });
+    },
+    simple: function() {
+        $('.card .plain_text li:last-child').css('margin-right', 0);
+    }
+};
+
+//大师页面 ok
+var masterPage = {
+    init: function() {
+        this.getScreen();
+        this.selectMaster();
+        $(window).resize(function() {
+            masterPage.getScreen();
+        })
+    },
+    getScreen: function() { //获取浏览器分辨率
+        var headerHeight = $('.header').outerHeight(true); //导航高度
+        var clientWidth = $(window).width(); //浏览器宽度
+        var clientHeight = $(window).height(); //浏览器宽度
+        var mainHeight = clientHeight - headerHeight; //内容的高度
+
+
+        var lbox = $('.lbox');
+        var rbox = $('.rbox');
+        var rboxDefaultContextP = rbox.find('.context p');
+        var li = lbox.find('li');
+        var liHeight = parseInt(mainHeight / 4) < 150 ? 150 : parseInt(mainHeight / 4); //单个li的高度,最小宽度为150px;
+
+        var lboxWidth = liHeight * 5; //左侧宽度
+        var lboxHeight = liHeight * 4; //左侧高度
+        var rboxWidth = clientWidth - lboxWidth; //右侧宽度
+
+        if (clientWidth < 1200) {
+            clientWidth = 1200;
+        }
+
+
+        //左侧
+        lbox.css('width', lboxWidth + 'px'); //左侧赋值
+        li.css({ 'width': liHeight + 'px', 'height': liHeight + 'px' });
+
+        //右侧
+        rbox.css({ 'width': rboxWidth + 'px', 'height': lboxHeight + 'px' });
+
+        if (mainHeight <= 760) {
+            rboxDefaultContextP.css('height', '70px');
+            $('.master_page .rbox .more').css('bottom', '110px')
+        } else {
+            rboxDefaultContextP.css('height', '');
+            $('.master_page .rbox .more').css('bottom', '110px')
+        }
 
 
     },
-    praise: function () {//点赞功能
-        var _detail = $('.detail');
-        var praise = _detail.find('.praise');
+    selectMaster: function() { //选中大师
+        var _li = $('.master_avatar li');
+        var _default = $('.master_page .rbox .default');
+        var _item = $('.master_page .rbox .item');
+        var _h1 = $('.master_page .rbox .item .title h1');
+        var _oldText = _h1.text();
 
-        praise.on('click', function () {
+
+        _li.on('click', function() {
+            var index = $(this).index();
+            _default.hide();
+            _item.show();
+            $(this).addClass('active').siblings('li').removeClass('active');
+            _h1.text(_oldText + index);
+        });
+    }
+
+};
+
+//非遗名录 && 搜索结果页
+var searchPage = {
+    init: function() {
+        $('.directory .section li:nth-child(3n)').css('margin-right', 0);
+    },
+
+};
+
+
+
+
+//登录注册
+var loginPage = {
+    init: function() {
+        //去除表单最后一组的下边距
+        $('.form_area .group:last-child').css('margin-bottom', 0);
+
+        this.code();
+    },
+    code: function() { //验证码
+        var _form = $('.form_area');
+        var _span = _form.find('.code span');
+        var _oldSpan = _span.text();
+        var time = 60;
+
+
+        _span.on('click', function() {
+            var _this = $(this);
+
+            if (!_this.hasClass('active')) {
+                _this.addClass('active').text(time + 's后重新发送');
+                var timer = setInterval(function() {
+                    time--;
+                    _this.text(time + 's后重新发送');
+
+                    if (time == 0) {
+                        clearInterval(timer);
+                        time = 60;
+                        _this.removeClass('active').text(_oldSpan);
+                    }
+                }, 1000);
+            }
+
+        });
+
+    }
+
+};
+
+
+
+//文本处理相关
+var textHandle = {
+    getLength: function(str) { //获取字符串长度   汉字是2
+        var real = 0;
+        var len = str.length;
+        var charCode = -1;
+        for (var i = 0; i < len; i++) {
+            charCode = str.charCodeAt(i);
+            if (charCode >= 0 && charCode <= 128) {
+                real += 1;
+            } else {
+                real += 2;
+            }
+        }
+        return real;
+    },
+    set: function(el) {
+        var _this = this; //存储当前this
+        var obj = $(el); //获取目标元素
+        obj.each(function() {
+            var _text = $(this).text(); //目标元素的内容
+            var _len = _this.getLength(_text) / 2; //计算目标元素内容的长度
+            if (_len >= 200 && _len <= 1200) {
+                $(this).addClass('column3');
+            }
+        })
+    }
+};
+
+//小组件
+var widget = {
+    share: function(obj) { //分享
+        obj.each(function() {
+            var _share = $(this).find('a.share');
+            var _shareBox = $(this).find('.share_box');
+            //弹出框
+            _share.on('click', function() {
+                _shareBox.stop(true).fadeToggle();
+                return false;
+            });
+
+            _shareBox.on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+            });
+
+            $(document).on("click", function() {
+                _shareBox.fadeOut();
+            });
+        });
+    },
+    praise: function(obj) { //点赞功能
+        var praise = obj.find('.praise');
+        praise.on('click', function() {
             var _this = $(this);
 
             //创建动画数字
-            if (_this.hasClass('active')) {//取消点赞
+            if (_this.hasClass('active')) { //取消点赞
                 _this.removeClass('active');
                 _this.append('<div class="add"><b>-1</b></div>');
                 animateNum('.add');
-            } else {//点赞
+            } else { //点赞
                 _this.addClass('active');
                 _this.append('<div class="add"><b>+1</b></div>');
                 animateNum('.add');
@@ -444,86 +627,79 @@ var detailPage = {
                 }).animate({
                     left: 15,
                     top: -30
-                }, 'slow', function () {
+                }, 'slow', function() {
                     $(this).fadeIn('fast').remove();
                 });
             }
+
         });
 
     },
-    pageTab: function () {//代表性作品
+    doiCode: function() { //doi鼠标滑过显示二维码
+        $('.doi_code').hover(function() {
+            $(this).find('.drop').stop(true).fadeToggle(true);
+        });
+    }
+};
+
+var detailCommon = { //详情页用到的效果
+    productsTab: function() { //作品分页
         var _products = $('.product_list');
+        _products.each(function() {
+            //列表相关属性
+            var _ul = _products.find('ul'); //获取列表ul
+            var _li = _ul.find('li'); //获取列表li
+            var liLen = _li.length; //获取列表的length
 
-        //列表相关属性
-        var _ul = _products.find('ul');  //获取列表ul
-        var _li = _ul.find('li');  //获取列表li
-        var liLen = _li.length;   //获取列表的length
+            //分页相关属性
+            var _page = _products.find('.page'); //分页显示容器
+            var currentNum = 4; //当前页显示个数
+            var total = Math.ceil(liLen / currentNum); //分页总数
 
-        //分页相关属性
-        var _page = _products.find('.page');  //分页显示容器
-        var currentNum = 4;      //当前页显示个数
-        var total = Math.ceil(liLen / currentNum);  //分页总数
+            //创建分页数码
+            if (total > 1) {
+                for (var i = 1; i <= total; i++) {
+                    _page.append('<span>0' + i + '</span>');
+                }
+                var _pageSpan = _page.find('span');
+                _pageSpan.eq(0).addClass('active');
 
-        //创建分页数码
-        if (total > 1) {
-            for (var i = 1; i <= total; i++) {
-                _page.append('<span>0' + i + '</span>');
+                //计算列表滚动
+                _pageSpan.on('click', function() {
+                    var index = $(this).index();
+                    _ul.animate({ 'margin-left': -index * 1170 + 'px' }, 300);
+                    $(this).addClass('active').siblings('span').removeClass('active');
+                });
             }
-            var _pageSpan = _page.find('span');
-            _pageSpan.eq(0).addClass('active');
-
-            //计算列表滚动
-            _pageSpan.on('click', function () {
-                var index = $(this).index();
-                _ul.animate({'margin-left': -index * 1170 + 'px'}, 300);
-                $(this).addClass('active').siblings('span').removeClass('active');
-            });
-        }
-
-
-    },
-    specific: function () {//doi鼠标滑过
-        $('.detail .project .content .code').hover(function () {
-            $(this).find('.drop').fadeToggle(true);
         });
     },
-    scroll: function () {//楼层
-        var aNav = $('.side_fixed li');  //导航
-        var aDiv = $('section.floor');   //楼层
-        if (aDiv.length == 1) {
-            var f0 = aDiv.eq(0).offset().top;
-        }
-        if (aDiv.length == 2) {
-            var f1 = aDiv.eq(1).offset().top;
-        }
-        if (aDiv.length == 3) {
-            var f2 = aDiv.eq(2).offset().top;
-        }
-        if (aDiv.length == 4) {
-            var f3 = aDiv.eq(3).offset().top;
-        }
-        if (aDiv.length == 5) {
-            var f4 = aDiv.eq(4).offset().top;
-        }
-        if (aDiv.length == 6) {
-            var f5 = aDiv.eq(5).offset().top;
-        }
-        if (aDiv.length == 7) {
-            var f6 = aDiv.eq(6).offset().top;
-        }
-        if (aDiv.length == 8) {
-            var f7 = aDiv.eq(7).offset().top;
-        }
-        if (aDiv.length == 9) {
-            var f8 = aDiv.eq(8).offset().top;
-        }
+    //TODO
+    scroll: function() { //楼层
+        var aNav = $('.side_fixed li'); //导航
+        var aDiv = $('section.floor'); //楼层
+
+        var num = $('.card header');
+        console.log(num.length);
+
+
+
+        var f0 = aDiv.eq(0).offset().top;
+        var f1 = aDiv.eq(1).offset().top;
+        var f2 = aDiv.eq(2).offset().top;
+        var f3 = aDiv.eq(3).offset().top;
+        var f4 = aDiv.eq(4).offset().top;
+        // var f5 = aDiv.eq(5).offset().top;
+        // var f6 = aDiv.eq(6).offset().top;
+        // var f7 = aDiv.eq(7).offset().top;
+        // var f8 = aDiv.eq(8).offset().top;
 
         //滚动
-        $(window).scroll(function () {
+        $(window).scroll(function() {
             var tt = $(window).scrollTop();
 
 
             if (tt > f0) {
+                console.log('0')
                 aNav.eq(0).addClass('active').siblings('li').removeClass('active');
             }
             if (tt > f1) {
@@ -538,201 +714,37 @@ var detailPage = {
             if (tt > f4) {
                 aNav.eq(4).addClass('active').siblings('li').removeClass('active');
             }
-            if (tt > f5) {
-                aNav.eq(5).addClass('active').siblings('li').removeClass('active');
-            }
-            if (tt > f6) {
-                aNav.eq(6).addClass('active').siblings('li').removeClass('active');
-            }
-            if (tt > f7) {
-                aNav.eq(7).addClass('active').siblings('li').removeClass('active');
-            }
-            if (tt > f8) {
-                aNav.eq(8).addClass('active').siblings('li').removeClass('active');
-            }
+            // if (tt > f5) {
+            //     aNav.eq(5).addClass('active').siblings('li').removeClass('active');
+            // }
+            // if (tt > f6) {
+            //     aNav.eq(6).addClass('active').siblings('li').removeClass('active');
+            // }
+            // if (tt > f7) {
+            //     aNav.eq(7).addClass('active').siblings('li').removeClass('active');
+            // }
+            // if (tt > f8) {
+            //     aNav.eq(8).addClass('active').siblings('li').removeClass('active');
+            // }
 
         });
 
         //点击回到当前楼层
-        aNav.on('click', function () {
+        aNav.on('click', function() {
             var _index = $(this).index();
             var _top = aDiv.eq(_index).offset().top;
-
-            $('html,body').animate({'scrollTop': _top + 'px'}, 500);
-        });
-
-
-    },
-    doiCode: function () {
-        $('.doi_code').hover(function () {
-            $(this).find('.drop').fadeIn();
-        }, function () {
-            $(this).find('.drop').fadeOut();
-        })
-    }
-};
-
-
-//作品详情页
-var detailProduct = {
-    init: function () {
-        this.thumb();
-        this.simple();
-    },
-    thumb: function () {
-        var media = $('.media_box');
-        var _ul = media.find('ul');
-        var _li = _ul.find('li');
-        var _liWidth = _li.outerWidth(true);
-        var _liLen = _li.length;
-        var _ulWidth = _liLen * _liWidth;
-
-
-        _ul.css('width', _ulWidth + 'px');
-
-        _li.on('click', function () {
-            $(this).addClass('active').siblings('li').removeClass('active')
-        });
-    },
-    simple: function () {
-        $('.card .plain_text li:last-child').css('margin-right', 0);
-    }
-};
-
-
-//登录注册
-var loginPage = {
-    init: function () {
-        //去除表单最后一组的下边距
-        $('.form_area .group:last-child').css('margin-bottom', 0);
-
-        this.code();
-    },
-    code: function () {//验证码
-        var _form = $('.form_area');
-        var _span = _form.find('.code span');
-        var _oldSpan = _span.text();
-        var time = 60;
-
-
-        _span.on('click', function () {
-            var _this = $(this);
-
-            if (!_this.hasClass('active')) {
-                _this.addClass('active').text(time + 's后重新发送');
-                var timer = setInterval(function () {
-                    time--;
-                    _this.text(time + 's后重新发送');
-
-                    if (time == 0) {
-                        clearInterval(timer);
-                        time = 60;
-                        _this.removeClass('active').text(_oldSpan);
-                    }
-                }, 1000);
-            }
-
-
-        });
-
-
-    }
-
-};
-
-
-//取消css
-var cancelCss = {
-    marginRight: function (obj) {
-        $(obj).css('margin-right', 0);
-    }
-};
-
-
-var masterPage = {
-    init: function () {
-        this.getScreen();
-        this.selectMaster();
-        $(window).resize(function () {
-            masterPage.getScreen();
-        })
-    },
-    getScreen: function () {//获取浏览器分辨率
-        var headerHeight = $('.header').outerHeight(true); //导航高度
-        var clientWidth = $(window).width();  //浏览器宽度
-        var clientHeight = $(window).height();  //浏览器宽度
-        var mainHeight = clientHeight - headerHeight;//内容的高度
-
-
-        var lbox = $('.lbox');
-        var rbox = $('.rbox');
-        var rboxDefaultContextP = rbox.find('.context p');
-        var li = lbox.find('li');
-        var liHeight = parseInt(mainHeight / 4) < 150 ? 150 : parseInt(mainHeight / 4);  //单个li的高度,最小宽度为150px;
-
-        var lboxWidth = liHeight * 5;   //左侧宽度
-        var rboxWidth = clientWidth - lboxWidth;  //右侧宽度
-
-        if (clientWidth < 1200) {
-            clientWidth = 1200;
-        }
-
-
-        //左侧
-        lbox.css('width', lboxWidth + 'px');  //左侧赋值
-        li.css({'width': liHeight + 'px', 'height': liHeight + 'px'});
-
-        //右侧
-        rbox.css({'width': rboxWidth + 'px', 'height': mainHeight + 'px'});
-
-        if (mainHeight <= 760) {
-            rboxDefaultContextP.css('height', '70px');
-            $('.master_page .rbox .more').css('bottom', '110px')
-        } else {
-            rboxDefaultContextP.css('height', '');
-            $('.master_page .rbox .more').css('bottom', '110px')
-        }
-
-
-    },
-    selectMaster: function () {//选中大师
-        var _li = $('.master_avatar li');
-        var _default = $('.master_page .rbox .default');
-        var _item = $('.master_page .rbox .item');
-        var _h1 = $('.master_page .rbox .item .title h1');
-        var _oldText = _h1.text();
-
-
-        _li.on('click', function () {
-            var index = $(this).index();
-            _default.hide();
-            _item.show();
             $(this).addClass('active').siblings('li').removeClass('active');
-            _h1.text(_oldText + index);
+            $('html,body').animate({ 'scrollTop': _top + 'px' }, 500);
         });
-    }
 
+
+    },
 };
 
 
-$(function () {
+
+
+$(function() {
     renderHhtml.init();
-
     common.init();
-
-    homePage.init();
-
-    detailPage.init();
-
-    //作品详情页
-    detailProduct.init();
-
-    loginPage.init();
-
-
-    masterPage.init();
 });
-
-
-
-
