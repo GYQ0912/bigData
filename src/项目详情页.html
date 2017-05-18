@@ -11,133 +11,143 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="header header_detail">
-            <div class="content">
-                <a class="logo" href=""></a>
-                <div class="nav">
-                    <a class="active" href="">首页</a>
-                    <a href="">非遗名录</a>
-                    <a href="">非遗大师</a>
-                    <a href="">精选内容</a>
-                    <a href="">非遗咨询</a>
-                    <a href="">关于我们</a>
-                    <a href="">我要申报</a>
-                </div>
-                <div class="info">
+    <div class="header header_detail"></div>
+    <!--//End header -->
+    <div class="filter_search filter_search_fixed">
+        <div class="content">
+            <form class="form" action="">
+                <input class="ipt" type="text" value="从这里搜索您感兴趣的...">
+                <input class="submit" type="submit" value="搜索">
+                <div class="suggest" style="display: none;">
                     <ul>
-                        <li class="login"><a class="active" href=""><i class="icon"></i><em>登录</em></a></li>
-                        <li class="language">
-                            <a class="zh active" href=""><em>中文</em></a>
-                            <a class="en" href=""><em>EN</em></a>
-                        </li>
-                        <li class="search">
-                            <i class="icon"></i>
-                        </li>
+                        <li><a href=""><span>苏州</span>传承人</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
+                        <li><a href=""><span>苏州</span>苏绣</a></li>
                     </ul>
                 </div>
+            </form>
+            <!--//End form-->
+
+            <div class="attr">
+                <span>全部</span>
+                <span>所属类别</span>
+                <span>全球</span>
             </div>
-            <!--//End content-->
-            <div class="drop_menu">
-                <div class="content">
-                    <div class="item">
-                        <dl>
-                            <dt>口头传说和表述</dt>
-                            <dd>
-                                <a href="">语言</a>
-                                <a href="">文字</a>
-                                <a href="">口述</a>
-                                <a href="">其他口头传统</a>
-                                <a href="">及表述</a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!--//End-->
+            <!--//End attribute-->
 
-                    <div class="item">
-                        <dl>
-                            <dt>表演艺术</dt>
-                            <dd>
-                                <a href="">音乐演奏</a>
-                                <a href="">舞蹈</a>
-                                <a href="">民歌</a>
-                                <a href="">传统戏剧</a>
-                                <a href="">曲艺</a>
-                                <a href="">传统体育、游艺与杂技</a>
-                                <a href="">其他表演艺术</a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!--//End-->
-
-                    <div class="item">
-                        <dl>
-                            <dt>社会风俗<br>礼仪、节庆</dt>
-                            <dd>
-                                <a href="">生产商贸习俗</a>
-                                <a href="">生活习俗</a>
-                                <a href="">人生仪式</a>
-                                <a href="">节日庆典</a>
-                                <a href="">其他仪式及庆典</a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!--//End-->
-
-                    <div class="item">
-                        <dl>
-                            <dt>有关自然界和<br>宇宙的知识和实践</dt>
-                            <dd>
-                                <a href="">农林牧畜渔</a>
-                                <a href="">服装</a>
-                                <a href="">食品</a>
-                                <a href="">住房与建筑</a>
-                                <a href="">交通</a>
-                                <a href="">旅行</a>
-                                <!--</dd>-->
-                                <!--<dd>-->
-                                <a href="">医、药</a>
-                                <a href="">军事防御</a>
-                                <a href="">商贸</a>
-                                <a href="">工业、工程</a>
-                                <a href="">天文、地理、水文等</a>
-                                <a href="">其他自然知识和实践</a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <!--//End-->
-
-                    <div class="item">
-                        <dl>
-                            <dt>传统的手工艺技能</dt>
-                            <dd>
-                                <a href="">工具及机械制作</a>
-                                <a href="">髹饰工艺</a>
-                                <a href="">家畜农林产品加工</a>
-                                <a href="">织染工艺</a>
-                                <a href="">造纸、印刷机装裱</a>
-                                <a href="">编扎工艺</a>
-                                <a href="">字画工艺</a>
-                                <a href="">锻冶工艺</a>
-                                <a href="">剪刻工艺</a>
-
-                                <a href="">雕塑工艺</a>
-                                <a href="">烧造工艺</a>
-                                <a href="">木作工艺</a>
-                                <a href="">其他类</a>
-
-
-                            </dd>
-                        </dl>
-                    </div>
-
-
+            <div class="dropbox" id="drag">
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                    <div class="title">查看</div>
+                    </dt>
+                        <dd>
+                            <ul>
+                                <li class="active">全部<span>342</span></li>
+                                <li>项目<span>42</span></li>
+                                <li>传承人<span>42</span></li>
+                                <li>作品<span>42</span></li>
+                            </ul>
+                        </dd>
+                    </dl>
                 </div>
-            </div>
-            <!--//End drop_menu-->
-        </div>
-        <!--//End header -->
+                <!--//ENd 全部-->
 
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                    <div class="title">一级分类</div>
+                    <div class="subtitle">所有分类</div>
+                    </dt>
+                        <dd>
+                            <ul>
+                                <li>口头传统和表述</li>
+                                <li>表演艺术</li>
+                                <li>社会风俗、礼仪、节庆</li>
+                                <li>有关自然界和宇宙的知识和实践</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                                <li>传统的手工艺技能</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                    <div class="title">二级分类</div>
+                    <div class="subtitle">所有二级分类</div>
+                    </dt>
+                        <dd>
+                            <ul>
+                                <li>工具和机械制作</li>
+                                <li>家畜农林产品加工</li>
+                                <li>造纸、印刷及装裱</li>
+                                <li>烧造工艺</li>
+                                <li>锻冶工艺</li>
+                                <li>雕塑工艺</li>
+                                <li>雕塑工艺</li>
+                                <li>雕塑工艺</li>
+                                <li>雕塑工艺</li>
+                                <li>雕塑工艺</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 所属分类-->
+
+                <div class="item">
+                    <dl class="level">
+                        <dt>
+                    <div class="title">位置</div>
+                    </dt>
+                        <dd>
+                            <ul>
+                                <li>全球</li>
+                                <li>中国</li>
+                                <li>非洲</li>
+                                <li>阿拉伯地区</li>
+                                <li>亚太</li>
+                                <li>欧美</li>
+                                <li>拉美</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="level2">
+                        <dt>
+                    <div class="title">按照字母顺序</div>
+                    </dt>
+                        <dd>
+                            <ul>
+                                <li>安微</li>
+                                <li>澳门</li>
+                                <li>北京</li>
+                                <li>上海</li>
+                                <li>福建</li>
+                                <li>甘肃</li>
+                                <li>广东</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <!--//End 位置-->
+
+            </div>
+            <!--//End attribute-->
+        </div>
+    </div>
+    <!--//End filter_search -->
+
+
+
+    <div class="container">
         <div class="bd detail">
             <div class="mainbg">
                 <img src="assets/uploads/project_detail_01.png" alt="">
@@ -391,43 +401,39 @@
             <!--//ENd-->
         </div>
         <!--//End detail -->
-
-        <div class="bd footer"></div>
-        <!--//End--footer-->
-
-        <div class="side_fixed">
-            <ul>
-                <li class="active">
-                    <span>簡介</span>
-                    <strong>01</strong>
-                </li>
-                <li>
-                    <span>代表性作品</span>
-                    <strong>02</strong>
-                </li>
-                <li>
-                    <span>历史渊源</span>
-                    <strong>03</strong>
-                </li>
-                <li>
-                    <span>重要價值</span>
-                    <strong>04</strong>
-                </li>
-                <li>
-                    <span>影响</span>
-                    <strong>05</strong>
-                </li>
-            </ul>
-            <a class="gotop" href="javascript:void(0)" title="返回顶部"></a>
-        </div>
-        <!--//End 右侧悬浮-->
-
-
     </div>
 
 
 
+    <div class="bd footer"></div>
+    <!--//End--footer-->
 
+    <div class="side_fixed">
+        <ul>
+            <li class="active">
+                <span>簡介</span>
+                <strong>01</strong>
+            </li>
+            <li>
+                <span>代表性作品</span>
+                <strong>02</strong>
+            </li>
+            <li>
+                <span>历史渊源</span>
+                <strong>03</strong>
+            </li>
+            <li>
+                <span>重要價值</span>
+                <strong>04</strong>
+            </li>
+            <li>
+                <span>影响</span>
+                <strong>05</strong>
+            </li>
+        </ul>
+        <a class="gotop" href="javascript:void(0)" title="返回顶部"></a>
+    </div>
+    <!--//End 右侧悬浮-->
 
 </body>
 <script>

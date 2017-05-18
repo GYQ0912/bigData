@@ -216,7 +216,7 @@ var header = {
     scroll: function() { //页面滚动导航悬浮
         var _header = $('#home-header');
         var _top = $('.gotop');
-        var _filter = $('.filter_search');
+        var _filter = $('.filter_search_fixed');
 
         if (_header) {
             $(window).scroll(function() {
@@ -251,7 +251,6 @@ var header = {
             }, speed);
         });
 
-
         drop.hover(function() {
             clearInterval(timer);
         }, function() {
@@ -278,6 +277,7 @@ var header = {
         var _header = $('.header');
         var search = _header.find('li.search'); //搜索图标
         var filter = $('.filter_search'); //下拉搜索
+        var filterFixed = $('.filter_search_fixed');
         var filterAll = filter.find('.attr span'); //筛选项
         var filterItem = filter.find('.item'); //筛选下来框
 
@@ -285,7 +285,7 @@ var header = {
         search.on('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            filter.slideDown('fast');
+            filter.css('top', _header.outerHeight(true) + 'px').slideDown('fast');
         });
 
         //2.点击筛选
@@ -307,7 +307,7 @@ var header = {
 
         //4.点击自身之外的地方关闭下拉框
         $(document).on("click", function() {
-            filter.slideUp('fast');
+            filterFixed.slideUp('fast');
         });
     },
     loginLayer: function() { //登录弹出框
@@ -327,7 +327,7 @@ var header = {
 };
 
 
-//首页
+//首页 ok
 var homePage = {
     init: function() {
         this.slide(); //轮播图
@@ -501,7 +501,9 @@ var masterPage = {
 //非遗名录 && 搜索结果页
 var searchPage = {
     init: function() {
-        $('.directory .section li:nth-child(3n)').css('margin-right', 0);
+        $('.header_detail .content .info li.search').hide();
+        $('.header_detail .content .info li.login').addClass('line');
+
     },
 
 };

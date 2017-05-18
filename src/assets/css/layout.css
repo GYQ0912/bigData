@@ -2,7 +2,6 @@
     background-image: url(../images/icon@1x.png);
 }
 
-
 /*--//End--*/
 
 .home_title {
@@ -28,7 +27,6 @@
     left: 50%;
     margin-left: -12px;
 }
-
 
 /*--//End 首页title--*/
 
@@ -139,7 +137,6 @@
     border-bottom: 2px solid #fff;
 }
 
-
 /*--//End slider --*/
 
 .home .cate {
@@ -206,7 +203,6 @@
     background: #fafafa;
 }
 
-
 /*--//End cate--*/
 
 .home .global {
@@ -232,7 +228,6 @@
 .home .global .map {
     text-align: center;
 }
-
 
 /*--//End global--*/
 
@@ -331,7 +326,6 @@
     left: 10%;
 }
 
-
 /*--//End introduce--*/
 
 .home .information {
@@ -403,7 +397,6 @@
     bottom: 0;
 }
 
-
 /*--//End  information--*/
 
 .home .project .home_title {
@@ -458,7 +451,6 @@
     background: #3468BB;
 }
 
-
 /*--//ENd home_project--*/
 
 .partners {
@@ -503,7 +495,6 @@
     margin-top: 30px;
 }
 
-
 /*--//ENd partners--*/
 
 .detail {
@@ -537,7 +528,6 @@
     margin-left: -60px;
     z-index: 2;
 }
-
 
 /*--//End mainbg--*/
 
@@ -652,7 +642,6 @@
     background: #4283EB;
 }
 
-
 /*--//End 图文列表--*/
 
 section.odd {
@@ -673,7 +662,6 @@ section.odd {
     -webkit-column-gap: 30px;
     column-gap: 30px;
 }
-
 
 /*--//End 纯文本 三列--*/
 
@@ -732,7 +720,6 @@ section.odd {
     color: #1b1b1b;
 }
 
-
 /*--//End 时间轴--*/
 
 .card .master_avatar {
@@ -784,7 +771,6 @@ section.odd {
     display: inline-block;
     margin-left: 6px;
 }
-
 
 /*--//End 大师头像简介--*/
 
@@ -841,7 +827,6 @@ section.odd {
     float: right;
 }
 
-
 /*--//End 左边文字右边图片--*/
 
 .card_base {
@@ -873,7 +858,6 @@ section.odd {
 .card_base .info li span.value {
     color: #4A4A4A;
 }
-
 
 /*--//End 详情基本信息--*/
 
@@ -1191,7 +1175,6 @@ section.odd {
     border: 1px solid rgba(255, 255, 255, .7);
 }
 
-
 /*--//End 详情主要信息--*/
 
 .directory {
@@ -1277,14 +1260,17 @@ section.odd {
     box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.18);
 }
 
-
 /*--//End 非遗名录--*/
 
 .directory .pro_column3 {
     width: 100%;
     float: left;
+    overflow: hidden;
 }
-
+.directory .pro_column3 ul {
+    width:1200px;
+    float: left;
+}
 .directory .pro_column3 .pic {
     width: 100%;
     height: 269px;
@@ -1374,7 +1360,7 @@ section.odd {
     margin-right: 10px;
 }
 
-.directory .pro_column3 .context .avatar>span {
+.directory .pro_column3 .context .avatar > span {
     font-size: 12px;
     color: #949494;
     line-height: 36px;
@@ -1386,21 +1372,26 @@ section.odd {
     transition: all 0.3s ease-in-out;
 }
 
-
 /*--//End 非遗名录--*/
 
-.directory .section ul.inheritor {
+.directory .section .inheritor {
     width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.directory .section .inheritor ul {
+    width: 1200px;
     float: left;
 }
 
-.directory .section ul.inheritor li {
+.directory .section .inheritor li {
     background-color: #fff;
     padding: 30px 0;
     height: 400px;
 }
 
-.directory .section ul.inheritor li .avatar {
+.directory .section .inheritor li .avatar {
     width: 240px;
     height: 238px;
     border-radius: 50%;
@@ -1409,11 +1400,11 @@ section.odd {
     margin: 0 65px;
 }
 
-.directory .section ul.inheritor li .avatar img {
+.directory .section .inheritor li .avatar img {
     width: 100%;
 }
 
-.directory .section ul.inheritor li .icon:after {
+.directory .section .inheritor li .icon:after {
     position: relative;
     content: "";
     display: inline-block;
@@ -1425,11 +1416,11 @@ section.odd {
     left: 10px;
 }
 
-.directory .section ul.inheritor li .txt {
+.directory .section .inheritor li .txt {
     font-size: 14px;
 }
 
-.directory .section ul.inheritor li h2 {
+.directory .section .inheritor li h2 {
     width: 100%;
     float: left;
     text-align: center;
@@ -1437,14 +1428,14 @@ section.odd {
     margin-bottom: 24px;
 }
 
-.directory .section ul.inheritor li h4 {
+.directory .section .inheritor li h4 {
     width: 100%;
     text-align: center;
     float: left;
     margin-bottom: 12px;
 }
 
-.directory .section ul.inheritor li h4 span {
+.directory .section .inheritor li h4 span {
     font-size: 16px;
     color: #949494;
     line-height: 16px;
@@ -1454,7 +1445,7 @@ section.odd {
     display: inline-block;
 }
 
-.directory .section ul.inheritor li .doi {
+.directory .section .inheritor li .doi {
     width: 100%;
     font-size: 12px;
     text-align: center;
@@ -1464,20 +1455,20 @@ section.odd {
     margin-bottom: 10px;
 }
 
-.directory .section ul.inheritor li .doi .doi_gray {
+.directory .section .inheritor li .doi .doi_gray {
     position: relative;
     top: 10px;
 }
 
-.directory .section ul.inheritor li .doi .t1 {
+.directory .section .inheritor li .doi .t1 {
     color: #949494;
 }
 
-.directory .section ul.inheritor li .doi .t2 {
+.directory .section .inheritor li .doi .t2 {
     color: #333;
 }
 
-.directory .section ul.inheritor li p {
+.directory .section .inheritor li p {
     font-size: 12px;
     color: #949494;
     line-height: 12px;
@@ -1485,33 +1476,39 @@ section.odd {
     margin-top: 14px;
 }
 
-.directory .section ul.inheritor li p a {
+.directory .section .inheritor li p a {
     color: #949494;
 }
 
-.directory .section ul.inheritor li p a.active {
+.directory .section .inheritor li p a.active {
     color: #333;
 }
 
-.directory .section ul.product {
+.directory .section .product {
     width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.directory .section .product ul {
+    width:1200px;
     float: left;
 }
 
-.directory .section ul.product li .context {
+.directory .section .product li .context {
     width: 326px;
     display: table;
     padding: 21px 22px;
     background-color: #fff;
 }
 
-.directory .section ul.product li .context h4 {
+.directory .section .product li .context h4 {
     font-size: 24px;
     color: #1B1B1B;
     font-weight: 400;
 }
 
-.directory .section ul.product li .context h5 {
+.directory .section .product li .context h5 {
     font-size: 16px;
     color: #949494;
     line-height: 16px;
@@ -1525,46 +1522,46 @@ section.odd {
     font-weight: normal;
 }
 
-.directory .section ul.product li .context .cate {
+.directory .section .product li .context .cate {
     width: 100%;
     line-height: 22px;
     float: left;
     margin-top: 20px;
 }
 
-.directory .section ul.product li .context .cate span {
+.directory .section .product li .context .cate span {
     font-size: 12px;
 }
 
-.directory .section ul.product li .context .cate strong {
+.directory .section .product li .context .cate strong {
     font-size: 16px;
     font-weight: normal;
 }
 
-.directory .section ul.product li .context .info {
+.directory .section .product li .context .info {
     width: 100%;
     float: left;
     margin-top: 20px;
 }
 
-.directory .section ul.product li .context .info a {
+.directory .section .product li .context .info a {
     float: left;
     margin-right: 10px;
     font-size: 0;
 }
 
-.directory .section ul.product li .context .info span {
+.directory .section .product li .context .info span {
     line-height: 36px;
     color: #949494;
     font-size: 16px;
     float: left;
 }
 
-.directory .section ul.product li .context span.master {
+.directory .section .product li .context span.master {
     float: left;
 }
 
-.directory .section ul.product li .avatar img {
+.directory .section .product li .avatar img {
     width: 100%;
 }
 
@@ -1589,7 +1586,6 @@ section.odd {
     line-height: 60px;
     display: inline-block;
 }
-
 
 /*--//ENd 列表三列*/
 
@@ -1627,8 +1623,7 @@ section.odd {
 .mainContainer .master_photo img {
     width: auto;
     height: 100%;
-    -webkit-filter: grayscale(100%);
-    ;
+    -webkit-filter: grayscale(100%);;
     filter: grayscale(100%);
 }
 
@@ -1686,12 +1681,12 @@ section.odd {
     box-sizing: border-box;
 }
 
-.mainContainer>.rbox {
+.mainContainer > .rbox {
     z-index: 1;
     opacity: 1;
 }
 
-.mainContainer>.rbox h4 {
+.mainContainer > .rbox h4 {
     white-space: pre-wrap;
     font-weight: 800;
 }
@@ -1876,7 +1871,6 @@ section.odd {
     -webkit-transition: all 0.3s ease-in-out;
 }
 
-
 /*--//End 非遗大师--*/
 
 .wonderful {
@@ -2053,7 +2047,6 @@ section.odd {
     float: right;
 }
 
-
 /*--//End 精彩内容--*/
 
 .information {
@@ -2188,7 +2181,6 @@ section.odd {
     font-size: 24px;
     line-height: 24px;
 }
-
 
 /*--//End information--*/
 
@@ -2395,7 +2387,6 @@ section.odd {
     margin-top: 35px
 }
 
-
 /*--//End 详情页弹出浮层--*/
 
 .detail_product .crumbs {
@@ -2456,7 +2447,6 @@ section.odd {
     border-radius: 2px;
     margin: 8px 0 8px 6px;
 }
-
 
 /*--//End main--*/
 
@@ -2567,7 +2557,6 @@ section.odd {
     color: #333;
 }
 
-
 /*--//End media_box--*/
 
 .official {
@@ -2667,7 +2656,6 @@ section.odd {
     margin-bottom: 20px;
 }
 
-
 /*--//End 官方服务--*/
 
 .box_layer {
@@ -2682,7 +2670,6 @@ section.odd {
     background: #f7f7f7;
     z-index: 11;
 }
-
 
 /*--//End 弹出层--*/
 
@@ -2781,7 +2768,6 @@ section.odd {
     margin: 24px 0;
 }
 
-
 /*--//End 表单相关--*/
 
 .my_declare {
@@ -2817,7 +2803,6 @@ section.odd {
     margin-right: 10px;
     vertical-align: top;
 }
-
 
 /*--//End 我要申报--*/
 
@@ -3077,6 +3062,5 @@ section.odd {
     height: auto;
     display: block;
 }
-
 
 /*--//End 非遗大师--*/
