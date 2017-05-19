@@ -706,38 +706,23 @@ var detailCommon = { //详情页用到的效果
         var _ul = $('.side_fixed ul'); //导航
         var _floor = $('section.floor'); //楼层
         var _nav = $('.card header h4'); //楼层标题
-        var floorData = [];
-        // var arr = [];
-        // var uniq = [];
+        var arr = []; //把pros对应的几个位置标示出来
 
         //获取所有楼层标题
-        _nav.each(function(i) {
-            // navData.push($(this).text());
-            //给右侧悬浮添加标题
+        _nav.each(function(i) { //给右侧悬浮添加标题
             _ul.append('<li><span>' + $(this).text() + '</span><strong>0' + (i + 1) + '</strong></li>');
         });
-
-        // _floor.each(function() {
-        //     floorData.push($(this).offset().top);
-        // })
-
-        // console.log(floorData);
-
         var _li = _ul.find('li');
 
 
         //滚动
-        var arr = []; //把pros对应的几个位置标示出来
-        _floor.each(function() {
+        _floor.each(function() { //标记所有楼层导航的高度
             var offsettop = $(this).offset().top;
             arr.push(parseInt(offsettop)); //火狐有半个像素的情况，故取整
         });
 
-        console.log(arr)
-
         $(window).scroll(function() {
             var d = parseInt($(document).scrollTop());
-
             for (var i = 0; i < arr.length; i++) {
                 if (arr[i] >= d) {
                     break;
