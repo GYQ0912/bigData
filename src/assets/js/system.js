@@ -413,8 +413,6 @@ var header = {
         search.on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
-            //创建蒙版
-            body.append('<div class="overbg"></div>');
             filter.css('top', _header.outerHeight(true) + 'px').slideDown('fast');
         });
 
@@ -442,7 +440,6 @@ var header = {
         });
 
         //自动提示
-
         if (suggest.is(':visible')) {
             body.css('overflow', 'hidden');
             body.append('<div class="overbg"></div>');
