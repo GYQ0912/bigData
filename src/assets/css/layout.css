@@ -2061,6 +2061,28 @@ section.odd {
     width: 1170px;
     height: 100%;
     margin: 0 auto;
+    position: relative;
+}
+
+.media_layer .content .album .prev,
+.media_layer .content .album .next {
+    background: url(../images/icon_list.png) no-repeat;
+    width: 18px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    margin-top: -74px;
+    cursor: pointer;
+}
+
+.media_layer .content .album .prev {
+    background-position: 0 -192px;
+    left: -50px;
+}
+
+.media_layer .content .album .next {
+    background-position: -18px -192px;
+    right: -50px;
 }
 
 .media_layer .content .icon_close {

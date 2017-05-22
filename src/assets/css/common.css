@@ -789,7 +789,7 @@ div:before {
 
 .side_fixed {
     position: fixed;
-    bottom: 250px;
+    bottom: 100px;
     right: 40px;
     z-index: 9;
 }
