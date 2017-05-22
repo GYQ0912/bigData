@@ -2,7 +2,6 @@
     background-image: url(../images/icon@1x.png);
 }
 
-
 /*--//End--*/
 
 .home_title {
@@ -28,7 +27,6 @@
     left: 50%;
     margin-left: -12px;
 }
-
 
 /*--//End 首页title--*/
 
@@ -92,6 +90,19 @@
     display: none;
 }
 
+.home .slider form .suggest {
+    height: 150px;
+    top: 94px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+.home .slider form .suggest li {
+    text-indent: 40px;
+}
+
 .home .slider .img {
     width: 100%;
     position: absolute;
@@ -138,7 +149,6 @@
     opacity: 1;
     border-bottom: 2px solid #fff;
 }
-
 
 /*--//End slider --*/
 
@@ -206,7 +216,6 @@
     background: #fafafa;
 }
 
-
 /*--//End cate--*/
 
 .home .global {
@@ -232,7 +241,6 @@
 .home .global .map {
     text-align: center;
 }
-
 
 /*--//End global--*/
 
@@ -331,7 +339,6 @@
     left: 10%;
 }
 
-
 /*--//End introduce--*/
 
 .home .information {
@@ -403,7 +410,6 @@
     bottom: 0;
 }
 
-
 /*--//End  information--*/
 
 .home .project .home_title {
@@ -412,29 +418,33 @@
 }
 
 .home .project .content {
-    background: #22252A url(../images/declare_bg.png) no-repeat center 204px;
-    height: 522px;
+    background: #fff url(../images/declare_bg.png) no-repeat center 204px;
+    width: 100%;
+    float: left;
+    margin-bottom: 140px;
 }
 
 .home .project .content .part {
-    text-align: center
+    width: 100%;
+    text-align: center;
+    float: left;
+    margin-bottom: 30px;
 }
 
 .home .project .content .certificate {
     background: url(../images/certificate.png);
-    width: 140px;
-    height: 195px;
+    width: 296px;
+    height: 250px;
     display: inline-block;
-    margin-top: 74px;
-    margin-bottom: 34px;
+    margin-top: 140px;
+    margin-bottom: 40px;
 }
 
 .home .project .content .txt {
-    width: 956px;
-    line-height: 24px;
-    text-align: center;
-    font-size: 16px;
-    color: #fff;
+    width: 1170px;
+    line-height: 40px;
+    font-size: 24px;
+    color: #1B1B1B;
     opacity: 0.5;
     display: inline-block;
 }
@@ -444,7 +454,7 @@
     line-height: 60px;
     text-align: center;
     color: #fff;
-    background: #4283EB;
+    background: #1B1B1B;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     display: inline-block;
@@ -458,53 +468,7 @@
     background: #3468BB;
 }
 
-
 /*--//ENd home_project--*/
-
-.partners {
-    background: #1b1b1b;
-    height: 300px;
-}
-
-.partners .content {
-    width: 1070px;
-    height: 128px;
-    margin: 95px auto 77px auto;
-}
-
-.partners .content a {
-    float: left;
-    margin-left: 202px;
-}
-
-.partners .content a.united {
-    background: url(../images/partners_01.png) no-repeat;
-    width: 148px;
-    height: 127px;
-    margin-left: 0;
-}
-
-.partners .content a.intangible {
-    background: url(../images/partners_02.png) no-repeat;
-    width: 70px;
-    height: 128px;
-}
-
-.partners .content a.chinaich {
-    background: url(../images/partners_03.png) no-repeat;
-    width: 123px;
-    height: 124px;
-}
-
-.partners .content a.cctv {
-    background: url(../images/partners_04.png) no-repeat;
-    width: 117px;
-    height: 79px;
-    margin-top: 30px;
-}
-
-
-/*--//ENd partners--*/
 
 .detail {
     position: relative;
@@ -537,7 +501,6 @@
     margin-left: -60px;
     z-index: 2;
 }
-
 
 /*--//End mainbg--*/
 
@@ -656,7 +619,6 @@
     background: #4283EB;
 }
 
-
 /*--//End 图文列表--*/
 
 section.odd {
@@ -677,7 +639,6 @@ section.odd {
     -webkit-column-gap: 30px;
     column-gap: 30px;
 }
-
 
 /*--//End 纯文本 三列--*/
 
@@ -735,7 +696,6 @@ section.odd {
 .card .time_axis ul li span.txt {
     color: #1b1b1b;
 }
-
 
 /*--//End 时间轴--*/
 
@@ -795,7 +755,6 @@ section.odd {
     margin-left: 6px;
 }
 
-
 /*--//End 大师头像简介--*/
 
 .card .text_img {
@@ -851,7 +810,6 @@ section.odd {
     float: right;
 }
 
-
 /*--//End 左边文字右边图片--*/
 
 .card_base {
@@ -883,7 +841,6 @@ section.odd {
 .card_base .info li span.value {
     color: #4A4A4A;
 }
-
 
 /*--//End 详情基本信息--*/
 
@@ -1201,7 +1158,6 @@ section.odd {
     border: 1px solid rgba(255, 255, 255, .7);
 }
 
-
 /*--//End 详情主要信息--*/
 
 .directory {
@@ -1287,7 +1243,6 @@ section.odd {
     box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.18);
 }
 
-
 /*--//End 非遗名录--*/
 
 .directory .pro_column3 {
@@ -1321,18 +1276,14 @@ section.odd {
     font-weight: 400;
 }
 
-.directory .pro_column3 .context .doi {
-    font-size: 13px;
-    color: #949494;
-    letter-spacing: -0.62px;
-    line-height: 12px;
-    margin-top: 25.6px;
+.directory .pro_column3 .context .icon_project {
+
 }
 
-.directory .pro_column3 .context .doi span:first-of-type {
-    border: 1px solid #949494;
-    padding: 0px 3px;
-    font-weight: 600;
+.directory .pro_column3 .context .doi {
+    color: #949494;
+    margin-top: 26px;
+    margin-bottom: 5px;
 }
 
 .directory .pro_column3 .context .doi span:nth-of-type(2) {
@@ -1340,7 +1291,7 @@ section.odd {
 }
 
 .directory .pro_column3 .context .doi span:last-of-type {
-    color: #333333;
+    color: #333;
 }
 
 .directory .pro_column3 .context .cate {
@@ -1379,29 +1330,10 @@ section.odd {
     margin-bottom: 16px;
 }
 
-.directory .pro_column3 .context .avatar {
-    width: 100%;
-    display: table;
-    margin-top: 11px;
-}
-
-.directory .pro_column3 .context .avatar a {
-    float: left;
-    margin-right: 10px;
-}
-
-.directory .pro_column3 .context .avatar>span {
-    font-size: 12px;
-    color: #949494;
-    line-height: 36px;
-    margin-left: 10px;
-}
-
 .directory .pro_column3 .pic img {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-
 
 /*--//End 非遗名录--*/
 
@@ -1415,105 +1347,27 @@ section.odd {
     width: 1200px;
     float: left;
 }
-
-.directory .section .inheritor li {
-    background-color: #fff;
-    padding: 30px 0;
-    height: 400px;
+.directory .section .inheritor li .cate {
+    margin-top: 15px;
 }
-
-.directory .section .inheritor li .avatar {
-    width: 240px;
-    height: 238px;
-    border-radius: 50%;
-    overflow: hidden;
-    float: left;
-    margin: 0 65px;
-}
-
-.directory .section .inheritor li .avatar img {
-    width: 100%;
-}
-
-.directory .section .inheritor li .icon:after {
-    position: relative;
-    content: "";
-    display: inline-block;
-    width: 24px;
-    height: 17px;
-    background-image: url(../img/logo2@2x.png);
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    left: 10px;
-}
-
-.directory .section .inheritor li .txt {
-    font-size: 14px;
-}
-
-.directory .section .inheritor li h2 {
-    width: 100%;
-    float: left;
+.directory .section .inheritor li .cate span.name_gray {
+    width:46px;
+    height:26px;
+    line-height:26px;
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 24px;
-}
-
-.directory .section .inheritor li h4 {
-    width: 100%;
-    text-align: center;
-    float: left;
-    margin-bottom: 12px;
-}
-
-.directory .section .inheritor li h4 span {
-    font-size: 16px;
     color: #949494;
-    line-height: 16px;
-    border: 1px solid rgba(148, 148, 148, 0.6);
-    border-radius: 2px;
-    padding: 6px 22px;
-    display: inline-block;
+    font-size: 16px;
+    margin-left: 0;
+    border: 1px solid #eee;
+    background: #fafafa;
+    float: left;
 }
 
 .directory .section .inheritor li .doi {
-    width: 100%;
-    font-size: 12px;
-    text-align: center;
-    float: left;
-    /*margin-top: -10px;*/
-    margin-top: 14px;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
-.directory .section .inheritor li .doi .doi_gray {
-    position: relative;
-    top: 10px;
-}
-
-.directory .section .inheritor li .doi .t1 {
-    color: #949494;
-}
-
-.directory .section .inheritor li .doi .t2 {
-    color: #333;
-}
-
-.directory .section .inheritor li p {
-    font-size: 12px;
-    color: #949494;
-    line-height: 12px;
-    text-align: center;
-    margin-top: 14px;
-}
-
-.directory .section .inheritor li p a {
-    color: #949494;
-}
-
-.directory .section .inheritor li p a.active {
-    color: #333;
-}
+/*--//End 非遗名录传承人--*/
 
 .directory .section .product {
     width: 100%;
@@ -1540,16 +1394,16 @@ section.odd {
 }
 
 .directory .section .product li .context h5 {
-    font-size: 16px;
+    width:46px;
+    height:26px;
+    line-height:26px;
+    text-align: center;
     color: #949494;
-    line-height: 16px;
-    border: 1px solid rgba(148, 148, 148, 0.6);
-    border-radius: 2px;
-    padding: 4px 23px;
+    font-size: 16px;
+    border: 1px solid #eee;
+    background: #fafafa;
     float: left;
-    margin-top: 6px;
-    margin-right: 25px;
-    background: #fff;
+    margin:4px 0 4px 20px;
     font-weight: normal;
 }
 
@@ -1618,7 +1472,6 @@ section.odd {
     display: inline-block;
 }
 
-
 /*--//ENd 列表三列*/
 
 .mainContainer {
@@ -1655,8 +1508,7 @@ section.odd {
 .mainContainer .master_photo img {
     width: auto;
     height: 100%;
-    -webkit-filter: grayscale(100%);
-    ;
+    -webkit-filter: grayscale(100%);;
     filter: grayscale(100%);
 }
 
@@ -1714,12 +1566,12 @@ section.odd {
     box-sizing: border-box;
 }
 
-.mainContainer>.rbox {
+.mainContainer > .rbox {
     z-index: 1;
     opacity: 1;
 }
 
-.mainContainer>.rbox h4 {
+.mainContainer > .rbox h4 {
     white-space: pre-wrap;
     font-weight: 800;
 }
@@ -1904,7 +1756,6 @@ section.odd {
     -webkit-transition: all 0.3s ease-in-out;
 }
 
-
 /*--//End 非遗大师--*/
 
 .wonderful {
@@ -2081,7 +1932,6 @@ section.odd {
     float: right;
 }
 
-
 /*--//End 精彩内容--*/
 
 .information {
@@ -2216,7 +2066,6 @@ section.odd {
     font-size: 24px;
     line-height: 24px;
 }
-
 
 /*--//End information--*/
 
@@ -2361,7 +2210,6 @@ section.odd {
     display: inline-block
 }
 
-
 /*--//End 详情页弹出浮层--*/
 
 .detail_product .crumbs {
@@ -2422,7 +2270,6 @@ section.odd {
     border-radius: 2px;
     margin: 8px 0 8px 6px;
 }
-
 
 /*--//End main--*/
 
@@ -2533,7 +2380,6 @@ section.odd {
     color: #333;
 }
 
-
 /*--//End media_box--*/
 
 .official {
@@ -2633,7 +2479,6 @@ section.odd {
     margin-bottom: 20px;
 }
 
-
 /*--//End 官方服务--*/
 
 .box_layer {
@@ -2647,8 +2492,8 @@ section.odd {
     margin-left: -375px;
     background: #f7f7f7;
     z-index: 11;
+    display: none;
 }
-
 
 /*--//End 弹出层--*/
 
@@ -2747,7 +2592,6 @@ section.odd {
     margin: 24px 0;
 }
 
-
 /*--//End 表单相关--*/
 
 .my_declare {
@@ -2783,7 +2627,6 @@ section.odd {
     margin-right: 10px;
     vertical-align: top;
 }
-
 
 /*--//End 我要申报--*/
 
@@ -3043,6 +2886,5 @@ section.odd {
     height: auto;
     display: block;
 }
-
 
 /*--//End 非遗大师--*/

@@ -1,9 +1,10 @@
 var renderHhtml = {
-    init: function() {
+    init: function () {
         this.header();
         this.footer();
+        this.filter();
     },
-    header: function() { //导航
+    header: function () { //导航
         var htmlStr = `<div class="content">
             <a class="logo" href=""></a>
             <div class="nav">
@@ -131,58 +132,184 @@ var renderHhtml = {
         `;
         this.base('.header', htmlStr);
     },
-    footer: function() { //底部
+    footer: function () { //底部
         var htmlStr = `<div class="diich">
-            <p class="name">非遺國際 DIICH</p>
-            <p class="subname">2017 © FeiYi. All rights<br> reserved</p>
+        <div class="hd">
+            <p class="name"><span>DIICH</span><em>非遺國際</em></p>
+            <p class="subname">2017 © EFeiYi. All rights reserved</p>
         </div>
-        <div class="msg mese">Mese Selimovica, 52<br>78000, Banja Luka BiH</div>
-        <div class="msg phone">+387 065 252 552<br>email@example.com</div>
-        <div class="share">
-            <a href="" class="facebook" title="facebook"></a>
-            <a href="" class="twitter" title="twitter"></a>
-            <a href="" class="instagram" title="instagram"></a>
-            <a href="" class="linkedin" title="linkedin"></a>
-        </div>`;
+    </div>
+    <!--//End diich-->
+    <div class="main">
+        <div class="hd">
+            <div class="lbox">
+                <div><span>项目概况</span><em>tel：400-876-8766</em></div>
+                <div><span>重大活动</span><em>email：efeiyi@efeiyi.com</em></div>
+                <div><span>合作资源</span><em>地址：北京市东城区前门大街72&74号二层</em></div>
+                <div><span>业务体系</span><em>add：2Floor，72&74,Qian Men ST.Dongcheng District,Beijing,China</em></div>
+            </div>
+            <!--//End lbox-->
+            <div class="rbox">
+                <div class="share">
+                    <a href="" class="facebook" title="facebook"></a>
+                    <a href="" class="twitter" title="twitter"></a>
+                    <a href="" class="instagram" title="instagram"></a>
+                    <a href="" class="linkedin" title="linkedin"></a>
+                    <span class="code"><img src="assets/images/footer_code.png" alt=""></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//ENd main-->`;
         this.base('.footer', htmlStr);
     },
-    base: function(obj, html) {
+    filter: function () {
+        var htmlStr = `<div class="content">
+        <form class="form" action="">
+            <input class="ipt" type="text" value="从这里搜索您感兴趣的...">
+            <input class="submit" type="submit" value="搜索">
+            <div class="suggest" style="display: none;">
+                <ul>
+                    <li><a href=""><span>苏州</span>传承人</a></li>
+                    <li><a href=""><span>苏州</span>苏绣</a></li>
+                    <li><a href=""><span>苏州</span>苏绣</a></li>
+                    <li><a href=""><span>苏州</span>苏绣</a></li>
+                    <li><a href=""><span>苏州</span>苏绣</a></li>
+                    <li><a href=""><span>苏州</span>苏绣</a></li>
+                    <li><a href=""><span>苏州</span>苏绣</a></li>
+                    <li><a href=""><span>苏州</span>苏绣</a></li>
+                    <li><a href=""><span>苏州</span>苏绣</a></li>
+                </ul>
+            </div>
+        </form>
+        <!--//End form-->
+
+        <div class="attr">
+            <span>所属类别</span>
+            <span>全球</span>
+        </div>
+        <!--//End attribute-->
+
+        <div class="dropbox" id="drag">
+            <div class="item">
+                <dl class="level">
+                    <dt>
+                    <div class="title">一级分类</div>
+                    <div class="subtitle">所有分类</div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>口头传统和表述</li>
+                            <li>表演艺术</li>
+                            <li>社会风俗、礼仪、节庆</li>
+                            <li>有关自然界和宇宙的知识和实践</li>
+                            <li>传统的手工艺技能</li>
+                            <li>传统的手工艺技能</li>
+                            <li>传统的手工艺技能</li>
+                            <li>传统的手工艺技能</li>
+                            <li>传统的手工艺技能</li>
+                            <li>传统的手工艺技能</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                    <div class="title">二级分类</div>
+                    <div class="subtitle">所有二级分类</div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>工具和机械制作</li>
+                            <li>家畜农林产品加工</li>
+                            <li>造纸、印刷及装裱</li>
+                            <li>烧造工艺</li>
+                            <li>锻冶工艺</li>
+                            <li>雕塑工艺</li>
+                            <li>雕塑工艺</li>
+                            <li>雕塑工艺</li>
+                            <li>雕塑工艺</li>
+                            <li>雕塑工艺</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 所属分类-->
+            <div class="item">
+                <dl class="level">
+                    <dt>
+                    <div class="title">位置</div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>全球</li>
+                            <li>中国</li>
+                            <li>非洲</li>
+                            <li>阿拉伯地区</li>
+                            <li>亚太</li>
+                            <li>欧美</li>
+                            <li>拉美</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <dl class="level2">
+                    <dt>
+                    <div class="title">按照字母顺序</div>
+                    </dt>
+                    <dd>
+                        <ul>
+                            <li>安微</li>
+                            <li>澳门</li>
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>福建</li>
+                            <li>甘肃</li>
+                            <li>广东</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </div>
+            <!--//End 位置-->
+        </div>
+        <!--//End attribute-->
+    </div>`;
+        this.base('.filter_search', htmlStr);
+    },
+    base: function (obj, html) {
         var _el = $(obj);
         _el.html(html);
     }
 };
 
-
 //公共
 var common = {
-    init: function() {
+    init: function () {
         this.input();
         this.top();
         header.init();
     },
-    top: function() { //返回顶部
-        $('.gotop').click(function() {
-            $("html,body").animate({ scrollTop: 0 }, 500);
+    top: function () { //返回顶部
+        $('.gotop').click(function () {
+            $("html,body").animate({scrollTop: 0}, 500);
         });
     },
-    input: function() {
+    input: function () {
         //输入框特效
         var _form = $('.form');
         var _input = _form.find('input.ipt');
-        _input.each(function() {
+        _input.each(function () {
             var _this = $(this);
 
             //初始化val值
             var oldVal = _this.val();
 
             //获取焦点
-            _this.focus(function() {
+            _this.focus(function () {
                 // clearInterval(timer);
                 $(this).val('');
             });
 
             //失去焦点
-            _this.blur(function() {
+            _this.blur(function () {
                 // clearInterval(timer);
 
                 var newVal = $(this).val();
@@ -197,29 +324,28 @@ var common = {
     },
 };
 
-
 //导航部分
 var header = {
-    init: function() {
+    init: function () {
         this.scroll();
         this.search();
         this.drop();
         this.bind();
         loginPage.init();
     },
-    bind: function() { //点击状态
-        $('.header .content .info li.login').on('click', function() {
+    bind: function () { //点击状态
+        $('.header .content .info li.login').on('click', function () {
             header.loginLayer();
             return false;
         });
     },
-    scroll: function() { //页面滚动导航悬浮
+    scroll: function () { //页面滚动导航悬浮
         var _header = $('#home-header');
         var _top = $('.gotop');
         var _filter = $('.filter_search_fixed');
 
         if (_header) {
-            $(window).scroll(function() {
+            $(window).scroll(function () {
                 if ($(window).scrollTop() > 630) {
                     _header.addClass('active');
                     _top.fadeIn().css('display', 'block');
@@ -232,7 +358,7 @@ var header = {
         }
 
     },
-    drop: function() { //非遗名录下拉
+    drop: function () { //非遗名录 二级导航
         var drop = $('.drop_menu');
         var item = drop.find('.item');
         var _header = $('.header');
@@ -241,20 +367,20 @@ var header = {
         var speed = 200;
 
 
-        _houer.hover(function() {
+        _houer.hover(function () {
             clearInterval(timer);
             var _height = _header.outerHeight(true);
             drop.css('top', _height + 'px').slideDown('fast');
-        }, function() {
-            timer = setInterval(function() {
+        }, function () {
+            timer = setInterval(function () {
                 drop.slideUp();
             }, speed);
         });
 
-        drop.hover(function() {
+        drop.hover(function () {
             clearInterval(timer);
-        }, function() {
-            timer = setInterval(function() {
+        }, function () {
+            timer = setInterval(function () {
                 drop.slideUp();
             }, speed);
         });
@@ -267,13 +393,13 @@ var header = {
         item.eq(3).css('width', '240px');
 
         item.eq(3).find('a:even').css('width', '72px');
-        item.eq(3).find('a:odd').css({ 'width': '129px', 'margin-left': '24px' });
+        item.eq(3).find('a:odd').css({'width': '129px', 'margin-left': '24px'});
 
         item.eq(4).css('width', '210px');
         item.eq(4).find('a:even').css('width', '115px');
-        item.eq(4).find('a:odd').css({ 'width': '66px', 'margin-left': '24px' });
+        item.eq(4).find('a:odd').css({'width': '66px', 'margin-left': '24px'});
     },
-    search: function() {
+    search: function () {
         var _header = $('.header');
         var search = _header.find('li.search'); //搜索图标
         var filter = $('.filter_search'); //下拉搜索
@@ -282,14 +408,14 @@ var header = {
         var filterItem = filter.find('.item'); //筛选下来框
 
         //1.导航上的搜索图标
-        search.on('click', function(e) {
+        search.on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
             filter.css('top', _header.outerHeight(true) + 'px').slideDown('fast');
         });
 
         //2.点击筛选
-        filterAll.on('click', function() {
+        filterAll.on('click', function () {
             var _this = $(this);
             var _index = _this.index();
             filterItem.eq(_index)
@@ -300,39 +426,39 @@ var header = {
         });
 
         //3.阻止点击自身关闭
-        filter.on('click', function(e) {
+        filter.on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
         });
 
         //4.点击自身之外的地方关闭下拉框
-        $(document).on("click", function() {
+        $(document).on("click", function () {
+            filterItem.hide();
             filterFixed.slideUp('fast');
         });
     },
-    loginLayer: function() { //登录弹出框
+    loginLayer: function () { //登录弹出框
         var _layer = $('.box_layer');
         var _speed = 300;
 
         //弹出框显示
-        _layer.animate({ 'top': '50%' }, _speed);
+        _layer.animate({'top': '50%'}, _speed);
         $('body').append('<div class="overbg"></div>');
 
         //弹出框隐藏
-        $('.overbg').on('click', function() {
-            _layer.animate({ 'top': '-50%' }, _speed);
+        $('.overbg').on('click', function () {
+            _layer.animate({'top': '-50%'}, _speed);
             $(this).remove();
         })
     }
 };
 
-
 //首页 ok
 var homePage = {
-    init: function() {
+    init: function () {
         this.slide(); //轮播图
     },
-    slide: function() { //轮播图
+    slide: function () { //轮播图
         var parent = $('.slider');
         var imgLi = parent.find('ul.img li');
         var imgLen = imgLi.length;
@@ -344,7 +470,7 @@ var homePage = {
         var speed = 5000;
         var timer = null;
 
-        numLi.mousedown(function() {
+        numLi.mousedown(function () {
             clearInterval(timer);
             cur = $(this).index();
             $(this).addClass('active').siblings('li').removeClass('active');
@@ -352,7 +478,7 @@ var homePage = {
             textP.eq(cur).fadeIn().siblings('p').fadeOut();
         });
 
-        numLi.mouseup(function() {
+        numLi.mouseup(function () {
             timer = setInterval(slider, speed);
         });
 
@@ -374,10 +500,9 @@ var homePage = {
     }
 };
 
-
 //传承人详情页 ok
 var detaiInheritorlPage = {
-    init: function() {
+    init: function () {
         var _detail = $('.detail');
         widget.share(_detail); //分享
         widget.praise(_detail); //点赞
@@ -389,7 +514,7 @@ var detaiInheritorlPage = {
 
 //项目详情页 ok
 var projectPage = {
-    init: function() {
+    init: function () {
         var _detail = $('.detail');
         this.setAttr();
         widget.share(_detail); //分享
@@ -398,7 +523,7 @@ var projectPage = {
         detailCommon.productsTab(); //产品分页tab
         detailCommon.scroll(); //楼层导航效果
     },
-    setAttr: function() {
+    setAttr: function () {
         //设置文本内容为三列
         textHandle.set('.plain_text');
     }
@@ -407,12 +532,12 @@ var projectPage = {
 
 //作品详情页 ok
 var detailProductPage = {
-    init: function() {
+    init: function () {
         this.thumb();
         this.simple();
         widget.doiCode();
     },
-    thumb: function() {
+    thumb: function () {
         var media = $('.media_box');
         var _ul = media.find('ul');
         var _li = _ul.find('li');
@@ -422,25 +547,25 @@ var detailProductPage = {
 
         _ul.css('width', _ulWidth + 'px');
 
-        _li.on('click', function() {
+        _li.on('click', function () {
             $(this).addClass('active').siblings('li').removeClass('active')
         });
     },
-    simple: function() {
+    simple: function () {
         $('.card .plain_text li:last-child').css('margin-right', 0);
     }
 };
 
 //大师页面 ok
 var masterPage = {
-    init: function() {
+    init: function () {
         this.getScreen();
         this.selectMaster();
-        $(window).resize(function() {
+        $(window).resize(function () {
             masterPage.getScreen();
         })
     },
-    getScreen: function() { //获取浏览器分辨率
+    getScreen: function () { //获取浏览器分辨率
         var headerHeight = $('.header').outerHeight(true); //导航高度
         var clientWidth = $(window).width(); //浏览器宽度
         var clientHeight = $(window).height(); //浏览器宽度
@@ -464,10 +589,10 @@ var masterPage = {
 
         //左侧
         lbox.css('width', lboxWidth + 'px'); //左侧赋值
-        li.css({ 'width': liHeight + 'px', 'height': liHeight + 'px' });
+        li.css({'width': liHeight + 'px', 'height': liHeight + 'px'});
 
         //右侧
-        rbox.css({ 'width': rboxWidth + 'px', 'height': lboxHeight + 'px' });
+        rbox.css({'width': rboxWidth + 'px', 'height': lboxHeight + 'px'});
 
         if (mainHeight <= 760) {
             rboxDefaultContextP.css('height', '70px');
@@ -479,7 +604,7 @@ var masterPage = {
 
 
     },
-    selectMaster: function() { //选中大师
+    selectMaster: function () { //选中大师
         var _li = $('.master_avatar li');
         var _default = $('.master_page .rbox .default');
         var _item = $('.master_page .rbox .item');
@@ -487,7 +612,7 @@ var masterPage = {
         var _oldText = _h1.text();
 
 
-        _li.on('click', function() {
+        _li.on('click', function () {
             var index = $(this).index();
             _default.hide();
             _item.show();
@@ -500,35 +625,35 @@ var masterPage = {
 
 //非遗名录 && 搜索结果页
 var searchPage = {
-    init: function() {
+    init: function () {
         $('.header_detail .content .info li.search').hide();
         $('.header_detail .content .info li.login').addClass('line');
-
+        $('.directory .section li:last-child').css('margin-right', '0');
     },
 
 };
 
 //登录注册
 var loginPage = {
-    init: function() {
+    init: function () {
         //去除表单最后一组的下边距
         $('.form_area .group:last-child').css('margin-bottom', 0);
 
         this.code();
     },
-    code: function() { //验证码
+    code: function () { //验证码
         this.html();
 
         var _form = $('.form_area');
         var _span = _form.find('.code span');
         var _oldSpan = _span.text();
         var time = 60;
-        _span.on('click', function() {
+        _span.on('click', function () {
             var _this = $(this);
 
             if (!_this.hasClass('active')) {
                 _this.addClass('active').text(time + 's后重新发送');
-                var timer = setInterval(function() {
+                var timer = setInterval(function () {
                     time--;
                     _this.text(time + 's后重新发送');
 
@@ -543,7 +668,7 @@ var loginPage = {
         });
 
     },
-    html: function() {
+    html: function () {
         var str = `<div class="box_layer">
                             <form class="form_area" action="">
                                 <div class="title">登录</div>
@@ -575,10 +700,9 @@ var loginPage = {
 
 };
 
-
 //文本处理相关
 var textHandle = {
-    getLength: function(str) { //获取字符串长度   汉字是2
+    getLength: function (str) { //获取字符串长度   汉字是2
         var real = 0;
         var len = str.length;
         var charCode = -1;
@@ -592,10 +716,10 @@ var textHandle = {
         }
         return real;
     },
-    set: function(el) {
+    set: function (el) {
         var _this = this; //存储当前this
         var obj = $(el); //获取目标元素
-        obj.each(function() {
+        obj.each(function () {
             var _text = $(this).text(); //目标元素的内容
             var _len = _this.getLength(_text) / 2; //计算目标元素内容的长度
             if (_len >= 200 && _len <= 1200) {
@@ -607,29 +731,29 @@ var textHandle = {
 
 //小组件
 var widget = {
-    share: function(obj) { //分享
-        obj.each(function() {
+    share: function (obj) { //分享
+        obj.each(function () {
             var _share = $(this).find('a.share');
             var _shareBox = $(this).find('.share_box');
             //弹出框
-            _share.on('click', function() {
+            _share.on('click', function () {
                 _shareBox.stop(true).fadeToggle();
                 return false;
             });
 
-            _shareBox.on('click', function(e) {
+            _shareBox.on('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
             });
 
-            $(document).on("click", function() {
+            $(document).on("click", function () {
                 _shareBox.fadeOut();
             });
         });
     },
-    praise: function(obj) { //点赞功能
+    praise: function (obj) { //点赞功能
         var praise = obj.find('.praise');
-        praise.on('click', function() {
+        praise.on('click', function () {
             var _this = $(this);
 
             //创建动画数字
@@ -654,7 +778,7 @@ var widget = {
                 }).animate({
                     left: 15,
                     top: -30
-                }, 'slow', function() {
+                }, 'slow', function () {
                     $(this).fadeIn('fast').remove();
                 });
             }
@@ -662,8 +786,8 @@ var widget = {
         });
 
     },
-    doiCode: function() { //doi鼠标滑过显示二维码
-        $('.doi_code').hover(function() {
+    doiCode: function () { //doi鼠标滑过显示二维码
+        $('.doi_code').hover(function () {
             $(this).find('.drop').stop(true).fadeToggle(true);
         });
     }
@@ -671,9 +795,9 @@ var widget = {
 
 //详情页相关
 var detailCommon = { //详情页用到的效果
-    productsTab: function() { //作品分页
+    productsTab: function () { //作品分页
         var _products = $('.product_list');
-        _products.each(function() {
+        _products.each(function () {
             //列表相关属性
             var _ul = _products.find('ul'); //获取列表ul
             var _li = _ul.find('li'); //获取列表li
@@ -693,35 +817,35 @@ var detailCommon = { //详情页用到的效果
                 _pageSpan.eq(0).addClass('active');
 
                 //计算列表滚动
-                _pageSpan.on('click', function() {
+                _pageSpan.on('click', function () {
                     var index = $(this).index();
-                    _ul.animate({ 'margin-left': -index * 1170 + 'px' }, 300);
+                    _ul.animate({'margin-left': -index * 1170 + 'px'}, 300);
                     $(this).addClass('active').siblings('span').removeClass('active');
                 });
             }
         });
     },
     //TODO
-    scroll: function() { //楼层
+    scroll: function () { //楼层
         var _ul = $('.side_fixed ul'); //导航
         var _floor = $('section.floor'); //楼层
         var _nav = $('.card header h4'); //楼层标题
         var arr = []; //把pros对应的几个位置标示出来
 
         //获取所有楼层标题
-        _nav.each(function(i) { //给右侧悬浮添加标题
+        _nav.each(function (i) { //给右侧悬浮添加标题
             _ul.append('<li><span>' + $(this).text() + '</span><strong>0' + (i + 1) + '</strong></li>');
         });
         var _li = _ul.find('li');
 
 
         //滚动
-        _floor.each(function() { //标记所有楼层导航的高度
+        _floor.each(function () { //标记所有楼层导航的高度
             var offsettop = $(this).offset().top;
             arr.push(parseInt(offsettop)); //火狐有半个像素的情况，故取整
         });
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             var d = parseInt($(document).scrollTop());
             for (var i = 0; i < arr.length; i++) {
                 if (arr[i] >= d) {
@@ -738,18 +862,18 @@ var detailCommon = { //详情页用到的效果
         });
 
         //点击回到当前楼层
-        _ul.on('click', 'li', function() {
+        _ul.on('click', 'li', function () {
             var _index = $(this).index();
             var _top = _floor.eq(_index).offset().top;
             $(this).addClass('active').siblings('li').removeClass('active');
-            $('html,body').stop(true).animate({ 'scrollTop': _top + 'px' }, 500);
+            $('html,body').stop(true).animate({'scrollTop': _top + 'px'}, 500);
         });
 
     },
 };
 
 
-$(function() {
+$(function () {
     renderHhtml.init();
     common.init();
 });
