@@ -1230,16 +1230,16 @@ section.odd {
     transform: scale(1.1);
 }
 
-.directory .section li {
+.directory .section .pro_column3 li {
     width: 370px;
+    height: 430px;
     float: left;
     margin-right: 30px;
     margin-bottom: 48px;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+    background: #fff;
 }
 
-.directory .section li:hover {
+.directory .section .pro_column3 li:hover {
     box-shadow: 0 3px 10px 2px rgba(0, 0, 0, 0.18);
 }
 
@@ -1271,18 +1271,16 @@ section.odd {
 }
 
 .directory .pro_column3 .context h4 {
+    width: 100%;
     font-size: 24px;
     color: #1B1B1B;
     font-weight: 400;
-}
-
-.directory .pro_column3 .context .icon_project {
-
+    float: left;
+    margin-bottom: 20px;
 }
 
 .directory .pro_column3 .context .doi {
     color: #949494;
-    margin-top: 26px;
     margin-bottom: 5px;
 }
 
@@ -1296,8 +1294,8 @@ section.odd {
 
 .directory .pro_column3 .context .cate {
     width: 100%;
-    display: table;
-    margin-top: 11px;
+    float: left;
+    margin-bottom: 14px;
 }
 
 .directory .pro_column3 .context .cate span:first-of-type {
@@ -1315,6 +1313,44 @@ section.odd {
     margin-left: 11px;
 }
 
+.directory .pro_column3 .context span.name_project {
+    width: 46px;
+    height: 26px;
+    line-height: 26px !important;
+    text-align: center;
+    color: #949494 !important;
+    font-size: 16px !important;
+    margin-left: 0 !important;
+    border: 1px solid #eee;
+    background: #fafafa;
+    float: left;
+}
+
+.directory .pro_column3 .context .icon_inter {
+    background: #4283EA url(../images/icon_list.png) 5px -136px no-repeat;
+    height: 28px !important;
+    line-height: 29px !important;
+    padding-left: 34px;
+    padding-right: 30px;
+    color: #fff !important;
+    font-size: 12px;
+    float: left;
+    margin-right: 20px;
+    position: relative;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+}
+
+.directory .pro_column3 .context .icon_inter i {
+    background: #4283EA url(../images/icon_list.png) 0 -164px no-repeat;
+    width: 5px;
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    margin-top: -14px;
+    right: 10px;
+}
+
 .directory .pro_column3 .context .tag .name {
     padding: 0 10px;
     height: 24px;
@@ -1330,129 +1366,70 @@ section.odd {
     margin-bottom: 16px;
 }
 
+.directory .pro_column3 .context .info {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+
+.directory .pro_column3 .context .info a {
+    float: left;
+}
+
+.directory .pro_column3 .context .info span {
+    line-height: 36px;
+    float: left;
+    margin-left: 10px;
+}
+
+.directory .pro_column3 .context .info span.name_project {
+    margin: 4px 0 4px 20px !important;
+}
+
+.directory .pro_column3 .context .brief {
+    display: none;
+}
+
 .directory .pro_column3 .pic img {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 
-/*--//End 非遗名录--*/
+/*----------九宫格--------*/
+.directory .pro_column3.active li {
+    width: 1110px;
+    padding: 30px;
+    height: 180px;
+    float: left;
+    margin-right: 0;
+}
 
-.directory .section .inheritor {
+.directory .pro_column3.active li .pic {
+    width: 240px;
+    height: 180px;
+}
+
+.directory .pro_column3.active li .pic img {
+    height: 100%;
+}
+
+.directory .pro_column3.active .context {
+    width: 670px;
+    padding-bottom: 0;
+}
+
+.directory .pro_column3.active .context .brief {
     width: 100%;
-    float: left;
-    overflow: hidden;
-}
-
-.directory .section .inheritor ul {
-    width: 1200px;
-    float: left;
-}
-.directory .section .inheritor li .cate {
-    margin-top: 15px;
-}
-.directory .section .inheritor li .cate span.name_gray {
-    width:46px;
-    height:26px;
-    line-height:26px;
-    text-align: center;
-    color: #949494;
-    font-size: 16px;
-    margin-left: 0;
-    border: 1px solid #eee;
-    background: #fafafa;
-    float: left;
-}
-
-.directory .section .inheritor li .doi {
-    margin-top: 15px;
-}
-
-/*--//End 非遗名录传承人--*/
-
-.directory .section .product {
-    width: 100%;
-    float: left;
-    overflow: hidden;
-}
-
-.directory .section .product ul {
-    width: 1200px;
-    float: left;
-}
-
-.directory .section .product li .context {
-    width: 326px;
-    display: table;
-    padding: 21px 22px;
-    background-color: #fff;
-}
-
-.directory .section .product li .context h4 {
-    font-size: 24px;
-    color: #1B1B1B;
-    font-weight: 400;
-}
-
-.directory .section .product li .context h5 {
-    width:46px;
-    height:26px;
-    line-height:26px;
-    text-align: center;
-    color: #949494;
-    font-size: 16px;
-    border: 1px solid #eee;
-    background: #fafafa;
-    float: left;
-    margin:4px 0 4px 20px;
-    font-weight: normal;
-}
-
-.directory .section .product li .context .cate {
-    width: 100%;
-    line-height: 22px;
-    float: left;
-    margin-top: 20px;
-}
-
-.directory .section .product li .context .cate span {
     font-size: 12px;
-}
-
-.directory .section .product li .context .cate strong {
-    font-size: 16px;
-    font-weight: normal;
-}
-
-.directory .section .product li .context .info {
-    width: 100%;
+    line-height: 24px;
+    color: #1B1B1B;
     float: left;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
-.directory .section .product li .context .info a {
-    float: left;
-    margin-right: 10px;
-    font-size: 0;
-}
+/*----------横版--------*/
 
-.directory .section .product li .context .info span {
-    line-height: 36px;
-    color: #949494;
-    font-size: 16px;
-    float: left;
-}
-
-.directory .section .product li .context span.master {
-    float: left;
-}
-
-.directory .section .product li .avatar img {
-    width: 100%;
-}
-
-.search .section ul.inheritor li .doi {
-    margin-top: -10px;
-}
+/*--//End 非遗名录--*/
 
 .load_more {
     width: 100%;
@@ -2888,3 +2865,75 @@ section.odd {
 }
 
 /*--//End 非遗大师--*/
+.filter_bar {
+    width: 100%;
+    float: left;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.filter_bar .links {
+    float: left;
+}
+
+.filter_bar .links a {
+    line-height: 62px;
+    font-size: 20px;
+    color: #1B1B1B;
+    float: left;
+    margin-right: 40px;
+    position: relative;
+}
+
+.filter_bar .links a:after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    background: #1B1B1B;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+.filter_bar .links a:before {
+    content: '';
+    width: 2px;
+    height: 2px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    margin-top: -1px;
+    background: #1B1B1B;
+}
+
+.filter_bar .links a:last-child:before {
+    display: none;
+}
+
+.filter_bar .links a.active:after {
+    display: block;
+}
+
+.filter_bar .icon_tab {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.filter_bar .icon_tab i {
+    background: url(../images/icon_list.png) no-repeat 0 -76px;
+    width: 24px;
+    height: 20px;
+    float: left;
+}
+
+.filter_bar .icon_tab.active i {
+    background-position: 0 -96px;
+}
+
+/*--//End 搜索结果--*/

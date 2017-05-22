@@ -168,7 +168,7 @@ var renderHhtml = {
         <form class="form" action="">
             <input class="ipt" type="text" value="从这里搜索您感兴趣的...">
             <input class="submit" type="submit" value="搜索">
-            <div class="suggest" style="display: none;">
+            <div class="suggest" style="display: block;">
                 <ul>
                     <li><a href=""><span>苏州</span>传承人</a></li>
                     <li><a href=""><span>苏州</span>苏绣</a></li>
@@ -406,11 +406,15 @@ var header = {
         var filterFixed = $('.filter_search_fixed');
         var filterAll = filter.find('.attr span'); //筛选项
         var filterItem = filter.find('.item'); //筛选下来框
+        var suggest = filter.find('.suggest');
+        var body = $('body');
 
         //1.导航上的搜索图标
         search.on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
+            //创建蒙版
+            body.append('<div class="overbg"></div>');
             filter.css('top', _header.outerHeight(true) + 'px').slideDown('fast');
         });
 
@@ -436,6 +440,24 @@ var header = {
             filterItem.hide();
             filterFixed.slideUp('fast');
         });
+
+        //自动提示
+
+        if (suggest.is(':visible')) {
+            body.css('overflow', 'hidden');
+            body.append('<div class="overbg"></div>');
+        } else {
+            body.css('overflow', '');
+        }
+
+        body.find('.overbg').on('click', function () {
+            filterItem.hide();
+            filterFixed.slideUp('fast');
+            suggest.hide();
+            $(this).remove();
+            body.css('overflow', '');
+        });
+
     },
     loginLayer: function () { //登录弹出框
         var _layer = $('.box_layer');
@@ -629,8 +651,33 @@ var searchPage = {
         $('.header_detail .content .info li.search').hide();
         $('.header_detail .content .info li.login').addClass('line');
         $('.directory .section li:last-child').css('margin-right', '0');
+        this.filterBar();
     },
+    filterBar: function () {
+        var obj = $('.filter_bar');
+        var linkTab = obj.find('a');
+        var iconTab = obj.find('.icon_tab');
+        var proColumn = $('.pro_column3'); //搜索列表
 
+        //筛选
+        linkTab.on('click', function () {
+            $(this).addClass('active').siblings('a').removeClass('active');
+            return false;
+        });
+
+        //切换图标
+        iconTab.on('click', function () {
+            if ($(this).hasClass('active')) {//九宫格
+                $(this).removeClass('active');
+                proColumn.removeClass('active');
+            } else {//横排
+                $(this).addClass('active');
+                proColumn.addClass('active');
+            }
+        });
+
+
+    }
 };
 
 //登录注册
