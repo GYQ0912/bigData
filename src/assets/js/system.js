@@ -322,6 +322,12 @@ var common = {
 
         });
     },
+    pad: function (num, length) {//个位数补零
+        if (!length) {
+            length = 10;
+        }
+        return ( "0" + num ).substr(-length);
+    }
 };
 
 //导航部分
@@ -914,10 +920,186 @@ var detailCommon = { //详情页用到的效果
         });
 
     },
+    mediaShow: function (type, index) {//浮层弹出
+        if (type === '0') {
+            this.mediaTab(type, index);
+        } else {
+            this.mediaTab(type, index);
+        }
+        console.log(index)
+    },
+    mediaTab: function (type, index) {//相册和视频切换  type:0位相册,1为视频
+        var first = true;
+        var mediaLayer = $('.media_layer');
+        var head = mediaLayer.find('.head');
+        var close = head.find('.icon_close');
+        var span = head.find('span');
+        var items = mediaLayer.find('.items');
+        var album = mediaLayer.find('.album');
+        var video = mediaLayer.find('.video');
+
+        //
+        mediaLayer.fadeIn('fast');
+        if (first) {
+            firstShow(type, index);
+            first = false;
+        } else {
+
+        }
+
+        //点击
+        span.on('click', function () {
+            var _type = $(this).index();
+            headTab(_type);
+        });
+
+        function firstShow(type, index) {
+            span.eq(type).addClass('active').siblings('span').removeClass('active');
+            items.eq(type).show().siblings('.items').hide();
+
+            if (type == 0) {//显示相册
+                mediaAlbum(index);
+                mediaVideo(1);
+            } else {//显示视频
+                mediaVideo(index);
+                mediaAlbum(1);
+            }
+
+        }
+
+        // //head
+        function headTab(type0) {
+            span.eq(type0).addClass('active').siblings('span').removeClass('active');
+            items.eq(type0).show().siblings('.items').hide();
+        }
+
+
+        //相册
+        function mediaAlbum(val) {
+            var cur = parseInt(val) - 1;
+            var title = album.find('.title .dt li');
+            var li = album.find('.media li');
+            var liLen = li.length;
+            var num = album.find('.num');  //角标
+
+            var prev = album.find('.prev');
+            var next = album.find('.next');
+
+            li.eq(cur).show().siblings('li').hide();
+            title.eq(cur).show().siblings('li').hide();
+            num.each(function () {
+                $(this).find('.active').text(common.pad(cur + 1));
+                $(this).find('.total').text(common.pad(liLen));
+            });
+
+            //下一页
+            next.on('click', function () {
+                prev.removeClass('active');
+                if (cur < liLen - 1) {
+                    cur++;
+                }
+                if (cur == liLen - 1) {
+                    $(this).addClass('active');
+                }
+                title.eq(cur).show().siblings('li').hide();
+                num.find('.active').text(common.pad(cur + 1));
+                li.eq(cur).show().siblings('li').hide();
+            });
+
+            //上一页
+            prev.on('click', function () {
+                next.removeClass('active');
+                if (cur > 0) {
+                    cur--;
+                }
+                if (cur == 0) {
+                    $(this).addClass('active');
+                }
+                title.eq(cur).show().siblings('li').hide();
+                num.find('.active').text(common.pad(cur+1));
+                li.eq(cur).show().siblings('li').hide();
+            });
+
+
+        }
+
+        //视频
+        function mediaVideo(val) {
+            var cur = parseInt(val) - 1;
+            var title = video.find('.title .dt li');
+            var li = video.find('.media li');
+            var liLen = li.length;
+            var numLi = video.find('.num li');  //角标
+
+            var prev = video.find('.prev');
+            var next = video.find('.next');
+
+            li.eq(cur).show().siblings('li').hide();
+            title.eq(cur).show().siblings('li').hide();
+            numLi.eq(cur).addClass('active').siblings('li').removeClass('active');
+
+            //下一页
+            next.on('click', function () {
+                prev.removeClass('active');
+                if (cur < liLen - 1) {
+                    cur++;
+                }
+                if (cur === liLen - 1) {
+                    $(this).addClass('active');
+                }
+
+                title.eq(cur).show().siblings('li').hide();
+                numLi.eq(cur).addClass('active').siblings('li').removeClass('active');
+                li.eq(cur).show().siblings('li').hide();
+
+            });
+
+            //上一页
+            prev.on('click', function () {
+                next.removeClass('active');
+                if (cur > 0) {
+                    cur--;
+                }
+                if (cur === 0) {
+                    $(this).addClass('active');
+                }
+                title.eq(cur).show().siblings('li').hide();
+                numLi.eq(cur).addClass('active').siblings('li').removeClass('active');
+                li.eq(cur).show().siblings('li').hide();
+            });
+
+            //角标点击效果
+            numLi.on('click', function () {
+                cur = $(this).index();
+                $(this).addClass('active').siblings('li').removeClass('active');
+                title.eq(cur).show().siblings('li').hide();
+                li.eq(cur).show().siblings('li').hide();
+
+                if (cur == 0) {
+                    prev.addClass('active');
+                }
+                if (cur == liLen - 1) {
+                    next.addClass('active');
+                }
+            })
+
+        }
+
+
+        //关闭浮层
+        function closeMedia() {
+
+        }
+
+    }
+
+
 };
 
 
 $(function () {
     renderHhtml.init();
     common.init();
+
+    // detailCommon.mediaTab()
 });

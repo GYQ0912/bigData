@@ -128,7 +128,9 @@ div:before {
     content: '';
 }
 
+
 /*--//End--reset--*/
+
 
 /*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
 
@@ -138,6 +140,7 @@ div:before {
     height: 5px;
 }
 
+
 /*定义滚动条的轨道，内阴影及圆角*/
 
 .filter_search .content .dropbox .item dd::-webkit-scrollbar-track,
@@ -146,6 +149,7 @@ div:before {
     background-color: #fff;
 }
 
+
 /*定义滑块，内阴影及圆角*/
 
 .filter_search .content .dropbox .item dd::-webkit-scrollbar-thumb,
@@ -153,6 +157,7 @@ div:before {
     border-radius: 5px;
     background-color: rgba(148, 148, 148, .5);
 }
+
 
 /*--//End 自定义滚动条--*/
 
@@ -413,6 +418,7 @@ div:before {
     background-position: -19px -19px
 }
 
+
 /*--//End header 基本--*/
 
 .drop_menu {
@@ -468,6 +474,7 @@ div:before {
 .drop_menu .content .item dd a:hover {
     opacity: 1;
 }
+
 
 /*--//ENd 导航二级菜单*/
 
@@ -639,6 +646,7 @@ div:before {
     padding-left: 38px;
 }
 
+
 /*--//End header --*/
 
 .overbg {
@@ -650,6 +658,7 @@ div:before {
     background: rgba(0, 0, 0, .6);
     z-index: 8;
 }
+
 
 /*--//End 遮罩层--*/
 
@@ -766,6 +775,7 @@ div:before {
     right: 0;
 }
 
+
 /*--//ENd footer--*/
 
 .play_big {
@@ -784,6 +794,7 @@ div:before {
     width: 24px;
     height: 24px;
 }
+
 
 /*--//End 播放按钮组件*/
 
@@ -861,6 +872,7 @@ div:before {
     opacity: .5;
 }
 
+
 /*--//End 返回顶部*/
 
 .crumbs {
@@ -896,6 +908,7 @@ div:before {
     margin: 1px 8px;
 }
 
+
 /*--//End crumbs--*/
 
 .card_video {
@@ -907,10 +920,8 @@ div:before {
     width: 100%;
     height: 100%;
     float: left;
-    /*margin-bottom: 20px;*/
     background-size: cover;
     object-fit: fill;
-    pointer-events: none;
 }
 
 .card_video .time {
@@ -939,6 +950,7 @@ div:before {
     cursor: pointer;
 }
 
+
 /*--//End card_video--*/
 
 .doi_gray {
@@ -947,6 +959,7 @@ div:before {
     height: 28px;
     display: inline-block;
 }
+
 
 /*--//End--*/
 
@@ -994,6 +1007,10 @@ div:before {
     margin-left: 5px;
 }
 
+.detail_title .doi_code span {
+    float: left
+}
+
 .detail_title .doi_code .drop {
     width: 108px;
     height: 108px;
@@ -1009,6 +1026,10 @@ div:before {
     display: none;
 }
 
+.detail_title .doi_code .drop img {
+    float: left
+}
+
 .detail_title .doi_code .drop:after {
     content: '';
     width: 0;
@@ -1020,6 +1041,7 @@ div:before {
     top: -5px;
     right: 12px;
 }
+
 
 /*--//ENd 详情title*/
 
@@ -1033,6 +1055,7 @@ div:before {
     -webikt-border-radius: 50%;
     border-radius: 50%;
 }
+
 
 /*--//End 圆角头像--*/
 
@@ -1085,6 +1108,7 @@ div:before {
     right: 10px;
 }
 
+
 /*--//End 视频相关*/
 
 .slide_img {
@@ -1102,6 +1126,7 @@ div:before {
     left: 50%;
     margin-left: -1400px;
 }
+
 
 /*--//End 通屏图片--*/
 
@@ -1131,7 +1156,9 @@ a.arrow_right:hover:after {
     background-position: -28px -144px;
 }
 
+
 /*--//End--*/
+
 .suggest {
     width: 100%;
     height: 176px;
@@ -1167,7 +1194,9 @@ a.arrow_right:hover:after {
     color: #949494;
 }
 
+
 /*--//End suggest--*/
+
 .doi {
     width: 100%;
     float: left;
@@ -1201,10 +1230,12 @@ a.arrow_right:hover:after {
     right: 3px;
 }
 
+
 /*--//End doi图标部分--*/
+
 .icon_list_cate,
 .icon_list_user,
-.icon_list_album{
+.icon_list_album {
     background: url(../images/icon_list.png) no-repeat;
     width: 18px;
     height: 22px;
@@ -1213,12 +1244,15 @@ a.arrow_right:hover:after {
     top: 5px;
     margin-left: 10px;
 }
+
 .icon_list_cate {
     background-position: 0 0;
 }
+
 .icon_list_user {
     background-position: 0 -22px;
 }
+
 .icon_list_album {
     background-position: 0 -44px;
 }
