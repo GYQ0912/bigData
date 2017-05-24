@@ -1371,9 +1371,9 @@ section.odd {
 }
 
 .directory .pro_column3 .context span.name_project {
-    width: 46px;
     height: 26px;
     line-height: 26px !important;
+    padding:0 10px;
     text-align: center;
     color: #949494 !important;
     font-size: 16px !important;
@@ -1396,6 +1396,7 @@ section.odd {
     position: relative;
     -webkit-border-radius: 1px;
     border-radius: 1px;
+    display: none;
 }
 
 .directory .pro_column3 .context .icon_inter i {
@@ -1421,6 +1422,21 @@ section.odd {
     margin-right: 32px;
     margin-top: 27px;
     margin-bottom: 16px;
+}
+.directory .pro_column3 .context .avatar {
+    width:100%;
+    line-height:38px;
+    float: left;
+    margin-top: 10px;
+}
+.directory .pro_column3 .context .avatar img {
+    width:36px;
+    height:36px;
+}
+.directory .pro_column3 .context .avatar a {
+    height:36px;
+    float: left;
+    margin-right: 10px;
 }
 
 .directory .pro_column3 .context .info {
@@ -1837,7 +1853,8 @@ section.odd {
 .wonderful .conbox {
     width: 100%;
     float: left;
-    margin-top: 50px;
+    padding-top:50px;
+    background: rgb(245, 246, 247);
 }
 
 .wonderful .conbox .content {
@@ -1867,23 +1884,24 @@ section.odd {
 
 .wonderful .conbox .head .avatar {
     width: 100%;
+    line-height:40px;
     float: left;
     margin-top: 24px;
 }
 
 .wonderful .conbox .head .avatar .name {
-    display: inline-block;
-    width: 120px;
-    height: 30px;
-    border: 1px solid #777777;
-    border-radius: 2px;
-    font-size: 16px;
-    color: #949494;
-    line-height: 30px;
+    height: 26px;
+    line-height: 26px !important;
+    padding: 0 10px;
     text-align: center;
+    color: #949494 !important;
+    font-size: 16px !important;
+    margin-left: 0 !important;
+    border: 1px solid #eee;
+    background: #fafafa;
     float: left;
-    margin-top: 5px;
-    margin-right: 32px;
+    margin-top: 7px;
+    margin-right:10px;
 }
 
 .wonderful .conbox .head .avatar .imgs a {
@@ -1929,19 +1947,17 @@ section.odd {
 }
 
 .wonderful .conbox .main .lbox .info .name {
-    display: inline-block;
-    width: 120px;
-    height: 30px;
-    border: 1px solid #777777;
-    border-radius: 2px;
-    font-size: 16px;
-    color: #949494;
-    line-height: 30px;
+    height: 26px;
+    line-height: 26px !important;
+    padding: 0 10px;
     text-align: center;
+    color: #949494 !important;
+    font-size: 16px !important;
+    margin-left: 0 !important;
+    border: 1px solid #eee;
+    background: #fafafa;
     float: left;
-    margin-top: 5px;
-    margin-right: 32px;
-    margin-bottom: 23px;
+    margin-bottom: 20px;
 }
 
 .wonderful .conbox .main .lbox .info .avatar {
@@ -1950,13 +1966,15 @@ section.odd {
 }
 
 .wonderful .conbox .main .lbox .info .avatar a {
+    width: 40px;
+    height:40px;
     float: left;
     margin-right: 10px;
 }
 
 .wonderful .conbox .main .lbox .info .avatar span {
     float: left;
-    line-height: 36px;
+    line-height: 40px;
 }
 
 .wonderful .conbox .directory {

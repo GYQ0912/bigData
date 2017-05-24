@@ -674,7 +674,7 @@ var searchPage = {
     init: function () {
         $('.header_detail .content .info li.search').hide();
         $('.header_detail .content .info li.login').addClass('line');
-        $('.directory .section li:last-child').css('margin-right', '0');
+        // $('.directory .section li:nth-child(2n+1)').css('margin-right', '0');
         this.filterBar();
     },
     filterBar: function () {
@@ -703,6 +703,14 @@ var searchPage = {
 
     }
 };
+
+//精选页面
+var wonderfulPage={
+    init:function () {
+        // $('.directory .section .pro_column3 li:nth-child(2n+1)').css('margin-right')
+    }
+};
+
 
 //登录注册
 var loginPage = {
