@@ -345,6 +345,46 @@ var common = {
             length = 10;
         }
         return ( "0" + num ).substr(-length);
+    },
+    slide: function () { //轮播图
+        var parent = $('.slider');
+        var imgLi = parent.find('ul.img li');
+        var imgLen = imgLi.length;
+        var numLi = parent.find('ul.num li');
+        var form = $('.form');
+        var ipt = form.find('input.ipt');
+        var textP = form.find('div.text p');
+        var cur = 0;
+        var speed = 5000;
+        var timer = null;
+
+        numLi.mousedown(function () {
+            clearInterval(timer);
+            cur = $(this).index();
+            $(this).addClass('active').siblings('li').removeClass('active');
+            imgLi.eq(cur).stop(true).fadeIn().siblings('li').fadeOut();
+            textP.eq(cur).stop(true).fadeIn().siblings('p').fadeOut();
+        });
+
+        numLi.mouseup(function () {
+            timer = setInterval(slider, speed);
+        });
+
+        //轮播
+        timer = setInterval(slider, speed);
+
+        function slider() {
+            if (cur < imgLen - 1) {
+                cur++;
+            } else {
+                cur = 0;
+            }
+            numLi.eq(cur).addClass('active').siblings('li').removeClass('active');
+            imgLi.eq(cur).stop(true).fadeIn().siblings('li').fadeOut();
+            textP.eq(cur).stop(true).fadeIn().siblings('p').fadeOut();
+        }
+
+
     }
 };
 
@@ -499,48 +539,8 @@ var header = {
 //首页 ok
 var homePage = {
     init: function () {
-        this.slide(); //轮播图
+        common.slide(); //轮播图
     },
-    slide: function () { //轮播图
-        var parent = $('.slider');
-        var imgLi = parent.find('ul.img li');
-        var imgLen = imgLi.length;
-        var numLi = parent.find('ul.num li');
-        var form = $('.form');
-        var ipt = form.find('input.ipt');
-        var textP = form.find('div.text p');
-        var cur = 0;
-        var speed = 5000;
-        var timer = null;
-
-        numLi.mousedown(function () {
-            clearInterval(timer);
-            cur = $(this).index();
-            $(this).addClass('active').siblings('li').removeClass('active');
-            imgLi.eq(cur).fadeIn().siblings('li').fadeOut();
-            textP.eq(cur).fadeIn().siblings('p').fadeOut();
-        });
-
-        numLi.mouseup(function () {
-            timer = setInterval(slider, speed);
-        });
-
-        //轮播
-        timer = setInterval(slider, speed);
-
-        function slider() {
-            if (cur < imgLen - 1) {
-                cur++;
-            } else {
-                cur = 0;
-            }
-            numLi.eq(cur).addClass('active').siblings('li').removeClass('active');
-            imgLi.eq(cur).fadeIn().siblings('li').fadeOut();
-            textP.eq(cur).fadeIn().siblings('p').fadeOut();
-        }
-
-
-    }
 };
 
 //传承人详情页 ok
@@ -707,7 +707,7 @@ var searchPage = {
 //精选页面
 var wonderfulPage={
     init:function () {
-        // $('.directory .section .pro_column3 li:nth-child(2n+1)').css('margin-right')
+        common.slide(); //轮播图
     }
 };
 
