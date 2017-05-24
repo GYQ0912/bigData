@@ -926,10 +926,8 @@ var detailCommon = { //详情页用到的效果
         } else {
             this.mediaTab(type, index);
         }
-        console.log(index)
     },
     mediaTab: function (type, index) {//相册和视频切换  type:0位相册,1为视频
-        var first = true;
         var mediaLayer = $('.media_layer');
         var head = mediaLayer.find('.head');
         var close = head.find('.icon_close');
@@ -938,14 +936,16 @@ var detailCommon = { //详情页用到的效果
         var album = mediaLayer.find('.album');
         var video = mediaLayer.find('.video');
 
-        //
-        mediaLayer.fadeIn('fast');
-        if (first) {
-            firstShow(type, index);
-            first = false;
-        } else {
 
+        //
+
+        if (!mediaLayer.hasClass('active')) {
+            firstShow(type, index);
+        } else {
+            afterShow(type, index);
+            console.log('111')
         }
+
 
         //点击
         span.on('click', function () {
@@ -953,7 +953,9 @@ var detailCommon = { //详情页用到的效果
             headTab(_type);
         });
 
+        //第一次展开
         function firstShow(type, index) {
+            mediaLayer.fadeIn('fast');
             span.eq(type).addClass('active').siblings('span').removeClass('active');
             items.eq(type).show().siblings('.items').hide();
 
@@ -966,6 +968,18 @@ var detailCommon = { //详情页用到的效果
             }
 
         }
+
+        function afterShow(type, index) {
+            mediaLayer.fadeIn('fast');
+            span.eq(type).addClass('active').siblings('span').removeClass('active');
+            items.eq(type).show().siblings('.items').hide();
+            if (type == 0) {//显示相册
+                mediaAlbum(index);
+            } else {//显示视频
+                mediaVideo(index);
+            }
+        }
+
 
         // //head
         function headTab(type0) {
@@ -1016,7 +1030,7 @@ var detailCommon = { //详情页用到的效果
                     $(this).addClass('active');
                 }
                 title.eq(cur).show().siblings('li').hide();
-                num.find('.active').text(common.pad(cur+1));
+                num.find('.active').text(common.pad(cur + 1));
                 li.eq(cur).show().siblings('li').hide();
             });
 
@@ -1087,9 +1101,10 @@ var detailCommon = { //详情页用到的效果
 
 
         //关闭浮层
-        function closeMedia() {
-
-        }
+        close.on('click', function () {
+            mediaLayer.addClass('active').fadeOut('fast');
+            return false;
+        });
 
     }
 
