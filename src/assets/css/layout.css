@@ -483,14 +483,13 @@
     left: 0;
     overflow: hidden;
     z-index: 1;
+    background: #000;
 }
 
 .detail .mainbg img {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -600px;
-    margin-left: -1400px;
     z-index: 1;
 }
 
@@ -797,6 +796,40 @@ section.odd {
 .card .text_img .media {
     width: 370px;
     float: right;
+}
+.card .text_img .side .text_more {
+    width:100%;
+    float: left;
+}
+.card .text_img .side .text_more span {
+    height:18px;
+    line-height:18px;
+    font-size:14px;
+    float: left;
+    cursor: pointer;
+}
+.card .text_img .side .text_more span i {
+    background: #fff url(../images/icon_text_more.png) 0 0 no-repeat;
+    width:14px;
+    height:18px;
+    float: right;
+    margin-left:10px;
+}
+.card .text_img .side .text_more span:hover {
+    color: #4283EB;
+}
+.card .text_img .side .text_more span.show i {
+    background-position: 0 0;
+}
+.card .text_img .side .text_more span.show:hover i {
+    background-position: -14px 0;
+}
+
+.card .text_img .side .text_more span.hide i {
+    background-position: 0 -18px;
+}
+.card .text_img .side .text_more span.hide:hover i {
+    background-position: -14px -18px;
 }
 
 .card .text_img .media li {

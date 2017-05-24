@@ -128,9 +128,7 @@ div:before {
     content: '';
 }
 
-
 /*--//End--reset--*/
-
 
 /*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
 
@@ -140,7 +138,6 @@ div:before {
     height: 5px;
 }
 
-
 /*定义滚动条的轨道，内阴影及圆角*/
 
 .filter_search .content .dropbox .item dd::-webkit-scrollbar-track,
@@ -149,7 +146,6 @@ div:before {
     background-color: #fff;
 }
 
-
 /*定义滑块，内阴影及圆角*/
 
 .filter_search .content .dropbox .item dd::-webkit-scrollbar-thumb,
@@ -157,7 +153,6 @@ div:before {
     border-radius: 5px;
     background-color: rgba(148, 148, 148, .5);
 }
-
 
 /*--//End 自定义滚动条--*/
 
@@ -418,7 +413,6 @@ div:before {
     background-position: -19px -19px
 }
 
-
 /*--//End header 基本--*/
 
 .drop_menu {
@@ -475,11 +469,10 @@ div:before {
     opacity: 1;
 }
 
-
 /*--//ENd 导航二级菜单*/
 
 .filter_search_fixed {
-    position: fixed!important;
+    position: fixed !important;
     left: 0;
     right: 0;
     display: none
@@ -646,7 +639,6 @@ div:before {
     padding-left: 38px;
 }
 
-
 /*--//End header --*/
 
 .overbg {
@@ -658,7 +650,6 @@ div:before {
     background: rgba(0, 0, 0, .6);
     z-index: 8;
 }
-
 
 /*--//End 遮罩层--*/
 
@@ -775,7 +766,6 @@ div:before {
     right: 0;
 }
 
-
 /*--//ENd footer--*/
 
 .play_big {
@@ -794,7 +784,6 @@ div:before {
     width: 24px;
     height: 24px;
 }
-
 
 /*--//End 播放按钮组件*/
 
@@ -865,13 +854,13 @@ div:before {
     z-index: 3;
     -webkit-transition: all .3s;
     transition: all .3s;
-    display: none;
+    opacity:0;
+    float: left;
 }
 
 .side_fixed a.gotop:hover {
     opacity: .5;
 }
-
 
 /*--//End 返回顶部*/
 
@@ -907,7 +896,6 @@ div:before {
     float: left;
     margin: 1px 8px;
 }
-
 
 /*--//End crumbs--*/
 
@@ -950,7 +938,6 @@ div:before {
     cursor: pointer;
 }
 
-
 /*--//End card_video--*/
 
 .doi_gray {
@@ -959,7 +946,6 @@ div:before {
     height: 28px;
     display: inline-block;
 }
-
 
 /*--//End--*/
 
@@ -990,19 +976,25 @@ div:before {
 }
 
 .detail_title .doi_code .icon {
-    background: url(../images/qrcode.png) no-repeat;
     width: 28px;
     height: 28px;
+
 }
 
 .detail_title .doi_code i.icon {
-    background-position: 0 0;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border: 1px solid #fff;
+    -webkit-border-radius:2px;
+    border-radius:2px;
     float: left;
-    margin-right: 5px
+    margin-top: 5px;
+    margin-right: 5px;
 }
 
 .detail_title .doi_code em.icon {
-    background-position: 0 -28px;
+    background: url(../images/qrcode.png) no-repeat 0 -28px;
     float: right;
     margin-left: 5px;
 }
@@ -1042,7 +1034,6 @@ div:before {
     right: 12px;
 }
 
-
 /*--//ENd 详情title*/
 
 .avatar {
@@ -1055,7 +1046,6 @@ div:before {
     -webikt-border-radius: 50%;
     border-radius: 50%;
 }
-
 
 /*--//End 圆角头像--*/
 
@@ -1108,7 +1098,6 @@ div:before {
     right: 10px;
 }
 
-
 /*--//End 视频相关*/
 
 .slide_img {
@@ -1126,7 +1115,6 @@ div:before {
     left: 50%;
     margin-left: -1400px;
 }
-
 
 /*--//End 通屏图片--*/
 
@@ -1155,7 +1143,6 @@ a.arrow_right:hover {
 a.arrow_right:hover:after {
     background-position: -28px -144px;
 }
-
 
 /*--//End--*/
 
@@ -1194,7 +1181,6 @@ a.arrow_right:hover:after {
     color: #949494;
 }
 
-
 /*--//End suggest--*/
 
 .doi {
@@ -1229,7 +1215,6 @@ a.arrow_right:hover:after {
     top: 15px;
     right: 3px;
 }
-
 
 /*--//End doi图标部分--*/
 

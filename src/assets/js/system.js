@@ -280,6 +280,24 @@ var renderHhtml = {
     }
 };
 
+//工具
+var utils = {
+    getStr: function (str) {//计算长度 汉字是2
+        var real = 0;
+        var len = str.length;
+        var charCode = -1;
+        for (var i = 0; i < len; i++) {
+            charCode = str.charCodeAt(i);
+            if (charCode >= 0 && charCode <= 128) {
+                real += 1;
+            } else {
+                real += 2;
+            }
+        }
+        return real;
+    },
+};
+
 //公共
 var common = {
     init: function () {
@@ -354,10 +372,10 @@ var header = {
             $(window).scroll(function () {
                 if ($(window).scrollTop() > 630) {
                     _header.addClass('active');
-                    _top.fadeIn().css('display', 'block');
+                    _top.css('opacity', '1');
                 } else {
                     _header.removeClass('active');
-                    _top.fadeOut();
+                    _top.css('opacity', '0');
                     _filter.slideUp('fast');
                 }
             });
@@ -534,6 +552,7 @@ var detaiInheritorlPage = {
         widget.doiCode(); //doi二维码
         detailCommon.productsTab(); //产品分页tab
         detailCommon.scroll(); //楼层导航效果
+        detailCommon.mainBg();
     }
 };
 
@@ -547,6 +566,8 @@ var projectPage = {
         widget.doiCode(); //doi二维码
         detailCommon.productsTab(); //产品分页tab
         detailCommon.scroll(); //楼层导航效果
+        detailCommon.mainBg();
+        detailCommon.cutText();
     },
     setAttr: function () {
         //设置文本内容为三列
@@ -936,16 +957,12 @@ var detailCommon = { //详情页用到的效果
         var album = mediaLayer.find('.album');
         var video = mediaLayer.find('.video');
 
-
         //
-
         if (!mediaLayer.hasClass('active')) {
             firstShow(type, index);
         } else {
             afterShow(type, index);
-            console.log('111')
         }
-
 
         //点击
         span.on('click', function () {
@@ -1105,6 +1122,26 @@ var detailCommon = { //详情页用到的效果
             mediaLayer.addClass('active').fadeOut('fast');
             return false;
         });
+
+    },
+    mainBg: function () {//首屏图片 视频
+        var _img = $('.mainbg img');
+        var imgW = _img.width();
+        var imgH = _img.height();
+
+        _img.css({
+            'margin-top': -parseInt(imgH / 2) + 'px',
+            'margin-left': -parseInt(imgW / 2) + 'px',
+        });
+
+    },
+    cutText: function () {//截取长文本 大于3000
+        // var lgText = $('div[data-type=lgText]');
+        // var _text = lgText.text();
+        // var len = utils.getStr(_text);
+        // if (len >= 3000) {
+        //     lgText.text(_text.substring(0, 3000));
+        // }
 
     }
 
