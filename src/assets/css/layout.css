@@ -777,6 +777,7 @@ section.odd {
     width: 100%;
     float: left;
     padding-bottom: 100px;
+    position: relative;
 }
 
 .card .text_img .side {
@@ -784,6 +785,8 @@ section.odd {
     font-size: 16px;
     line-height: 36px;
     float: left;
+    overflow: hidden;
+    position: relative;
 }
 
 .card .text_img .side .item div {
@@ -798,38 +801,40 @@ section.odd {
     width: 370px;
     float: right;
 }
-.card .text_img .side .text_more {
+.card .text_img .text_more {
     width:100%;
-    float: left;
+    position: absolute;
+    bottom:120px;
+    left:0;
 }
-.card .text_img .side .text_more span {
+.card .text_img .text_more span {
     height:18px;
     line-height:18px;
     font-size:14px;
     float: left;
     cursor: pointer;
 }
-.card .text_img .side .text_more span i {
+.card .text_img .text_more span i {
     background: #fff url(../images/icon_text_more.png) 0 0 no-repeat;
     width:14px;
     height:18px;
     float: right;
     margin-left:10px;
 }
-.card .text_img .side .text_more span:hover {
+.card .text_img .text_more span:hover {
     color: #4283EB;
 }
-.card .text_img .side .text_more span.show i {
+.card .text_img .text_more span.show i {
     background-position: 0 0;
 }
-.card .text_img .side .text_more span.show:hover i {
+.card .text_img .text_more span.show:hover i {
     background-position: -14px 0;
 }
 
-.card .text_img .side .text_more span.hide i {
+.card .text_img .text_more span.hide i {
     background-position: 0 -18px;
 }
-.card .text_img .side .text_more span.hide:hover i {
+.card .text_img .text_more span.hide:hover i {
     background-position: -14px -18px;
 }
 

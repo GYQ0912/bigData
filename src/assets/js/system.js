@@ -705,8 +705,8 @@ var searchPage = {
 };
 
 //精选页面
-var wonderfulPage={
-    init:function () {
+var wonderfulPage = {
+    init: function () {
         common.slide(); //轮播图
     }
 };
@@ -1144,12 +1144,22 @@ var detailCommon = { //详情页用到的效果
 
     },
     cutText: function () {//截取长文本 大于3000
-        // var lgText = $('div[data-type=lgText]');
-        // var _text = lgText.text();
-        // var len = utils.getStr(_text);
-        // if (len >= 3000) {
-        //     lgText.text(_text.substring(0, 3000));
-        // }
+        var lgText = $('div[data-type=lgText]');
+        var textMore = $('.text_more');
+        var _span = textMore.find('span');
+
+        var oldH = lgText.height();
+        var newH = 480; //基本高度
+
+        if (lgText.height() >= newH) {
+            lgText.animate({'height': newH + 'px'}, 0);
+        }
+        //
+        // _span.eq(1).hide();
+        // _span.on('click', function () {
+        //     $(this).hide().siblings('span').show();
+        //     lgText.css({'height': ''});
+        // })
 
     }
 
