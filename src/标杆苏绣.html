@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <title>标杆苏绣</title>
     <link rel="stylesheet" href="assets/css/common.css">
-    <link rel="stylesheet" href="assets/css/layout.css">
-    <script src="./assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/model.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/model.js"></script>
 </head>
 <body>
-<div class="header fixed" id="home-header">
+<div class="header fixed">
     <div class="content">
         <a class="logo" href=""></a>
         <div class="nav">
             <ul>
-                <li class="active"><a href="http://localhost:3000/首页.html">首页</a></li>
-                <li><a href="http://localhost:3000/非遗名录.html">非遗名录</a></li>
-                <li><a href="http://localhost:3000/非遗大师.html">非遗大师</a></li>
-                <li><a href="http://localhost:3000/精选内容.html">精选内容</a></li>
-                <li><a href="http://localhost:3000/非遗资讯.html">非遗资讯</a></li>
-                <li><a href="http://localhost:3000/官方服务.html">官方服务</a></li>
-                <li><a href="http://localhost:3000/我要申报.html">我要申报</a></li>
+                <li class="active"><a href="首页.html">首页</a></li>
+                <li><a href="非遗名录.html">非遗名录</a></li>
+                <li><a href="非遗大师.html">非遗大师</a></li>
+                <li><a href="精选内容.html">精选内容</a></li>
+                <li><a href="非遗资讯.html">非遗资讯</a></li>
+                <li><a href="官方服务.html">官方服务</a></li>
+                <li><a href="我要申报.html">我要申报</a></li>
             </ul>
         </div>
         <div class="info">
@@ -125,7 +126,62 @@
         </div>
     </div>
     <!--//End drop_menu-->
+</div>
+<!--//End header-->
+
+<div class="container suxiu">
+    <div class="bg">
+        <div class="main">
+            <div class="hd">
+                <div class="info">
+                    <h1 class="bd">姚慧芬</h1>
+                    <div class="bd tag"><i class="m_icon"></i></div>
+                    <div class="bd doi"><i>ID</i><span>标识码：1231237128973812937</span></div>
+                </div>
+            </div>
+            <div class="play"></div>
+            <img src="assets/model/sx_pic_01.jpg" alt="">
+        </div>
+    </div>
+    <!--//End-->
+    <div class="base">
+        <div class="card">
+            <div class="main">
+                <h2>传承项目</h2>
+                <div class="pro">
+                    <div class="img"><img src="assets/model/sx_pic_02.jpg" width="94" height="70" alt="">
+                    </div>
+                    <div class="txt">
+                        <p class="t1">苏绣</p>
+                        <p class="t2">类别：传统美术 | 地域：中国江苏省</p>
+                        <p class="t3">DOI ：37232519870103004383005768</p>
+                    </div>
+                </div>
+                <!--//End-->
+                <div class="bd batch">
+                    <div class="tname">非遗在中国<i></i></div>
+                    <div class="subcon">
+                        <span>级别：中国国家级</span>
+                        <span>批次：第一批(2006年)</span>
+                        <span>中国国家非遗名录编号：Ⅶ-18</span>
+                    </div>
+                </div>
+                <!--//End-->
+            </div>
+        </div>
+    </div>
+    <!--//End base-->
+
+
+
 
 </div>
+
+
 </body>
+<script>
+$(function () {
+    examplePage.init();
+})
+</script>
 </html>

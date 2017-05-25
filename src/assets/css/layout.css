@@ -787,13 +787,15 @@ section.odd {
     float: left;
     overflow: hidden;
     position: relative;
+    -webkit-transition: height .3s;
+    transition: height .3s;
 }
 
 .card .text_img .side .item div {
     margin-bottom: 50px;
 }
 
-.card .text_img .side .item p {
+.card .text_img .side p {
     margin-bottom: 30px;
 }
 
@@ -804,7 +806,7 @@ section.odd {
 .card .text_img .text_more {
     width:100%;
     position: absolute;
-    bottom:120px;
+    bottom:90px;
     left:0;
 }
 .card .text_img .text_more span {
@@ -1028,13 +1030,14 @@ section.odd {
 }
 
 .card_main .inheritor .pro .txt {
-    font-size: 12px;
     line-height: 24px;
-    color: #777;
     float: left;
     margin-left: 20px;
 }
-
+.card_main .inheritor .pro .txt p {
+    font-size: 12px;
+    color: #777;
+}
 .card_main .inheritor .pro .txt .t {
     color: #333;
 }
@@ -1066,6 +1069,7 @@ section.odd {
 }
 
 .card_main .batch .subcon span {
+    font-size:12px;
     float: left;
     margin-right: 30px;
 }

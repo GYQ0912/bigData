@@ -1,0 +1,221 @@
+.header {
+    padding: 38px 0;
+}
+.header .content .logo {
+    background: url(../model/m_logo.png) no-repeat 0 0;
+    width: 163px;
+    height: 44px;
+    margin-top:0;
+}
+.header .content .info li.login:after {
+    margin-top: -5px;
+}
+.header .content .info li.language {
+    display: none;
+}
+.header .content .info li.search {
+    display: block;
+}
+/*--//End header--*/
+.hd {
+    width:1200px;
+    margin:0 auto;
+    position: relative;
+}
+.m_icon {
+    background: url(../model/m_icon.png) no-repeat 0 0;
+    display: inline-block;
+    position: relative;
+}
+
+.bg .main {
+    background: #000;
+    width: 100%;
+    height:810px;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+.bg .main img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+}
+
+.bg .main .hd {
+    width:1200px;
+    height:810px;
+    margin:0 auto;
+    position: relative;
+    z-index:2;
+}
+.bg .main .info {
+    width:100%;
+    float: left;
+    margin-top: 250px;
+}
+
+.bg .main .info h1 {
+    font-size:64px;
+    line-height:64px;
+    color: #fff;
+}
+
+.bg .main .info .tag .m_icon {
+    background-position: 0 0;
+    width:140px;
+    height:28px;
+    cursor: pointer;
+    margin-top:34px;
+}
+.bg .main .info .doi {
+    height:18px;
+    line-height:18px;
+    margin-top: 20px;
+}
+.bg .main .info .doi i {
+    width:26px;
+    line-height:16px;
+    color: #fff;
+    font-size:13px;
+    text-align: center;
+    border: 1px solid #fff;
+    float: left;
+    -webkit-border-radius:1px;
+    border-radius:1px;
+}
+.bg .main .info .doi span {
+    font-family:DINPro;
+    line-height:18px;
+    font-size:12px;
+    color: #fff;
+    float: left;
+    margin-left: 10px;
+}
+.bg .main .play {
+    background: url(../model/play_big.png) no-repeat 0 0;
+    width:120px;
+    height:120px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top:-60px;
+    margin-left:-60px;
+    z-index:3;
+    cursor: pointer;
+}
+.bg .main .play:hover {
+    background-position: 0 -120px;
+}
+/*--//End main--*/
+.card {
+    width:1200px;
+    margin:0 auto;
+}
+.base {
+    width:100%;
+    float: left;
+    background: #21274A;
+}
+.base .main {
+    background: #fff url(../images/project_mapbg.png) no-repeat 220px -20px;
+    width: 670px;
+    height:236px;
+    padding: 50px;
+    float: left;
+    margin-top: 620px;
+    position: relative;
+    z-index:2;
+}
+.base .main h2 {
+    font-size:44px;
+    line-height:44px;
+    color: #333;
+}
+.base .main .pro {
+    width:100%;
+    float: left;
+    margin-top:30px;
+    margin-bottom: 45px;
+}
+.base .main .pro .img {
+    width: 94px;
+    height: 70px;
+    float: left;
+}
+
+.base .main .pro .txt {
+    line-height: 24px;
+    float: left;
+    margin-left: 20px;
+}
+.base .main .pro .txt p {
+    font-size:12px;
+    color: #777;
+}
+.base .main .pro .txt p.t1 {
+    color: #333;
+}
+.base .main .batch {
+    width:100%;
+    float: left;
+}
+
+.base .main .batch .tname {
+    height: 20px;
+    line-height: 20px;
+    color: #333;
+}
+
+.base .main .batch .tname i {
+    background: url(../images/detail_icon.png) no-repeat 0 -104px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+    top: 4px;
+}
+
+.base .main .batch .subcon {
+    font-size: 12px;
+    color: #777;
+    margin-top: 15px;
+}
+
+.base .main .batch .subcon span {
+    font-size:12px;
+    float: left;
+    margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

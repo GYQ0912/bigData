@@ -617,9 +617,9 @@ var masterPage = {
         var clientHeight = $(window).height(); //浏览器宽度
         var mainHeight = clientHeight - headerHeight; //内容的高度
 
-
-        var lbox = $('.lbox');
-        var rbox = $('.rbox');
+        var master=$('.master_page');
+        var lbox = master.find('.lbox');
+        var rbox = master.find('.rbox');
         var rboxDefaultContextP = rbox.find('.context p');
         var li = lbox.find('li');
         var liHeight = parseInt(mainHeight / 4) < 150 ? 150 : parseInt(mainHeight / 4); //单个li的高度,最小宽度为150px;
@@ -1147,19 +1147,26 @@ var detailCommon = { //详情页用到的效果
         var lgText = $('div[data-type=lgText]');
         var textMore = $('.text_more');
         var _span = textMore.find('span');
-
         var oldH = lgText.height();
-        var newH = 480; //基本高度
-
+        var newH = 600; //基本高度
         if (lgText.height() >= newH) {
             lgText.animate({'height': newH + 'px'}, 0);
         }
-        //
-        // _span.eq(1).hide();
-        // _span.on('click', function () {
-        //     $(this).hide().siblings('span').show();
-        //     lgText.css({'height': ''});
-        // })
+        _span.eq(1).hide();
+        _span.on('click', function () {
+            var _this = $(this);
+            if(_this.hasClass('show')){
+                lgText.animate({'height': oldH + 'px'}, 100);
+                setTimeout(function () {
+                    _this.hide().siblings('span').show();
+                }, 100);
+            }else {
+                lgText.animate({'height': newH + 'px'}, 100);
+                setTimeout(function () {
+                    _this.hide().siblings('span').show();
+                }, 100);
+            }
+        })
 
     }
 
