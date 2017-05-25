@@ -192,9 +192,130 @@
     margin-right: 30px;
 }
 
+.base .main .floor {
+    width: 100%;
+    height: 44px;
+    position: absolute;
+    top: -64px;
+    left: 0;
+}
+
+.base .main .floor a.share,
+.base .main .floor a.praise {
+    background: url(../images/detail_icon.png) no-repeat 0 0;
+    width: 23px;
+    height: 20px;
+    float: left;
+    margin: 11px 0;
+    opacity: .7;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    position: relative;
+}
+
+.base .main .floor a.share:hover,
+.base .main .floor a.praise:hover {
+    opacity: 1;
+}
+
+.base .main .floor a.praise.active {
+    background: url(../images/detail_icon.png) no-repeat -23px -20px;
+    opacity: 1;
+}
+
+.base .main .floor .share_box {
+    width: 154px;
+    height: 108px;
+    padding: 10px 10px 10px 0;
+    position: absolute;
+    top: -130px;
+    left: 0;
+    background: #fff;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: none;
+}
+
+.base .main .floor .share_box:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+}
+
+.base .main .floor .share_box .icons {
+    width: 46px;
+    float: left;
+}
+
+.base .main .floor .share_box .icons a {
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+
+.base .main .floor .share_box .icons a:after {
+    content: '';
+    background: url(../images/detail_share.png) no-repeat 0 0;
+    width: 17px;
+    height: 15px;
+    display: inline-block;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+.base .main .floor .share_box .icons a.sina:after {
+    background-position: 0 0;
+}
+
+.base .main .floor .share_box .icons a.facebook:after {
+    background-position: 0 -15px;
+}
+
+.base .main .floor .share_box .icons a.twitter:after {
+    background-position: 0 -30px;
+}
+
+.base .main .floor .share_box .icons a.sina:hover:after {
+    background-position: -17px 0;
+}
+
+.base .main .floor .share_box .icons a:hover.facebook:after {
+    background-position: -17px -15px;
+}
+
+.base .main .floor .share_box .icons a:hover.twitter:after {
+    background-position: -17px -30px;
+}
+
+.base .main .floor .share_box .qrcode {
+    width: 108px;
+    height: 108px;
+    float: right;
+}
+
+.base .main .floor a.praise {
+    background-position: 0 -20px;
+    margin-left: 30px;
+    -webkit-transition: all 0s;
+    transition: all 0s;
+}
 
 
-
+.brief {
+    background: #21274A url(../model/sx_bg.png) no-repeat 20px center;
+    width:100%;
+    height:768px;
+    float: left;
+}
 
 
 
