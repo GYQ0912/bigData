@@ -279,8 +279,7 @@ var renderHhtml = {
         _el.html(html);
     }
 };
-
-
+/*--//End 公共的html--*/
 
 var utils={
     pad: function (num, length) {//个位数补零
@@ -333,7 +332,30 @@ var utils={
         });
 
     },
+    headerScroll:function () { //页面滚动导航悬浮
+        var _header = $('#home-header');
+        var _top = $('.gotop');
+        var _filter = $('.filter_search_fixed');
+
+        if (_header) {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 630) {
+                    _header.addClass('active');
+                    _top.css('opacity', '1');
+                } else {
+                    _header.removeClass('active');
+                    _top.css('opacity', '0');
+                    _filter.slideUp('fast');
+                }
+            });
+        }
+
+    }
 };
+/*--//End 公共的效果--*/
+
+
+
 
 var examplePage = {
     init: function () {
@@ -514,7 +536,6 @@ var examplePage = {
             arr.push(parseInt(offsettop)); //火狐有半个像素的情况，故取整
         });
 
-
         $(window).scroll(function () {
             var d = parseInt($(document).scrollTop());
             if(d>800){
@@ -552,7 +573,12 @@ var examplePage = {
     }
 };
 
+
+var initPage=function () {
+    utils.headerScroll();
+    renderHhtml.header();
+    renderHhtml.footer();
+};
 $(function () {
-    renderHhtml.footer();
-    renderHhtml.footer();
+    initPage();
 });
