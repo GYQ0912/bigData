@@ -171,7 +171,7 @@ div:before {
     min-width: 1200px;
     height: 100%;
     position: relative;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 .header {
@@ -817,6 +817,7 @@ div:before {
     white-space: nowrap;
     -webkit-transition: all .3s;
     transition: all .3s;
+    opacity:0;
     display: none;
 }
 
@@ -828,25 +829,45 @@ div:before {
     transition: all .3s;
     text-align: center
 }
+.side_fixed li:after {
+    content: '';
+    width:14px;
+    height:3px;
+    background: #4183ea;
+    position: absolute;
+    top:50%;
+    right: 30px;
+    margin-top: -12px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    opacity:0;
+}
+
+.side_fixed li.active {
+    color: #333;
+}
 
 .side_fixed li:hover {
     font-size: 24px;
     color: #333;
 }
 
-.side_fixed li:hover span {
+.side_fixed li:hover span,
+.side_fixed li.active span{
     font-size: 24px;
+    opacity:1;
     display: block;
 }
-
-.side_fixed li:hover strong {
+.side_fixed li:hover:after,
+.side_fixed li.active:after {
+    opacity:1;
+}
+.side_fixed li:hover strong,
+.side_fixed li.active strong {
     font-size: 24px;
-    display: block;
 }
 
-.side_fixed li.active {
-    color: #333;
-}
+
 
 .side_fixed a.gotop {
     background: url(../images/gotop.png) no-repeat 0 0;
@@ -854,9 +875,6 @@ div:before {
     height: 60px;
     cursor: pointer;
     z-index: 3;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    opacity:0;
     float: left;
 }
 

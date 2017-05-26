@@ -274,117 +274,6 @@ var renderHhtml = {
     </div>`;
         this.base('.filter_search', htmlStr);
     },
-    filter: function () {
-        var htmlStr = `<div class="content">
-        <form class="form" action="">
-            <input class="ipt" type="text" value="从这里搜索您感兴趣的...">
-            <input class="submit" type="submit" value="搜索">
-            <div class="suggest" style="display: block;">
-                <ul>
-                    <li><a href=""><span>苏州</span>传承人</a></li>
-                    <li><a href=""><span>苏州</span>苏绣</a></li>
-                    <li><a href=""><span>苏州</span>苏绣</a></li>
-                    <li><a href=""><span>苏州</span>苏绣</a></li>
-                    <li><a href=""><span>苏州</span>苏绣</a></li>
-                    <li><a href=""><span>苏州</span>苏绣</a></li>
-                    <li><a href=""><span>苏州</span>苏绣</a></li>
-                    <li><a href=""><span>苏州</span>苏绣</a></li>
-                    <li><a href=""><span>苏州</span>苏绣</a></li>
-                </ul>
-            </div>
-        </form>
-        <!--//End form-->
-
-        <div class="attr">
-            <span>所属类别</span>
-            <span>全球</span>
-        </div>
-        <!--//End attribute-->
-
-        <div class="dropbox" id="drag">
-            <div class="item">
-                <dl class="level">
-                    <dt>
-                    <div class="title">一级分类</div>
-                    <div class="subtitle">所有分类</div>
-                    </dt>
-                    <dd>
-                        <ul>
-                            <li>口头传统和表述</li>
-                            <li>表演艺术</li>
-                            <li>社会风俗、礼仪、节庆</li>
-                            <li>有关自然界和宇宙的知识和实践</li>
-                            <li>传统的手工艺技能</li>
-                            <li>传统的手工艺技能</li>
-                            <li>传统的手工艺技能</li>
-                            <li>传统的手工艺技能</li>
-                            <li>传统的手工艺技能</li>
-                            <li>传统的手工艺技能</li>
-                        </ul>
-                    </dd>
-                </dl>
-                <dl class="level2">
-                    <dt>
-                    <div class="title">二级分类</div>
-                    <div class="subtitle">所有二级分类</div>
-                    </dt>
-                    <dd>
-                        <ul>
-                            <li>工具和机械制作</li>
-                            <li>家畜农林产品加工</li>
-                            <li>造纸、印刷及装裱</li>
-                            <li>烧造工艺</li>
-                            <li>锻冶工艺</li>
-                            <li>雕塑工艺</li>
-                            <li>雕塑工艺</li>
-                            <li>雕塑工艺</li>
-                            <li>雕塑工艺</li>
-                            <li>雕塑工艺</li>
-                        </ul>
-                    </dd>
-                </dl>
-            </div>
-            <!--//End 所属分类-->
-            <div class="item">
-                <dl class="level">
-                    <dt>
-                    <div class="title">位置</div>
-                    </dt>
-                    <dd>
-                        <ul>
-                            <li>全球</li>
-                            <li>中国</li>
-                            <li>非洲</li>
-                            <li>阿拉伯地区</li>
-                            <li>亚太</li>
-                            <li>欧美</li>
-                            <li>拉美</li>
-                        </ul>
-                    </dd>
-                </dl>
-                <dl class="level2">
-                    <dt>
-                    <div class="title">按照字母顺序</div>
-                    </dt>
-                    <dd>
-                        <ul>
-                            <li>安微</li>
-                            <li>澳门</li>
-                            <li>北京</li>
-                            <li>上海</li>
-                            <li>福建</li>
-                            <li>甘肃</li>
-                            <li>广东</li>
-                        </ul>
-                    </dd>
-                </dl>
-            </div>
-            <!--//End 位置-->
-        </div>
-        <!--//End attribute-->
-    </div>`;
-        this.base('.filter_search', htmlStr);
-    },
     base: function (obj, html) {
         var _el = $(obj);
         _el.html(html);
@@ -728,9 +617,9 @@ var masterPage = {
         var clientHeight = $(window).height(); //浏览器宽度
         var mainHeight = clientHeight - headerHeight; //内容的高度
 
-        var master=$('.master_page');
-        var lbox = master.find('.lbox');
-        var rbox = master.find('.rbox');
+
+        var lbox = $('.lbox');
+        var rbox = $('.rbox');
         var rboxDefaultContextP = rbox.find('.context p');
         var li = lbox.find('li');
         var liHeight = parseInt(mainHeight / 4) < 150 ? 150 : parseInt(mainHeight / 4); //单个li的高度,最小宽度为150px;
@@ -1028,17 +917,25 @@ var detailCommon = { //详情页用到的效果
         });
         var _li = _ul.find('li');
 
-
         //滚动
         _floor.each(function () { //标记所有楼层导航的高度
             var offsettop = $(this).offset().top;
             arr.push(parseInt(offsettop)); //火狐有半个像素的情况，故取整
         });
 
+        //点击回到当前楼层
+        _ul.on('click', 'li', function () {
+            var _index = $(this).index();
+            var _top = _floor.eq(_index).offset().top;
+            $(this).addClass('active').siblings('li').removeClass('active');
+            $('html,body').stop(true).animate({'scrollTop': _top + 'px'}, 500);
+        });
+
         $(window).scroll(function () {
-            var d = parseInt($(document).scrollTop());
+            var d =$(document).scrollTop();
             for (var i = 0; i < arr.length; i++) {
                 if (arr[i] >= d) {
+                    console.log(d)
                     break;
                 }
             }
@@ -1051,13 +948,7 @@ var detailCommon = { //详情页用到的效果
             }
         });
 
-        //点击回到当前楼层
-        _ul.on('click', 'li', function () {
-            var _index = $(this).index();
-            var _top = _floor.eq(_index).offset().top;
-            $(this).addClass('active').siblings('li').removeClass('active');
-            $('html,body').stop(true).animate({'scrollTop': _top + 'px'}, 500);
-        });
+
 
     },
     mediaShow: function (type, index) {//浮层弹出
