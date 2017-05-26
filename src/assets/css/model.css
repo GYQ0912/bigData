@@ -27,7 +27,66 @@
     display: inline-block;
     position: relative;
 }
+.row_img ul {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
 
+.row_img li {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+
+.row_img li .lbox {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.row_img li .lbox .txt {
+    width: 34%;
+    min-width: 500px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -17%;
+}
+
+.row_img li .lbox .txt p {
+    color: #1b1b1b;
+    line-height: 30px;
+    margin-bottom: 40px;
+}
+
+.row_img li .rbox {
+    width: 50%;
+    float: right;
+    position: relative;
+}
+
+.row_img li .lbox .content .info {
+    width: 32%;
+    height: 316px;
+    line-height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    margin-top: -158px;
+}
+
+.row_img li .lbox .content .info p {
+    margin-bottom: 40px;
+    color: #1b1b1b;
+}
+.row_img li .rbox img {
+    width: 100%;
+    float: left;
+}
+/*--//End--*/
 .bg .main {
     background: #000;
     width: 100%;
@@ -38,7 +97,7 @@
     left:0;
     z-index: 1;
 }
-.bg .main img {
+.img_bg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -115,6 +174,33 @@
     width:1200px;
     margin:0 auto;
 }
+
+.card .title {
+    width:100%;
+    height: 64px;
+    float: left;
+    margin-top: 120px;
+    margin-bottom: 48px;
+    position: relative;
+}
+.card .title h4{
+    font-size: 24px;
+    color: #fff;
+    display: inline-block;
+}
+.card .title:after {
+    content: '';
+    width: 24px;
+    height: 4px;
+    background: #4283EB;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
 .base {
     width:100%;
     float: left;
@@ -309,19 +395,378 @@
     transition: all 0s;
 }
 
-
 .brief {
-    background: #21274A url(../model/sx_bg.png) no-repeat 20px center;
+    background: #21274A url(../model/suxiu/sx_bg.png) no-repeat center 20px;
     width:100%;
-    height:768px;
+    height:790px;
+    float: left;
+    margin-top:-146px;
+}
+
+.brief .main .txt {
+    width:100%;
+    font-size: 24px;
+    line-height:24px;
+    color: #fff;
+    float: left;
+    margin-top: 265px;
+    margin-bottom: 40px;
+}
+.brief .main .info {
+    width:100%;
+    float: left;
+}
+.brief .main .info li {
+    width: 370px;
+    float: left;
+}
+.brief .main .info li p {
+    color: #fff;
+    line-height:36px;
+}
+.brief .main .info h4 {
+    font-size:36px;
+    line-height:54px;
+    font-weight:bold;
+    color: #fff;
+}
+.brief .main .time {
+    width:100%;
+    color: #fff;
+    float: left;
+    margin-top: 55px;
+}
+.brief .main .time p {
+    width:780px;
+    height:36px;
+    line-height:36px;
+    float: left;
+    margin-left:406px;
+}
+.brief .main .time strong {
+    width:80px;
+    float: left;
+    opacity:.5;
+}
+.brief .main .time span {
+    float: left;
+    margin-left: 20px;
+}
+/*--//End--*/
+.pedigree {
+    background: #1b1b1b;
+    width:100%;
+    height:740px;
     float: left;
 }
 
+.pedigree .main .info {
+    color: #fff;
+    opacity:.5;
+}
+.pedigree .main .contact {
+    background: url(../model/suxiu/sx_px.jpg) no-repeat 0 0;
+    width:100%;
+    height:280px;
+    float: left;
+    margin-top:90px;
+    position: relative;
+}
+.pedigree .main .contact p {
+    line-height:24px;
+    font-size:12px;
+    color: #fff;
+}
+.pedigree .main .contact .item {
+    width:218px;
+    height:60px;
+    padding-top:20px;
+    padding-left: 20px;
+    position: absolute;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    overflow: hidden;
+}
+.pedigree .main .contact .item img {
+    float: left;
+    margin-top: -6px;
+    margin-right: 10px;
+}
+.pedigree .main .contact .item .mask {
+    padding-left:70px;
+    margin-top:10px;
+    display: none;
+}
+.pedigree .main .contact .item:hover {
+    background: #22252a;
+    height:164px;
+}
+.pedigree .main .contact .item:hover .mask {
+    display: block;
+}
+.pedigree .main .contact .item1 {
+    top:-14px;
+    left:90px;
+}
+.pedigree .main .contact .item2 {
+    top:-14px;
+    left:380px;
+}
+.pedigree .main .contact .item3 {
+    top:-14px;
+    left:670px;
+}
+.pedigree .main .contact .item4 {
+    top: 206px;
+    left: 160px;
+}
+.pedigree .main .contact .item5 {
+    width:340px;
+    top: 206px;
+    left: 460px;
+}
+.pedigree .main .contact .item6 {
+    top: 96px;
+    right: -18px;
+}
+.product {
+    width:100%;
+    float: left;
+    background: #fff;
+    overflow: hidden;
+}
+.product .title h4 {
+    color: #444;
+}
+.product .main {
+    width:1200px;
+    overflow: hidden;
+}
+.product ul {
+    width: 1000%;
+    float: left;
+}
+
+.product li {
+    width: 370px;
+    float: left;
+    margin-right: 30px;
+}
+
+.product li p {
+    font-size: 16px;
+    color: #333;
+}
+
+.product li p.name {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.product li img {
+    width:100%;
+}
 
 
+.product .page {
+    width: 100%;
+    height: 14px;
+    text-align: center;
+    float: left;
+    margin-top: 50px;
+    margin-bottom:50px;
+    cursor: pointer;
+}
 
+.product .page span {
+    font-family: "DINPro";
+    font-size: 14px;
+    height:14px;
+    line-height:14px;
+    color: #949494;
+    position: relative;
+    display: inline-block;
+}
 
+.product .page span.show {
+    color: #333;
+}
+.product .page span.prev,
+.product .page span.next {
+    background: url(../model/arrow.png) no-repeat 0 0;
+    width:18px;
+    height:14px;
+}
+.product .page span.prev {
+    margin-right:20px;
+}
+.product .page span.next {
+    background-position: -18px 0;
+    margin-left:20px;
+}
+.product .page span.prev.active {
+    background-position: 0 -14px;
+}
+.product .page span.next.active {
+    background-position: -18px -14px;
+}
 
+.skill {
+    width:100%;
+    float: left;
+    background: #f7f7f7;
+}
+.skill .title h4 {
+    color: #444;
+}
+
+.skill .main .lbox {
+    width:370px;
+    height:784px;
+    float: left;
+    position: relative;
+}
+.skill .main .lbox p {
+    line-height:36px;
+    color: #1b1b1b;
+}
+.skill .main .lbox img {
+    position: absolute;
+    left:0;
+    bottom:0;
+}
+.skill .main .rbox {
+    width:770px;
+    height:784px;
+    float: right;
+}
+.skill .main .rbox img {
+    float: left;
+}
+.field {
+    width:100%;
+    float: left;
+}
+.field .title h4 {
+    color: #444;
+}
+.field .main .lbox {
+    width:350px;
+    float: left;
+}
+.field .main .lbox p {
+    font-size:30px;
+    line-height:48px;
+    color: #444;
+}
+.field .main .rbox {
+    width:770px;
+    float: right;
+}
+.field .main .rbox p {
+    line-height:36px;
+    color: #4A4A4A;
+}
+
+.field .pic {
+    width:100%;
+    height:704px;
+    float: left;
+    margin-top:100px;
+    position: relative;
+}
+
+.honor .title {
+    width: 100%;
+    height: 64px;
+    float: left;
+    margin-bottom: 48px;
+    position: relative;
+}
+.honor .title h4{
+    font-size: 24px;
+    color: #1B1B1B;
+    display: inline-block;
+}
+.honor .title:after {
+    content: '';
+    width: 24px;
+    height: 4px;
+    background: #4283EB;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+/*--//End honor--*/
+
+.model_fixed {
+    min-width:10px;
+    height:472px;
+    position: fixed;
+    top:100px;
+    right:30px;
+    z-index:3;
+    background: url(../model/model_fixed.png) repeat-y top right;
+}
+.model_fixed ul {
+    position: absolute;
+    top: 20px;
+    right:-6px;
+}
+.model_fixed li {
+    width:100%;
+    min-width:10px;
+    height:40px;
+    float: left;
+    margin-bottom: 50px;
+    position: relative;
+    cursor: pointer;
+}
+.model_fixed li i {
+    width:8px;
+    height:8px;
+    background: #979797;
+    border: 1px solid #979797;
+    position: absolute;
+    top:50%;
+    right:2px;
+    margin-top:-5px;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+}
+.model_fixed li span {
+    width:110px;
+    padding-right:7px;
+    height:40px;
+    line-height:40px;
+    text-align: center;
+    border-radius: 2px;
+    font-size:14px;
+    color: #fff;
+    position: absolute;
+    top:0;
+    right:10px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    opacity:0;
+}
+.model_fixed li span.active {
+    background: url(../model/side_active.png) no-repeat;
+    right:30px;
+}
+
+.model_fixed li:hover i,
+.model_fixed li.active i{
+    background: #fff;
+    border: 1px solid #4283EB;
+}
+.model_fixed li:hover span.default,
+.model_fixed li.active span.active{
+    opacity:1
+}
+.model_fixed li.active span.default {
+    opacity:0;
+}
 
 
 

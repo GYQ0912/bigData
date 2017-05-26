@@ -608,7 +608,8 @@ div:before {
     overflow-y: auto;
 }
 
-.filter_search .content .dropbox .item dd li {
+.filter_search .content .dropbox .item dd li,
+.filter_search .content .dropbox .item dd li a {
     width: 100%;
     line-height: 28px;
     font-size: 18px;
@@ -629,6 +630,7 @@ div:before {
 
 .filter_search .content .dropbox .item dl.level2 {
     padding-right: 18px;
+    display: none;
 }
 
 .filter_search .content .dropbox .item dl.level2 dt {
