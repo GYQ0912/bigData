@@ -221,6 +221,40 @@
     line-height:44px;
     color: #333;
 }
+.base .main h2 a.more {
+    float: right;
+    position: relative;
+}
+.base .main h2 a.more span {
+    font-size:12px;
+    height:14px;
+    line-height:14px;
+    color: #949494;
+    float: left;
+    padding-right:22px;
+}
+.base .main h2 a.more .gt {
+    background: url(../model/gt.png) no-repeat 0 0;
+    width: 18px;
+    height: 14px;
+    position: absolute;
+    top:50%;
+    right:0;
+    margin-top:-7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .base .main .pro {
     width:100%;
     float: left;
@@ -464,6 +498,14 @@
     color: #fff;
     opacity:.5;
 }
+.pedigree .main .info.col3 {
+    line-height:36px;
+}
+.pedigree .main .info.col3 p{
+    width:370px;
+    float: left;
+}
+
 .pedigree .main .contact {
     background: url(../model/suxiu/sx_px.jpg) no-repeat 0 0;
     width:100%;
@@ -529,6 +571,24 @@
     top: 96px;
     right: -18px;
 }
+
+.pedigree .main .project {
+    width:100%;
+    float: left;
+    margin-top:80px;
+}
+.pedigree .main .project .dt {
+    width:138px;
+    height:34px;
+    line-height:34px;
+    text-align: center;
+    border: 1px solid rgba(119,119,119,.56);
+    color: rgba(255,255,255,.7);
+}
+
+
+
+
 .product {
     width:100%;
     float: left;
@@ -698,6 +758,77 @@
     left: 0;
 }
 /*--//End honor--*/
+
+.suxiu .mavatar {
+    width: 100%;
+    height: 70px;
+    float: left;
+    margin-top:32px;
+    margin-bottom:48px;
+}
+
+.suxiu .mavatar li {
+    float: left;
+    margin-right: 35px;
+}
+
+.suxiu .mavatar li .avatar {
+    height: 70px;
+    float: left;
+    margin-right: 14px;
+    overflow: hidden;
+}
+
+.suxiu .mavatar li .avatar img {
+    width: 70px;
+    height: 70px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.suxiu .mavatar li .txt {
+    float: left;
+}
+
+.suxiu .mavatar li .txt p {
+    line-height: 24px;
+    font-size: 12px;
+    color: #777;
+}
+
+.suxiu .mavatar li .txt p.name {
+    color: #333;
+}
+.suxiu .mavatar li .txt p.name a {
+    font-size:12px;
+}
+.suxiu .mavatar li.more {
+    line-height: 34px;
+    float: right;
+    margin: 18px 0;
+}
+
+.suxiu .mavatar li.more a {
+    font-size: 12px;
+    color: #949494;
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .model_fixed {
     min-width:10px;
