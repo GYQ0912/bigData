@@ -1,10 +1,10 @@
 var renderHhtml = {
-    init: function () {
+    init: function() {
         this.header();
         this.footer();
         this.filter();
     },
-    header: function () { //导航
+    header: function() { //导航
         var htmlStr = `<div class="content">
             <a class="logo" href=""></a>
             <div class="nav">
@@ -132,7 +132,7 @@ var renderHhtml = {
         `;
         this.base('.header', htmlStr);
     },
-    footer: function () { //底部
+    footer: function() { //底部
         var htmlStr = `<div class="diich">
         <div class="hd">
             <p class="name"><span>DIICH</span><em>非遺國際</em></p>
@@ -163,7 +163,7 @@ var renderHhtml = {
     <!--//ENd main-->`;
         this.base('.footer', htmlStr);
     },
-    filter: function () {
+    filter: function() {
         var htmlStr = `<div class="content">
         <form class="form" action="">
             <input class="ipt" type="text" value="从这里搜索您感兴趣的...">
@@ -274,40 +274,40 @@ var renderHhtml = {
     </div>`;
         this.base('.filter_search', htmlStr);
     },
-    base: function (obj, html) {
+    base: function(obj, html) {
         var _el = $(obj);
         _el.html(html);
     }
 };
 /*--//End 公共的html--*/
 
-var utils={
-    pad: function (num, length) {//个位数补零
+var utils = {
+    pad: function(num, length) { //个位数补零
         if (!length) {
             length = 10;
         }
-        return ( "0" + num ).substr(-length);
+        return ("0" + num).substr(-length);
     },
-    scroll: function () { //楼层
+    scroll: function() { //楼层
         var _ul = $('.side_fixed ul'); //导航
         var _floor = $('section.floor'); //楼层
         var _nav = $('.card header h4'); //楼层标题
         var arr = []; //把pros对应的几个位置标示出来
 
         //获取所有楼层标题
-        _nav.each(function (i) { //给右侧悬浮添加标题
+        _nav.each(function(i) { //给右侧悬浮添加标题
             _ul.append('<li><span>' + $(this).text() + '</span><strong>0' + (i + 1) + '</strong></li>');
         });
         var _li = _ul.find('li');
 
 
         //滚动
-        _floor.each(function () { //标记所有楼层导航的高度
+        _floor.each(function() { //标记所有楼层导航的高度
             var offsettop = $(this).offset().top;
             arr.push(parseInt(offsettop)); //火狐有半个像素的情况，故取整
         });
 
-        $(window).scroll(function () {
+        $(window).scroll(function() {
             var d = parseInt($(document).scrollTop());
             for (var i = 0; i < arr.length; i++) {
                 if (arr[i] >= d) {
@@ -324,21 +324,21 @@ var utils={
         });
 
         //点击回到当前楼层
-        _ul.on('click', 'li', function () {
+        _ul.on('click', 'li', function() {
             var _index = $(this).index();
             var _top = _floor.eq(_index).offset().top;
             $(this).addClass('active').siblings('li').removeClass('active');
-            $('html,body').stop(true).animate({'scrollTop': _top + 'px'}, 500);
+            $('html,body').stop(true).animate({ 'scrollTop': _top + 'px' }, 500);
         });
 
     },
-    headerScroll:function () { //页面滚动导航悬浮
+    headerScroll: function() { //页面滚动导航悬浮
         var _header = $('#home-header');
         var _top = $('.gotop');
         var _filter = $('.filter_search_fixed');
 
         if (_header) {
-            $(window).scroll(function () {
+            $(window).scroll(function() {
                 if ($(window).scrollTop() > 630) {
                     _header.addClass('active');
                     _top.css('opacity', '1');
@@ -350,6 +350,54 @@ var utils={
             });
         }
 
+    },
+    //隐藏文字 点击展开
+    lgTextShow: function() {
+        var obj = $('div[data-type="lgText"]');
+
+        obj.each(function() {
+            var el = $(this).find('.text_more');
+            var text = $(this).find('.text');
+            var totalNum = text.html().length; //总字数
+            var limit = $(this).attr('data-number');
+
+            if (totalNum > limit) {
+                var oldText = text.html(); //原始文本
+                var oldHeight = text.height();
+                var showText = oldText.substring(0, limit); //最终显示的文本
+
+                text.html(showText + '...');
+                var showHeight = text.height(); //截取后的高度
+                text.css('height', showHeight);
+
+                el.on('click', function() {
+                    var _this = $(this);
+
+                    if (_this.hasClass('active')) {
+                        _this.removeClass('active');
+                        text.html(showText).animate({ height: showHeight }, 200);
+                    } else {
+                        $('.row_img li .lbox').css('height', oldHeight);
+
+                        _this.addClass('active');
+                        text.html(oldText).animate({ height: oldHeight }, 200);
+                    }
+
+
+
+                });
+
+
+
+            }
+
+
+            // var _height=text.css('height');
+            // var el=$(this).find('.text_more');
+
+        });
+
+
     }
 };
 /*--//End 公共的效果--*/
@@ -358,7 +406,7 @@ var utils={
 
 
 var suxiuPage = {
-    init: function () {
+    init: function() {
         this.mainBg();
         this.share();
         this.praise();
@@ -367,11 +415,12 @@ var suxiuPage = {
 
         this.productsHover();
         this.history();
+        utils.lgTextShow();
     },
-    mainBg: function () {//首屏图片 视频
+    mainBg: function() { //首屏图片 视频
 
         var _img = $('.img_bg');
-        _img.each(function () {
+        _img.each(function() {
             var imgW = $(this).width();
             var imgH = $(this).height();
             $(this).css({
@@ -384,32 +433,32 @@ var suxiuPage = {
 
 
     },
-    share: function () { //分享
-        var obj=$('.base .main .floor');
+    share: function() { //分享
+        var obj = $('.base .main .floor');
 
-        obj.each(function () {
+        obj.each(function() {
             var _share = $(this).find('a.share');
             var _shareBox = $(this).find('.share_box');
             //弹出框
-            _share.on('click', function () {
+            _share.on('click', function() {
                 _shareBox.stop(true).fadeToggle();
                 return false;
             });
 
-            _shareBox.on('click', function (e) {
+            _shareBox.on('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
             });
 
-            $(document).on("click", function () {
+            $(document).on("click", function() {
                 _shareBox.fadeOut();
             });
         });
     },
-    praise: function () { //点赞功能
-        var obj=$('.base .main .floor');
+    praise: function() { //点赞功能
+        var obj = $('.base .main .floor');
         var praise = obj.find('.praise');
-        praise.on('click', function () {
+        praise.on('click', function() {
             var _this = $(this);
 
             //创建动画数字
@@ -434,7 +483,7 @@ var suxiuPage = {
                 }).animate({
                     left: 15,
                     top: -30
-                }, 'slow', function () {
+                }, 'slow', function() {
                     $(this).fadeIn('fast').remove();
                 });
             }
@@ -442,9 +491,9 @@ var suxiuPage = {
         });
 
     },
-    productsTab: function () { //作品分页
+    productsTab: function() { //作品分页
         var _products = $('.suxiu .product .main');
-        _products.each(function () {
+        _products.each(function() {
 
             //列表相关属性
             var _ul = _products.find('ul'); //获取列表ul
@@ -453,11 +502,11 @@ var suxiuPage = {
 
             //分页相关属性
             var _page = _products.find('.page'); //分页显示容器
-            var _sShow=_page.find('span.show');  //当前页数
-            var _sToal=_page.find('span.total');  //当前页数
-            var _sPrev=_page.find('span.prev');
-            var _sNext=_page.find('span.next');
-            var cur=0;
+            var _sShow = _page.find('span.show'); //当前页数
+            var _sToal = _page.find('span.total'); //当前页数
+            var _sPrev = _page.find('span.prev');
+            var _sNext = _page.find('span.next');
+            var cur = 0;
 
             var currentNum = 3; //当前页显示个数
             var total = Math.ceil(liLen / currentNum); //分页总数
@@ -467,35 +516,35 @@ var suxiuPage = {
             _sPrev.addClass('active');
 
             //下一页
-            _sNext.on('click',function () {
+            _sNext.on('click', function() {
                 _sPrev.removeClass('active');
-                if(cur < total-1){
+                if (cur < total - 1) {
                     cur++
                 }
 
-                if(cur==total-1){
+                if (cur == total - 1) {
                     $(this).addClass('active');
                 }
 
-                _ul.animate({'margin-left':-cur*1200+'px'},300);
-                _sShow.html(utils.pad(cur+1));
+                _ul.animate({ 'margin-left': -cur * 1200 + 'px' }, 300);
+                _sShow.html(utils.pad(cur + 1));
 
             });
 
 
             //上一页
-            _sPrev.on('click',function () {
+            _sPrev.on('click', function() {
                 _sNext.removeClass('active');
-                if(cur>0){
+                if (cur > 0) {
                     cur--;
                 }
 
-                if(cur==0){
+                if (cur == 0) {
                     $(this).addClass('active');
                 }
 
-                _ul.animate({'margin-left':-cur*1200+'px'},300);
-                _sShow.html(utils.pad(cur+1));
+                _ul.animate({ 'margin-left': -cur * 1200 + 'px' }, 300);
+                _sShow.html(utils.pad(cur + 1));
             });
 
 
@@ -518,32 +567,32 @@ var suxiuPage = {
             // }
         });
     },
-    scroll:function () {
-        var data=['传承人简介','传承人谱系','代表性作品','技能特点','领域活动','荣誉称号'];
+    scroll: function() {
+        var data = ['传承人简介', '传承人谱系', '代表性作品', '技能特点', '领域活动', '荣誉称号'];
         var model = $('.model_fixed');
         var obj = model.find('ul');
         var floor = $('section.floor');
         var arr = []; //把pros对应的几个位置标示出来
 
         //获取所有楼层标题
-        obj.each(function () {
-            for (var i=0;i<data.length;i++){
-                obj.append('<li><i></i><span class="active">'+ data[i]+'0'+(i+1) +'</span><span class="default">'+ data[i] +'</span></li>');
+        obj.each(function() {
+            for (var i = 0; i < data.length; i++) {
+                obj.append('<li><i></i><span class="active">' + data[i] + '0' + (i + 1) + '</span><span class="default">' + data[i] + '</span></li>');
             }
         });
-        var _li=obj.find('li');
+        var _li = obj.find('li');
 
         //滚动
-        floor.each(function () { //标记所有楼层导航的高度
+        floor.each(function() { //标记所有楼层导航的高度
             var offsettop = $(this).offset().top;
             arr.push(parseInt(offsettop)); //火狐有半个像素的情况，故取整
         });
 
-        $(window).scroll(function () {
+        $(window).scroll(function() {
             var d = parseInt($(document).scrollTop());
-            if(d>800){
+            if (d > 800) {
                 model.fadeIn(100);
-            }else{
+            } else {
                 model.fadeOut(100);
             }
 
@@ -555,7 +604,7 @@ var suxiuPage = {
 
             _li.removeClass('active');
             if (i > 0) {
-                _li.eq(i-1).addClass('active');
+                _li.eq(i - 1).addClass('active');
             }
             if (i == arr.length) {
                 i--;
@@ -563,11 +612,11 @@ var suxiuPage = {
         });
 
         //右侧楼层选中效果
-        _li.on('click',function () {
+        _li.on('click', function() {
             var _index = $(this).index();
             var _top = floor.eq(_index).offset().top;
 
-            $('html,body').stop(true).animate({'scrollTop': _top + 'px'}, 500);
+            $('html,body').stop(true).animate({ 'scrollTop': _top + 'px' }, 500);
             $(this).addClass('active').siblings('li').removeClass('active');
         });
 
@@ -575,26 +624,26 @@ var suxiuPage = {
 
     },
     //代表性作品hover
-    productsHover:function () {
-        var parent=$('.product');
-        var el=parent.find('li');
-        var mask=el.find('.mask');
-        if(mask){
-            el.hover(function () {
+    productsHover: function() {
+        var parent = $('.product');
+        var el = parent.find('li');
+        var mask = el.find('.mask');
+        if (mask) {
+            el.hover(function() {
                 $(this).find('.mask').stop(true).fadeIn(100);
-            },function () {
+            }, function() {
                 $(this).find('.mask').stop(true).fadeOut(100);
             })
         }
     },
     //历史渊源
-    history:function () {
-        var parent=$('.history');
-        var tab=parent.find('.tab span');
-        var item=parent.find('.context .item');
+    history: function() {
+        var parent = $('.history');
+        var tab = parent.find('.tab span');
+        var item = parent.find('.context .item');
 
-        tab.on('click',function () {
-            var _index=$(this).index();
+        tab.on('click', function() {
+            var _index = $(this).index();
             $(this).addClass('active').siblings('span').removeClass('active');
             item.eq(_index).show().siblings('.item').hide();
         })
@@ -604,11 +653,11 @@ var suxiuPage = {
 };
 
 
-var initPage=function () {
+var initPage = function() {
     utils.headerScroll();
     renderHhtml.header();
     renderHhtml.footer();
 };
-$(function () {
+$(function() {
     initPage();
 });
