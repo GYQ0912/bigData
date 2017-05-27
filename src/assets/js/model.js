@@ -357,13 +357,16 @@ var utils={
 
 
 
-var examplePage = {
+var suxiuPage = {
     init: function () {
         this.mainBg();
         this.share();
         this.praise();
         this.productsTab();
         this.scroll();
+
+        this.productsHover();
+        this.history();
     },
     mainBg: function () {//首屏图片 视频
 
@@ -570,7 +573,34 @@ var examplePage = {
 
 
 
+    },
+    //代表性作品hover
+    productsHover:function () {
+        var parent=$('.product');
+        var el=parent.find('li');
+        var mask=el.find('.mask');
+        if(mask){
+            el.hover(function () {
+                $(this).find('.mask').stop(true).fadeIn(100);
+            },function () {
+                $(this).find('.mask').stop(true).fadeOut(100);
+            })
+        }
+    },
+    //历史渊源
+    history:function () {
+        var parent=$('.history');
+        var tab=parent.find('.tab span');
+        var item=parent.find('.context .item');
+
+        tab.on('click',function () {
+            var _index=$(this).index();
+            $(this).addClass('active').siblings('span').removeClass('active');
+            item.eq(_index).show().siblings('.item').hide();
+        })
+
     }
+
 };
 
 
