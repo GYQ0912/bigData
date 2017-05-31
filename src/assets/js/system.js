@@ -1,10 +1,10 @@
 var renderHhtml = {
-    init: function () {
+    init: function() {
         this.header();
         this.footer();
         this.filter();
     },
-    header: function () { //导航
+    header: function() { //导航
         var htmlStr = `<div class="content">
             <a class="logo" href=""></a>
             <div class="nav">
@@ -132,7 +132,7 @@ var renderHhtml = {
         `;
         this.base('.header', htmlStr);
     },
-    footer: function () { //底部
+    footer: function() { //底部
         var htmlStr = `<div class="diich">
         <div class="hd">
             <p class="name"><span>DIICH</span><em>非遺國際</em></p>
@@ -163,7 +163,7 @@ var renderHhtml = {
     <!--//ENd main-->`;
         this.base('.footer', htmlStr);
     },
-    filter: function () {
+    filter: function() {
         var htmlStr = `<div class="content">
         <form class="form" action="">
             <input class="ipt" type="text" value="从这里搜索您感兴趣的...">
@@ -274,7 +274,7 @@ var renderHhtml = {
     </div>`;
         this.base('.filter_search', htmlStr);
     },
-    base: function (obj, html) {
+    base: function(obj, html) {
         var _el = $(obj);
         _el.html(html);
     }
@@ -282,7 +282,7 @@ var renderHhtml = {
 
 //工具
 var utils = {
-    getStr: function (str) {//计算长度 汉字是2
+    getStr: function(str) { //计算长度 汉字是2
         var real = 0;
         var len = str.length;
         var charCode = -1;
@@ -300,34 +300,34 @@ var utils = {
 
 //公共
 var common = {
-    init: function () {
+    init: function() {
         this.input();
         this.top();
         header.init();
     },
-    top: function () { //返回顶部
-        $('.gotop').click(function () {
-            $("html,body").animate({scrollTop: 0}, 500);
+    top: function() { //返回顶部
+        $('.gotop').click(function() {
+            $("html,body").animate({ scrollTop: 0 }, 500);
         });
     },
-    input: function () {
+    input: function() {
         //输入框特效
         var _form = $('.form');
         var _input = _form.find('input.ipt');
-        _input.each(function () {
+        _input.each(function() {
             var _this = $(this);
 
             //初始化val值
             var oldVal = _this.val();
 
             //获取焦点
-            _this.focus(function () {
+            _this.focus(function() {
                 // clearInterval(timer);
                 $(this).val('');
             });
 
             //失去焦点
-            _this.blur(function () {
+            _this.blur(function() {
                 // clearInterval(timer);
 
                 var newVal = $(this).val();
@@ -340,13 +340,13 @@ var common = {
 
         });
     },
-    pad: function (num, length) {//个位数补零
+    pad: function(num, length) { //个位数补零
         if (!length) {
             length = 10;
         }
-        return ( "0" + num ).substr(-length);
+        return ("0" + num).substr(-length);
     },
-    slide: function () { //轮播图
+    slide: function() { //轮播图
         var parent = $('.slider');
         var imgLi = parent.find('ul.img li');
         var imgLen = imgLi.length;
@@ -358,7 +358,7 @@ var common = {
         var speed = 5000;
         var timer = null;
 
-        numLi.mousedown(function () {
+        numLi.mousedown(function() {
             clearInterval(timer);
             cur = $(this).index();
             $(this).addClass('active').siblings('li').removeClass('active');
@@ -366,7 +366,7 @@ var common = {
             textP.eq(cur).stop(true).fadeIn().siblings('p').fadeOut();
         });
 
-        numLi.mouseup(function () {
+        numLi.mouseup(function() {
             timer = setInterval(slider, speed);
         });
 
@@ -390,26 +390,26 @@ var common = {
 
 //导航部分
 var header = {
-    init: function () {
+    init: function() {
         this.scroll();
         this.search();
         this.drop();
         this.bind();
         loginPage.init();
     },
-    bind: function () { //点击状态
-        $('.header .content .info li.login').on('click', function () {
+    bind: function() { //点击状态
+        $('.header .content .info li.login').on('click', function() {
             header.loginLayer();
             return false;
         });
     },
-    scroll: function () { //页面滚动导航悬浮
+    scroll: function() { //页面滚动导航悬浮
         var _header = $('#home-header');
         var _top = $('.gotop');
         var _filter = $('.filter_search_fixed');
 
         if (_header) {
-            $(window).scroll(function () {
+            $(window).scroll(function() {
                 if ($(window).scrollTop() > 630) {
                     _header.addClass('active');
                     _top.css('opacity', '1');
@@ -422,7 +422,7 @@ var header = {
         }
 
     },
-    drop: function () { //非遗名录 二级导航
+    drop: function() { //非遗名录 二级导航
         var drop = $('.drop_menu');
         var item = drop.find('.item');
         var _header = $('.header');
@@ -431,20 +431,20 @@ var header = {
         var speed = 200;
 
 
-        _houer.hover(function () {
+        _houer.hover(function() {
             clearInterval(timer);
             var _height = _header.outerHeight(true);
             drop.css('top', _height + 'px').slideDown('fast');
-        }, function () {
-            timer = setInterval(function () {
+        }, function() {
+            timer = setInterval(function() {
                 drop.slideUp();
             }, speed);
         });
 
-        drop.hover(function () {
+        drop.hover(function() {
             clearInterval(timer);
-        }, function () {
-            timer = setInterval(function () {
+        }, function() {
+            timer = setInterval(function() {
                 drop.slideUp();
             }, speed);
         });
@@ -457,13 +457,13 @@ var header = {
         item.eq(3).css('width', '240px');
 
         item.eq(3).find('a:even').css('width', '72px');
-        item.eq(3).find('a:odd').css({'width': '129px', 'margin-left': '24px'});
+        item.eq(3).find('a:odd').css({ 'width': '129px', 'margin-left': '24px' });
 
         item.eq(4).css('width', '210px');
         item.eq(4).find('a:even').css('width', '115px');
-        item.eq(4).find('a:odd').css({'width': '66px', 'margin-left': '24px'});
+        item.eq(4).find('a:odd').css({ 'width': '66px', 'margin-left': '24px' });
     },
-    search: function () {
+    search: function() {
         var _header = $('.header');
         var search = _header.find('li.search'); //搜索图标
         var filter = $('.filter_search'); //下拉搜索
@@ -474,14 +474,14 @@ var header = {
         var body = $('body');
 
         //1.导航上的搜索图标
-        search.on('click', function (e) {
+        search.on('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
             filter.css('top', _header.outerHeight(true) + 'px').slideDown('fast');
         });
 
         //2.点击筛选
-        filterAll.on('click', function () {
+        filterAll.on('click', function() {
             var _this = $(this);
             var _index = _this.index();
             filterItem.eq(_index)
@@ -492,13 +492,13 @@ var header = {
         });
 
         //3.阻止点击自身关闭
-        filter.on('click', function (e) {
+        filter.on('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
         });
 
         //4.点击自身之外的地方关闭下拉框
-        $(document).on("click", function () {
+        $(document).on("click", function() {
             filterItem.hide();
             filterFixed.slideUp('fast');
         });
@@ -511,7 +511,7 @@ var header = {
             body.css('overflow', '');
         }
 
-        body.find('.overbg').on('click', function () {
+        body.find('.overbg').on('click', function() {
             filterItem.hide();
             filterFixed.slideUp('fast');
             suggest.hide();
@@ -520,17 +520,17 @@ var header = {
         });
 
     },
-    loginLayer: function () { //登录弹出框
+    loginLayer: function() { //登录弹出框
         var _layer = $('.box_layer');
         var _speed = 300;
 
         //弹出框显示
-        _layer.animate({'top': '50%'}, _speed);
+        _layer.show().animate({ 'top': '50%' }, _speed);
         $('body').append('<div class="overbg"></div>');
 
         //弹出框隐藏
-        $('.overbg').on('click', function () {
-            _layer.animate({'top': '-50%'}, _speed);
+        $('.overbg').on('click', function() {
+            _layer.animate({ 'top': '-50%' }, _speed);
             $(this).remove();
         })
     }
@@ -538,80 +538,259 @@ var header = {
 
 //首页 ok
 var homePage = {
-    init: function () {
+    init: function() {
         common.slide(); //轮播图
     },
 };
 
 //传承人详情页 ok
 var detaiInheritorlPage = {
-    init: function () {
+    init: function() {
         var _detail = $('.detail');
         widget.share(_detail); //分享
         widget.praise(_detail); //点赞
         widget.doiCode(); //doi二维码
         detailCommon.productsTab(); //产品分页tab
-        detailCommon.scroll(); //楼层导航效果
+        detailCommon.scrollFloor(); //楼层导航效果
         detailCommon.mainBg();
     }
 };
 
 //项目详情页 ok
 var projectPage = {
-    init: function () {
+    init: function() {
         var _detail = $('.detail');
         this.setAttr();
+        this.masterMore();
         widget.share(_detail); //分享
         widget.praise(_detail); //点赞
         widget.doiCode(); //doi二维码
         detailCommon.productsTab(); //产品分页tab
-        detailCommon.scroll(); //楼层导航效果
+        detailCommon.scrollFloor(); //楼层导航效果
         detailCommon.mainBg();
         detailCommon.cutText();
     },
-    setAttr: function () {
+    setAttr: function() {
         //设置文本内容为三列
         textHandle.set('.plain_text');
-    }
+    },
+    masterMore:function () {
+        var master=$('.card_main .inheritor .master');
+        var oldHeight=master.height()-50;
+        var ul = master.find('ul');
+        var li = ul.find('li');
+        var totalItem = ul.find('.item');
+        var item = li.find('.item');
+        var liLen=li.length;
+        var page = master.find('.page');
 
+        var prev = master.find('.prev');
+        var next = master.find('.next');
+        var more = master.find('.more');
+
+        var cur=0;
+
+        //初始化
+        li.hide();
+        li.eq(0).show();
+
+
+        if(item.length<=3){
+            more.hide();
+        }
+        more.find('em').html(totalItem.length-3);  //其他多少人
+
+        //查看其它
+        more.on('click',function () {
+            ul.addClass('active').animate({'height':oldHeight+'px'},100);
+            $(this).hide();
+            li.show();
+            prev.show();
+            next.show();
+            page.show();
+            li.find('.item:gt(0)').show();
+            if(liLen<2){
+                prev.hide();
+                next.hide();
+            }
+        });
+
+        //判断li的个数
+        prev.hide();
+        next.hide();
+
+        ul.animate({'height':'70px'},100);
+        page.hide();
+        prev.hide();
+        next.hide();
+
+        li.find('.item:gt(2)').hide();
+        if(liLen>2){
+            for (var i = 0;i<liLen;i++) {
+                page.append('<span>' + common.pad(i + 1) + '</span>')
+            }
+        }
+
+        var _span=page.find('span');
+        _span.eq(0).addClass('active');
+        _span.on('click',function () {
+            cur=$(this).index();
+            $(this).addClass('active').siblings('span').removeClass('active');
+            ul.stop(true).animate({'margin-left':-cur*li.outerWidth(true)+'px'},300);
+
+            if(cur==0){
+                prev.addClass('active');
+            }else {
+                prev.removeClass('active');
+            }
+            if(cur==liLen-1){
+                next.addClass('active');
+            }else {
+                next.removeClass('active');
+            }
+
+        });
+        prev.addClass('active');
+        //下一页
+        next.on('click',function () {
+            prev.removeClass('active');
+            if(cur<liLen-1){
+                cur++;
+            }
+            _span.eq(cur).addClass('active').siblings('span').removeClass('active');
+            ul.stop(true).animate({'margin-left':-cur*li.outerWidth(true)+'px'},300);
+            console.log(cur)
+        });
+        //上一页
+        prev.on('click',function () {
+            next.removeClass('active');
+            if(cur > 0){
+                cur--;
+            }
+            if(cur==0){
+                $(this).addClass('active');
+            }
+            _span.eq(cur).addClass('active').siblings('span').removeClass('active');
+            ul.stop(true).animate({'margin-left':-cur*li.outerWidth(true)+'px'},300);
+        });
+        if(cur==liLen-1){
+            next.addClass('active');
+        }
+        if(cur==0){
+            prev.addClass('active')
+        }
+    }
 };
 
 //作品详情页 ok
 var detailProductPage = {
-    init: function () {
-        this.thumb();
-        this.simple();
-        widget.doiCode();
-    },
-    thumb: function () {
-        var media = $('.media_box');
-        var _ul = media.find('ul');
-        var _li = _ul.find('li');
-        var _liWidth = _li.outerWidth(true);
-        var _liLen = _li.length;
-        var _ulWidth = _liLen * _liWidth;
-
-        _ul.css('width', _ulWidth + 'px');
-
-        _li.on('click', function () {
-            $(this).addClass('active').siblings('li').removeClass('active')
-        });
-    },
-    simple: function () {
+    init: function() {
         $('.card .plain_text li:last-child').css('margin-right', 0);
+        this.thumbTab();
+        detailCommon.scrollFloor();
+        widget.doiCode();
+        this.paly();
+    },
+    thumbTab: function() { //视频相册轮播
+        var parent = $('.media_box');
+        var item = parent.find('.pic .item'); //主内容
+        var _play = item.find('.play_big');
+        var prev = parent.find('.prev'); //上一页
+        var next = parent.find('.next'); //下一页
+        var num = parent.find('.num');
+        var em = num.find('em');
+
+        var _ul = parent.find('.thumb ul'); //缩略图父级
+        var _li = _ul.find('li'); //缩略图li
+        var _liWidth = _li.outerWidth(true); //缩略图占用的宽度
+        var _liLen = _li.length; //缩略图数量
+        var _ulWidth = _liLen * _liWidth; //动态计算缩略图父级宽度
+        var cur = 0; //设置初始值
+
+
+        //1.初始化状态
+        _ul.css('width', _ulWidth + 'px'); //给缩略图父级动态添加宽度
+        item.eq(0).show(); //显示主内容第一个
+        _li.eq(0).addClass('active'); //缩略图第一个加激活状态
+        em.eq(0).text(common.pad(cur + 1));
+        em.eq(2).text(common.pad(_liLen));
+        //如果数量小于等于6个就隐藏
+        if (_liLen <= 6) {
+            prev.hide();
+            next.hide();
+        }
+
+        //点击缩略图
+        _li.on('click', function() {
+            cur = $(this).index();
+            item.eq(cur).show().siblings('.item').hide();
+            $(this).addClass('active').siblings('li').removeClass('active');
+            em.eq(0).text(common.pad(cur + 1));
+
+            var type= $(this).attr('data-type');
+            videoPlay(type, cur);
+        });
+
+        //2.点击下一页
+        next.on('click', function() {
+            if (cur < _liLen - 1) {
+                cur++;
+                if (cur > 4 && cur < _liLen - 1) {
+                    _ul.animate({ 'margin-left': -(cur - 4) * _liWidth + 'px' }, 300)
+                }
+            }
+            item.eq(cur).show().siblings('.item').hide();
+            _li.eq(cur).addClass('active').siblings('li').removeClass('active');
+            em.eq(0).text(common.pad(cur + 1));
+        });
+
+        //3.点击上一页
+        prev.on('click', function() {
+            if (cur > 0) {
+                cur--;
+                if (cur > 4 && cur < _liLen - 1) {
+                    _ul.animate({ 'margin-left': -(cur - 5) * _liWidth + 'px' }, 300)
+                }
+            }
+            item.eq(cur).show().siblings('.item').hide();
+            _li.eq(cur).addClass('active').siblings('li').removeClass('active');
+            em.eq(0).text(common.pad(cur + 1));
+
+        });
+
+        //视频播放
+        function videoPlay(type, val) {
+            var video=item.find('video').get(0);
+            if(video){
+                video.pause();
+                if(video.paused){
+                    _play.show();
+                }
+            }
+        }
+
+    },
+    paly:function () {
+        var play=$('.play_big');
+        var video= play.siblings('video');
+        play.on('click',function () {
+            $(this).hide();
+            video.get(0).play();
+            video.attr('controls','controls')
+        });
     }
 };
 
 //大师页面 ok
 var masterPage = {
-    init: function () {
+    init: function() {
         this.getScreen();
         this.selectMaster();
-        $(window).resize(function () {
+        $(window).resize(function() {
             masterPage.getScreen();
         })
     },
-    getScreen: function () { //获取浏览器分辨率
+    getScreen: function() { //获取浏览器分辨率
         var headerHeight = $('.header').outerHeight(true); //导航高度
         var clientWidth = $(window).width(); //浏览器宽度
         var clientHeight = $(window).height(); //浏览器宽度
@@ -635,10 +814,10 @@ var masterPage = {
 
         //左侧
         lbox.css('width', lboxWidth + 'px'); //左侧赋值
-        li.css({'width': liHeight + 'px', 'height': liHeight + 'px'});
+        li.css({ 'width': liHeight + 'px', 'height': liHeight + 'px' });
 
         //右侧
-        rbox.css({'width': rboxWidth + 'px', 'height': lboxHeight + 'px'});
+        rbox.css({ 'width': rboxWidth + 'px', 'height': lboxHeight + 'px' });
 
         if (mainHeight <= 760) {
             rboxDefaultContextP.css('height', '70px');
@@ -650,7 +829,7 @@ var masterPage = {
 
 
     },
-    selectMaster: function () { //选中大师
+    selectMaster: function() { //选中大师
         var _li = $('.master_avatar li');
         var _default = $('.master_page .rbox .default');
         var _item = $('.master_page .rbox .item');
@@ -658,7 +837,7 @@ var masterPage = {
         var _oldText = _h1.text();
 
 
-        _li.on('click', function () {
+        _li.on('click', function() {
             var index = $(this).index();
             _default.hide();
             _item.show();
@@ -671,30 +850,30 @@ var masterPage = {
 
 //非遗名录 && 搜索结果页
 var searchPage = {
-    init: function () {
+    init: function() {
         $('.header_detail .content .info li.search').hide();
         $('.header_detail .content .info li.login').addClass('line');
         // $('.directory .section li:nth-child(2n+1)').css('margin-right', '0');
         this.filterBar();
     },
-    filterBar: function () {
+    filterBar: function() {
         var obj = $('.filter_bar');
         var linkTab = obj.find('a');
         var iconTab = obj.find('.icon_tab');
         var proColumn = $('.pro_column3'); //搜索列表
 
         //筛选
-        linkTab.on('click', function () {
+        linkTab.on('click', function() {
             $(this).addClass('active').siblings('a').removeClass('active');
             return false;
         });
 
         //切换图标
-        iconTab.on('click', function () {
-            if ($(this).hasClass('active')) {//九宫格
+        iconTab.on('click', function() {
+            if ($(this).hasClass('active')) { //九宫格
                 $(this).removeClass('active');
                 proColumn.removeClass('active');
-            } else {//横排
+            } else { //横排
                 $(this).addClass('active');
                 proColumn.addClass('active');
             }
@@ -706,7 +885,7 @@ var searchPage = {
 
 //精选页面
 var wonderfulPage = {
-    init: function () {
+    init: function() {
         common.slide(); //轮播图
     }
 };
@@ -714,25 +893,25 @@ var wonderfulPage = {
 
 //登录注册
 var loginPage = {
-    init: function () {
+    init: function() {
         //去除表单最后一组的下边距
         $('.form_area .group:last-child').css('margin-bottom', 0);
 
         this.code();
     },
-    code: function () { //验证码
+    code: function() { //验证码
         this.html();
 
         var _form = $('.form_area');
         var _span = _form.find('.code span');
         var _oldSpan = _span.text();
         var time = 60;
-        _span.on('click', function () {
+        _span.on('click', function() {
             var _this = $(this);
 
             if (!_this.hasClass('active')) {
                 _this.addClass('active').text(time + 's后重新发送');
-                var timer = setInterval(function () {
+                var timer = setInterval(function() {
                     time--;
                     _this.text(time + 's后重新发送');
 
@@ -747,7 +926,7 @@ var loginPage = {
         });
 
     },
-    html: function () {
+    html: function() {
         var str = `<div class="box_layer">
                             <form class="form_area" action="">
                                 <div class="title">登录</div>
@@ -781,7 +960,7 @@ var loginPage = {
 
 //文本处理相关
 var textHandle = {
-    getLength: function (str) { //获取字符串长度   汉字是2
+    getLength: function(str) { //获取字符串长度   汉字是2
         var real = 0;
         var len = str.length;
         var charCode = -1;
@@ -795,10 +974,10 @@ var textHandle = {
         }
         return real;
     },
-    set: function (el) {
+    set: function(el) {
         var _this = this; //存储当前this
         var obj = $(el); //获取目标元素
-        obj.each(function () {
+        obj.each(function() {
             var _text = $(this).text(); //目标元素的内容
             var _len = _this.getLength(_text) / 2; //计算目标元素内容的长度
             if (_len >= 200 && _len <= 1200) {
@@ -810,29 +989,29 @@ var textHandle = {
 
 //小组件
 var widget = {
-    share: function (obj) { //分享
-        obj.each(function () {
+    share: function(obj) { //分享
+        obj.each(function() {
             var _share = $(this).find('a.share');
             var _shareBox = $(this).find('.share_box');
             //弹出框
-            _share.on('click', function () {
+            _share.on('click', function() {
                 _shareBox.stop(true).fadeToggle();
                 return false;
             });
 
-            _shareBox.on('click', function (e) {
+            _shareBox.on('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
             });
 
-            $(document).on("click", function () {
+            $(document).on("click", function() {
                 _shareBox.fadeOut();
             });
         });
     },
-    praise: function (obj) { //点赞功能
+    praise: function(obj) { //点赞功能
         var praise = obj.find('.praise');
-        praise.on('click', function () {
+        praise.on('click', function() {
             var _this = $(this);
 
             //创建动画数字
@@ -857,7 +1036,7 @@ var widget = {
                 }).animate({
                     left: 15,
                     top: -30
-                }, 'slow', function () {
+                }, 'slow', function() {
                     $(this).fadeIn('fast').remove();
                 });
             }
@@ -865,8 +1044,8 @@ var widget = {
         });
 
     },
-    doiCode: function () { //doi鼠标滑过显示二维码
-        $('.doi_code').hover(function () {
+    doiCode: function() { //doi鼠标滑过显示二维码
+        $('.doi_code').hover(function() {
             $(this).find('.drop').stop(true).fadeToggle(true);
         });
     }
@@ -874,9 +1053,9 @@ var widget = {
 
 //详情页相关
 var detailCommon = { //详情页用到的效果
-    productsTab: function () { //作品分页
+    productsTab: function() { //作品分页
         var _products = $('.product_list');
-        _products.each(function () {
+        _products.each(function() {
             //列表相关属性
             var _ul = _products.find('ul'); //获取列表ul
             var _li = _ul.find('li'); //获取列表li
@@ -896,88 +1075,52 @@ var detailCommon = { //详情页用到的效果
                 _pageSpan.eq(0).addClass('active');
 
                 //计算列表滚动
-                _pageSpan.on('click', function () {
+                _pageSpan.on('click', function() {
                     var index = $(this).index();
-                    _ul.animate({'margin-left': -index * 1170 + 'px'}, 300);
+                    _ul.animate({ 'margin-left': -index * 1170 + 'px' }, 300);
                     $(this).addClass('active').siblings('span').removeClass('active');
                 });
             }
         });
     },
-    //TODO
-    scroll: function () { //楼层
-        var _ul = $('.side_fixed ul'); //导航
-        var _floor = $('section.floor'); //楼层
-        var _nav = $('.card header h4'); //楼层标题
-        var arr = []; //把pros对应的几个位置标示出来
-
-        //获取所有楼层标题
-        _nav.each(function (i) { //给右侧悬浮添加标题
-            _ul.append('<li><span>' + $(this).text() + '</span><strong>0' + (i + 1) + '</strong></li>');
-        });
-        var _li = _ul.find('li');
-
-        //滚动
-        _floor.each(function () { //标记所有楼层导航的高度
-            var offsettop = $(this).offset().top;
-            arr.push(parseInt(offsettop)); //火狐有半个像素的情况，故取整
-        });
-
-        //点击回到当前楼层
-        _ul.on('click', 'li', function () {
-            var _index = $(this).index();
-            var _top = _floor.eq(_index).offset().top;
-            $(this).addClass('active').siblings('li').removeClass('active');
-            $('html,body').stop(true).animate({'scrollTop': _top + 'px'}, 500);
-        });
-
-        $(window).scroll(function () {
-            var d =$(document).scrollTop();
-            for (var i = 0; i < arr.length; i++) {
-                if (arr[i] >= d) {
-                    console.log(d)
-                    break;
-                }
-            }
-            _li.removeClass('active');
-            if (i == arr.length) {
-                i--;
-            }
-            if (i > 0) {
-                _li.eq(i - 1).addClass('active');
-            }
-        });
-
-
-
-    },
-    mediaShow: function (type, index) {//浮层弹出
+    mediaShow: function(type, index) { //浮层弹出
         if (type === '0') {
             this.mediaTab(type, index);
         } else {
             this.mediaTab(type, index);
         }
     },
-    mediaTab: function (type, index) {//相册和视频切换  type:0位相册,1为视频
+    mediaTab: function(type, index) { //相册和视频切换  type:0位相册,1为视频
         var mediaLayer = $('.media_layer');
         var head = mediaLayer.find('.head');
-        var close = head.find('.icon_close');
+        var close = head.find('a.icon_close');
         var span = head.find('span');
         var items = mediaLayer.find('.items');
         var album = mediaLayer.find('.album');
+        var albumLi = album.find('.media li');
+        var albumNum = album.find('.num');
         var video = mediaLayer.find('.video');
+        var videoLi = video.find('.media li');
 
         //
         if (!mediaLayer.hasClass('active')) {
             firstShow(type, index);
+            albumNum.each(function() {
+                $(this).find('.active').text(common.pad(1));
+                $(this).find('.total').text(common.pad(albumLi.length));
+            });
         } else {
             afterShow(type, index);
         }
 
         //点击
-        span.on('click', function () {
+        span.on('click', function() {
             var _type = $(this).index();
             headTab(_type);
+            videoPlay();
+            if(_type==1) {
+                videoPlay(1);
+            }
         });
 
         //第一次展开
@@ -985,28 +1128,25 @@ var detailCommon = { //详情页用到的效果
             mediaLayer.fadeIn('fast');
             span.eq(type).addClass('active').siblings('span').removeClass('active');
             items.eq(type).show().siblings('.items').hide();
-
-            if (type == 0) {//显示相册
-                mediaAlbum(index);
+            if (type == 0) { //显示相册
+                mediaAlbum(1);
                 mediaVideo(1);
-            } else {//显示视频
-                mediaVideo(index);
+            } else { //显示视频
+                mediaVideo(1);
                 mediaAlbum(1);
             }
-
         }
 
         function afterShow(type, index) {
             mediaLayer.fadeIn('fast');
             span.eq(type).addClass('active').siblings('span').removeClass('active');
             items.eq(type).show().siblings('.items').hide();
-            if (type == 0) {//显示相册
+            if (type == 0) { //显示相册
                 mediaAlbum(index);
-            } else {//显示视频
+            } else { //显示视频
                 mediaVideo(index);
             }
         }
-
 
         // //head
         function headTab(type0) {
@@ -1014,27 +1154,31 @@ var detailCommon = { //详情页用到的效果
             items.eq(type0).show().siblings('.items').hide();
         }
 
-
         //相册
         function mediaAlbum(val) {
             var cur = parseInt(val) - 1;
             var title = album.find('.title .dt li');
             var li = album.find('.media li');
             var liLen = li.length;
-            var num = album.find('.num');  //角标
+            var num = album.find('.num'); //角标
 
             var prev = album.find('.prev');
             var next = album.find('.next');
 
+            if (liLen == 1) {
+                prev.hide();
+                next.hide();
+            }
+
             li.eq(cur).show().siblings('li').hide();
             title.eq(cur).show().siblings('li').hide();
-            num.each(function () {
+            num.each(function() {
                 $(this).find('.active').text(common.pad(cur + 1));
                 $(this).find('.total').text(common.pad(liLen));
             });
 
             //下一页
-            next.on('click', function () {
+            next.on('click', function() {
                 prev.removeClass('active');
                 if (cur < liLen - 1) {
                     cur++;
@@ -1048,7 +1192,7 @@ var detailCommon = { //详情页用到的效果
             });
 
             //上一页
-            prev.on('click', function () {
+            prev.on('click', function() {
                 next.removeClass('active');
                 if (cur > 0) {
                     cur--;
@@ -1066,21 +1210,35 @@ var detailCommon = { //详情页用到的效果
 
         //视频
         function mediaVideo(val) {
-            var cur = parseInt(val) - 1;
+            var cur = parseInt(val);
             var title = video.find('.title .dt li');
             var li = video.find('.media li');
             var liLen = li.length;
-            var numLi = video.find('.num li');  //角标
+
+            var numLi = video.find('.num li'); //角标
 
             var prev = video.find('.prev');
             var next = video.find('.next');
 
+            if (liLen == 1) {
+                prev.hide();
+                next.hide();
+            }
+
+            if(cur==0){
+                prev.addClass('active');
+            }
+            if(cur==liLen-1){
+               next.addClass('active');
+            }
+
+            videoPlay(val);
             li.eq(cur).show().siblings('li').hide();
             title.eq(cur).show().siblings('li').hide();
             numLi.eq(cur).addClass('active').siblings('li').removeClass('active');
 
             //下一页
-            next.on('click', function () {
+            next.on('click', function() {
                 prev.removeClass('active');
                 if (cur < liLen - 1) {
                     cur++;
@@ -1088,15 +1246,16 @@ var detailCommon = { //详情页用到的效果
                 if (cur === liLen - 1) {
                     $(this).addClass('active');
                 }
-
                 title.eq(cur).show().siblings('li').hide();
                 numLi.eq(cur).addClass('active').siblings('li').removeClass('active');
                 li.eq(cur).show().siblings('li').hide();
 
+                videoPlay(cur);
+
             });
 
             //上一页
-            prev.on('click', function () {
+            prev.on('click', function() {
                 next.removeClass('active');
                 if (cur > 0) {
                     cur--;
@@ -1104,14 +1263,16 @@ var detailCommon = { //详情页用到的效果
                 if (cur === 0) {
                     $(this).addClass('active');
                 }
+                videoPlay(cur);
                 title.eq(cur).show().siblings('li').hide();
                 numLi.eq(cur).addClass('active').siblings('li').removeClass('active');
                 li.eq(cur).show().siblings('li').hide();
             });
 
             //角标点击效果
-            numLi.on('click', function () {
+            numLi.on('click', function() {
                 cur = $(this).index();
+                videoPlay(cur);
                 $(this).addClass('active').siblings('li').removeClass('active');
                 title.eq(cur).show().siblings('li').hide();
                 li.eq(cur).show().siblings('li').hide();
@@ -1122,19 +1283,30 @@ var detailCommon = { //详情页用到的效果
                 if (cur == liLen - 1) {
                     next.addClass('active');
                 }
-            })
+            });
 
         }
 
+        //视频播放暂停
+        function videoPlay(val) {
+            videoLi.each(function () {
+                $(this).find('video').get(0).pause();
+                if(val || $(this).index()==val){
+                    $(this).find('video').get(0).play();
+                }
+            });
+
+        }
 
         //关闭浮层
-        close.on('click', function () {
+        close.on('click', function() {
             mediaLayer.addClass('active').fadeOut('fast');
+            videoPlay();
             return false;
         });
 
     },
-    mainBg: function () {//首屏图片 视频
+    mainBg: function() { //首屏图片 视频
         var _img = $('.mainbg img');
         var imgW = _img.width();
         var imgH = _img.height();
@@ -1145,40 +1317,96 @@ var detailCommon = { //详情页用到的效果
         });
 
     },
-    cutText: function () {//截取长文本 大于3000
+    cutText: function() { //截取长文本 大于3000
         var lgText = $('div[data-type=lgText]');
         var textMore = $('.text_more');
         var _span = textMore.find('span');
         var oldH = lgText.height();
         var newH = 600; //基本高度
         if (lgText.height() >= newH) {
-            lgText.animate({'height': newH + 'px'}, 0);
+            lgText.animate({ 'height': newH + 'px' }, 0);
         }
         _span.eq(1).hide();
-        _span.on('click', function () {
+        _span.on('click', function() {
             var _this = $(this);
-            if(_this.hasClass('show')){
-                lgText.animate({'height': oldH + 'px'}, 100);
-                setTimeout(function () {
+            if (_this.hasClass('show')) {
+                lgText.animate({ 'height': oldH + 'px' }, 100);
+                setTimeout(function() {
                     _this.hide().siblings('span').show();
                 }, 100);
-            }else {
-                lgText.animate({'height': newH + 'px'}, 100);
-                setTimeout(function () {
+            } else {
+                lgText.animate({ 'height': newH + 'px' }, 100);
+                setTimeout(function() {
                     _this.hide().siblings('span').show();
                 }, 100);
             }
         })
 
-    }
+    },
+    scrollFloor: function() { //楼层
+        var parent = $('.side_fixed')
+        var _ul = parent.find('ul'); //导航
+        var _floor = $('section.floor'); //楼层
+        var _nav = $('.card header h4'); //楼层标题
+        var arr = []; //把pros对应的几个位置标示出来
+
+        //获取所有楼层标题
+        _nav.each(function(i) { //给右侧悬浮添加标题
+            _ul.append('<li><span>' + $(this).text() + '</span><strong>0' + (i + 1) + '</strong></li>');
+        });
+        var _li = _ul.find('li');
+
+        //滚动
+        _floor.each(function() { //标记所有楼层导航的高度
+            var offsettop = $(this).offset().top;
+            arr.push(parseInt(offsettop)); //火狐有半个像素的情况，故取整
+        });
+
+        var firstFloor = arr[0];
+        //滚动鼠标
+        $(window).scroll(function() {
+            var d = $(document).scrollTop();
+
+            if (d > firstFloor - 20) {
+                parent.fadeIn('fast');
+                for (var i = 0; i < arr.length; i++) {
+                    if (d < arr[i]) {
+                        break;
+                    }
+                }
+                _li.removeClass('active');
+                if (i > 0) {
+                    _li.eq(i - 1).addClass('active').siblings('li').removeClass('active');
+                }
+
+                if (i == arr.length) {
+                    i--;
+                }
+            } else {
+                parent.fadeOut('fast');
+            }
 
 
+        });
+
+        //点击回到当前楼层
+        _ul.on('click', 'li', function() {
+            var _index = $(this).index();
+            var _top = _floor.eq(_index).offset().top;
+            $(this).addClass('active').siblings('li').removeClass('active');
+            $('html,body').stop(true).animate({ 'scrollTop': _top + 'px' }, 500);
+        });
+    },
 };
 
 
-$(function () {
+$(function() {
     renderHhtml.init();
     common.init();
 
-    // detailCommon.mediaTab()
+    $('.play_big,.play,.albums').on('click', function() {
+        var type = $(this).attr('data-type');
+        var index = parseInt($(this).attr('data-id'));
+        detailCommon.mediaShow(type, index);
+    })
 });
