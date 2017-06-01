@@ -151,6 +151,103 @@
 .ipt_page .create_project .step1 form .btn:hover {
     background: #376dc3;
 }
+.ipt_page .create_project .step2 {
+    width:100%;
+    float: left;
+    margin-top:80px;
+}
+.ipt_page .create_project .step2 .tips {
+    background: #FFD58E;
+    line-height: 38px;
+    padding:0 16px;
+    float: left;
+}
+.ipt_page .create_project .step2 .tips i {
+    background: url(../images/inputs/tips.png) no-repeat 0 0;
+    width:19px;
+    height:18px;
+    float: left;
+    margin:10px 17px 10px 0;
+}
+
+.ipt_page .create_project .step2 .result {
+    width:100%;
+    float: left;
+    margin-top: 30px;
+}
+.ipt_page .create_project .step2 .result .dt {
+    width:100%;
+    color: #949494;
+    float: left;
+    margin-bottom:20px;
+}
+.ipt_page .create_project .step2 .result .dd {
+    width:560px;
+    float: left;
+}
+.ipt_page .create_project .step2 .result .dd li {
+    width:100%;
+    height:177px;
+    float: left;
+    background: #fff;
+}
+.ipt_page .create_project .step2 .result .dd li img {
+    width:236px;
+    height:177px;
+    float: left;
+}
+.ipt_page .create_project .step2 .result .dd li .info {
+    width:252px;
+    padding:40px 36px;
+    float: left;
+}
+.ipt_page .create_project .step2 .result .dd li .info p {
+    width:100%;
+    height:26px;
+    line-height:26px;
+    float: left;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.ipt_page .create_project .step2 .result .dd li .info span {
+    font-size:14px;
+    color: #000;
+}
+.ipt_page .create_project .step2 .result .dd li .info strong {
+    font-size:14px;
+    color: #949494;
+}
+.ipt_page .create_project .step2 .result .dd li .info p.name strong{
+    font-size:20px;
+    line-height:28px;
+    color: #1b1b1b;
+    float: left;
+}
+.ipt_page .create_project .step2 .result .dd li .info p.name em {
+    background: #4283EB;
+    padding:0 10px;
+    height:21px;
+    line-height:22px;
+    font-size:14px;
+    color: #fff;
+    float: left;
+    margin-top:4px;
+    margin-left:4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
