@@ -796,9 +796,9 @@ var masterPage = {
         var clientHeight = $(window).height(); //浏览器宽度
         var mainHeight = clientHeight - headerHeight; //内容的高度
 
-
-        var lbox = $('.lbox');
-        var rbox = $('.rbox');
+        var parent=$('.master_page');
+        var lbox = parent.find('.lbox');
+        var rbox = parent.find('.rbox');
         var rboxDefaultContextP = rbox.find('.context p');
         var li = lbox.find('li');
         var liHeight = parseInt(mainHeight / 4) < 150 ? 150 : parseInt(mainHeight / 4); //单个li的高度,最小宽度为150px;
@@ -845,7 +845,6 @@ var masterPage = {
             _h1.text(_oldText + index);
         });
     }
-
 };
 
 //非遗名录 && 搜索结果页

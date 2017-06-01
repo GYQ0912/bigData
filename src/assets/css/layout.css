@@ -3036,15 +3036,6 @@ section.odd {
     position: relative;
 }
 
-.master_page .rbox .item .doi span.tag:after {
-    content: '';
-    width: 2px;
-    height: 7px;
-    background: #bbb;
-    position: absolute;
-    top: 15px;
-    right: 3px;
-}
 
 .master_page .rbox .item .doi span.zh {
     margin: 0 6px;

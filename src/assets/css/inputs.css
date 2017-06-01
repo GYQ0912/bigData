@@ -189,6 +189,8 @@
     width:100%;
     height:177px;
     float: left;
+    margin-bottom: 30px;
+    overflow: hidden;
     background: #fff;
 }
 .ipt_page .create_project .step2 .result .dd li img {
@@ -205,10 +207,10 @@
     width:100%;
     height:26px;
     line-height:26px;
-    float: left;
     white-space:nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    float: left;
 }
 .ipt_page .create_project .step2 .result .dd li .info span {
     font-size:14px;
@@ -218,9 +220,13 @@
     font-size:14px;
     color: #949494;
 }
+.ipt_page .create_project .step2 .result .dd li .info p.name {
+    margin-bottom:20px;
+}
 .ipt_page .create_project .step2 .result .dd li .info p.name strong{
     font-size:20px;
-    line-height:28px;
+    height:21px;
+    line-height:21px;
     color: #1b1b1b;
     float: left;
 }
@@ -232,7 +238,6 @@
     font-size:14px;
     color: #fff;
     float: left;
-    margin-top:4px;
     margin-left:4px;
 }
 

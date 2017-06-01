@@ -1251,17 +1251,6 @@ a.arrow_right:hover:after {
     background: #fafafa;
 }
 
-.doi span.tag:after {
-    content: '';
-    width: 1px;
-    height: 7px;
-    background: #dedede;
-    position: absolute;
-    top: 15px;
-    right: 3px;
-}
-
-
 /*--//End doi图标部分--*/
 
 .icon_list_cate,
